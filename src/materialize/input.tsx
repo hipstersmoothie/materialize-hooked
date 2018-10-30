@@ -1,29 +1,47 @@
-import React, { useEffect, useRef, useState, forwardRef } from 'react';
+import * as React from 'react';
 import makeClass from 'classnames';
-import PropTypes from 'prop-types';
 
 import { textareaAutoResize, CharacterCounter } from 'materialize-css';
 
-const useTextArea = (ref, isTextArea = true) => {
+const { useEffect, useRef, useState, forwardRef } = React;
+
+const useTextArea = (
+  ref: React.RefObject<HTMLDivElement>,
+  isTextArea = true
+) => {
   useEffect(() => {
-    if (isTextArea) {
+    if (isTextArea && ref.current) {
       textareaAutoResize(ref.current);
     }
   });
 };
 
-const useCharacterCount = (ref, count = undefined) => {
+const useCharacterCount = (ref: React.RefObject<HTMLDivElement>, count = 0) => {
   const [initialized, setInit] = useState();
 
   useEffect(() => {
-    if (count > 0 && !initialized) {
+    if (count > 0 && !initialized && ref.current) {
       CharacterCounter.init(ref.current);
       setInit(count);
     }
   });
 };
 
-export const FileInput = ({
+type OnChangeCallback = (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+export interface FileInputProps {
+  onChange?: OnChangeCallback;
+  help?: string;
+  icon?: string;
+  fileButtonText?: string;
+  placeholder?: string;
+  isMultiple?: boolean;
+  isDisabled?: boolean;
+  iconClassName?: string;
+  className?: string;
+}
+
+export const FileInput: React.SFC<FileInputProps> = ({
   className,
   onChange,
   iconClassName,
@@ -34,10 +52,9 @@ export const FileInput = ({
   help,
   icon
 }) => {
-  const iconClass = makeClass({
+  const iconClass = makeClass(iconClassName, {
     'material-icons': true,
-    right: !iconClassName,
-    [iconClassName]: iconClassName
+    right: !iconClassName
   });
 
   return (
@@ -69,18 +86,6 @@ export const FileInput = ({
   );
 };
 
-FileInput.propTypes = {
-  onChange: PropTypes.func,
-  help: PropTypes.string,
-  icon: PropTypes.string,
-  fileButtonText: PropTypes.string,
-  placeholder: PropTypes.string,
-  isMultiple: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  iconClassName: PropTypes.string,
-  className: PropTypes.string
-};
-
 FileInput.defaultProps = {
   onChange: () => undefined,
   help: undefined,
@@ -93,7 +98,43 @@ FileInput.defaultProps = {
   className: undefined
 };
 
-export const Input = (
+export interface InputProps {
+  id: string;
+  onChange?: OnChangeCallback;
+  value?: string;
+  icon?: string;
+  length?: number;
+  help?: string;
+  type?:
+    | 'color'
+    | 'date'
+    | 'datetime'
+    | 'email'
+    | 'file'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'reset'
+    | 'search'
+    | 'tel'
+    | 'text'
+    | 'time'
+    | 'url'
+    | 'week';
+  label?: string | React.ReactNode;
+  placeholder?: string;
+  className?: string;
+  iconClassName?: string;
+  inputClassName?: string;
+  isDisabled?: boolean;
+  isSensitive?: boolean;
+  isTextArea?: boolean;
+  isInline?: boolean;
+  fileButtonText?: string;
+  isMultiple?: boolean;
+}
+
+export const Input: React.SFC<InputProps> = (
   {
     id,
     label,
@@ -105,6 +146,7 @@ export const Input = (
     placeholder,
     className,
     inputClassName,
+    iconClassName,
     isDisabled,
     isSensitive,
     isInline,
@@ -116,15 +158,13 @@ export const Input = (
   ref
 ) => {
   const input = ref && ref.current ? ref : useRef();
-  const wrapperClass = makeClass({
+  const wrapperClass = makeClass(className, {
     'input-field': true,
-    [className]: className,
     inline: isInline
   });
-  const inputClass = makeClass({
+  const inputClass = makeClass(inputClassName, {
     validate: true,
-    'materialize-textarea': isTextArea,
-    [inputClassName]: inputClassName
+    'materialize-textarea': isTextArea
   });
   const labelClass = makeClass({
     active: placeholder || value
@@ -138,11 +178,11 @@ export const Input = (
     return (
       <FileInput
         className={className}
+        iconClassName={iconClassName}
         fileButtonText={fileButtonText}
         isMultiple={isMultiple}
         isDisabled={isDisabled}
         placeholder={placeholder}
-        value={value}
         icon={icon}
         help={help}
         onChange={onChange}
@@ -176,42 +216,6 @@ export const Input = (
   );
 };
 
-Input.propTypes = {
-  id: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  value: PropTypes.string,
-  icon: PropTypes.string,
-  length: PropTypes.number,
-  help: PropTypes.string,
-  type: PropTypes.oneOf([
-    'color',
-    'date',
-    'datetime',
-    'email',
-    'file',
-    'month',
-    'number',
-    'password',
-    'reset',
-    'search',
-    'tel',
-    'text',
-    'time',
-    'url',
-    'week'
-  ]),
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  placeholder: PropTypes.string,
-  className: PropTypes.string,
-  inputClassName: PropTypes.string,
-  isDisabled: PropTypes.bool,
-  isSensitive: PropTypes.bool,
-  isTextArea: PropTypes.bool,
-  isInline: PropTypes.bool,
-  fileButtonText: PropTypes.string,
-  isMultiple: PropTypes.bool
-};
-
 Input.defaultProps = {
   placeholder: undefined,
   length: undefined,
@@ -222,6 +226,7 @@ Input.defaultProps = {
   help: undefined,
   inputClassName: undefined,
   className: '',
+  iconClassName: undefined,
   label: undefined,
   isDisabled: false,
   isSensitive: false,

@@ -4,36 +4,29 @@ import makeClass from 'classnames';
 type ClickCallback = (event: React.MouseEvent<HTMLElement>) => void;
 
 export interface ChipProps {
+  /** Callback for when the chip is clicked */
   onClick?: ClickCallback;
+  /** Callback for when close chip is clicked */
   onClickClose?: ClickCallback;
-  value?: string;
+  /** Text inside chip */
+  value: string;
+  /** Image to display with chip */
   image?: string;
   children?: React.ReactNode;
+  /** Whether the chip should display the close button */
   hasClose?: boolean;
   className?: string;
 }
 
-const defaultProps = {
-  onClick: () => undefined,
-  onClickClose: () => undefined,
-  className: '',
-  value: undefined,
-  image: undefined,
-  hasClose: false,
-  children: undefined
-} as ChipProps;
-
-const Chip = (props: ChipProps) => {
-  const {
-    className,
-    value,
-    image,
-    children,
-    onClick,
-    hasClose,
-    onClickClose
-  } = { ...defaultProps, ...props };
-
+export const Chip: React.SFC<ChipProps> = ({
+  className,
+  value,
+  image,
+  children,
+  onClick,
+  hasClose,
+  onClickClose
+}) => {
   const chipClass = makeClass(className, {
     chip: true
   });
@@ -55,6 +48,15 @@ const Chip = (props: ChipProps) => {
       )}
     </div>
   );
+};
+
+Chip.defaultProps = {
+  onClick: () => undefined,
+  onClickClose: () => undefined,
+  className: '',
+  image: undefined,
+  hasClose: false,
+  children: undefined
 };
 
 export default Chip;

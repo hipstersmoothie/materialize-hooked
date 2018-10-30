@@ -18,7 +18,7 @@ export const usePushpin = (
 export interface PushpinProps {
   children: React.ReactNode;
   className?: string;
-  top?: number;
+  top: number;
   bottom?: number;
   offset?: number;
   onPositionChange?: (
@@ -27,18 +27,13 @@ export interface PushpinProps {
   ) => void;
 }
 
-const defaultProps = {
-  className: undefined,
-  top: 0,
-  bottom: Infinity,
-  offset: 0,
-  onPositionChange: () => undefined
-};
-
-const PushpinComponent = (props: PushpinProps) => {
-  const { children, className, ...options } = { ...defaultProps, ...props };
+export const PushpinComponent: React.SFC<PushpinProps> = ({
+  children,
+  className,
+  ...options
+}) => {
   const pushPin = useRef();
-  usePushpin(pushPin, options);
+  usePushpin(pushPin, options as PushpinOptions);
 
   const pushPinClass = makeClass(className, {
     pushpin: true
@@ -49,6 +44,13 @@ const PushpinComponent = (props: PushpinProps) => {
       {children}
     </div>
   );
+};
+
+PushpinComponent.defaultProps = {
+  className: undefined,
+  bottom: Infinity,
+  offset: 0,
+  onPositionChange: () => undefined
 };
 
 export default PushpinComponent;

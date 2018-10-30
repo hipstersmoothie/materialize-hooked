@@ -13,24 +13,17 @@ export interface RadioButtonProps {
   className?: string;
 }
 
-const defaultProps = {
-  onClick: () => undefined,
-  className: ''
-};
-
-const RadioButton = (props: RadioButtonProps) => {
-  const {
-    value,
-    children,
-    withGap,
-    onClick,
-    className,
-    isChecked,
-    isDisabled
-  } = { ...defaultProps, ...props };
-  const radioClass = makeClass({
-    'with-gap': withGap,
-    [className]: className
+export const RadioButton: React.SFC<RadioButtonProps> = ({
+  value,
+  children,
+  withGap,
+  onClick,
+  className,
+  isChecked,
+  isDisabled
+}) => {
+  const radioClass = makeClass(className, {
+    'with-gap': withGap
   });
 
   return (
@@ -48,6 +41,11 @@ const RadioButton = (props: RadioButtonProps) => {
       </label>
     </p>
   );
+};
+
+RadioButton.defaultProps = {
+  onClick: () => undefined,
+  className: ''
 };
 
 export default RadioButton;

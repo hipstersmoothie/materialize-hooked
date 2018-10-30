@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
 
 import Badge from '../src/materialize/badge';
 
@@ -15,10 +15,10 @@ const DummyPage: StoryDecorator = storyFn => (
 storiesOf('Components/Badge', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addWithJSX('basic', () => (
     <Badge
       isNew={boolean('isNew', true)}
-      value={text('value', '1')}
+      value={number('value', 1)}
       className={text('className', 'red')}
       caption={text('caption', '')}
     />

@@ -32,12 +32,6 @@ storiesOf('Form/Radio', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .addWithDoc(
-    'with label',
-    Radio,
-    'It should render a Radio with a label',
-    () => <Radio onClick={onClick}>Radio</Radio>
-  )
   .addWithJSX('basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>

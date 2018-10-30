@@ -1,5 +1,6 @@
 import { addDecorator, setAddon, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
+import { withInfo } from '@storybook/addon-info';
 import JSXAddon from 'storybook-addon-jsx';
 
 setAddon(JSXAddon);
@@ -13,6 +14,7 @@ addDecorator(
     url: 'https://github.com/hipstersmoothie/material-hooked'
   })
 );
+addDecorator(withInfo);
 
 function loadStories() {
   ts.keys().forEach(filename => ts(filename));

@@ -1,13 +1,17 @@
 import * as React from 'react';
 import makeClass from 'classnames';
 
-export interface FooterCopyright {
+export interface FooterCopyrightProps {
   text?: string;
   year?: string;
   children?: React.ReactElement<{}>;
 }
 
-export const FooterCopyright = ({ text, year, children }: FooterCopyright) => (
+export const FooterCopyright: React.SFC<FooterCopyrightProps> = ({
+  text,
+  year,
+  children
+}) => (
   <div className="footer-copyright">
     <div className="container">
       © {year} {text}
@@ -22,7 +26,11 @@ export interface FooterBodyProps {
   links: string[][];
 }
 
-export const FooterBody = ({ title, description, links }: FooterBodyProps) => (
+export const FooterBody: React.SFC<FooterBodyProps> = ({
+  title,
+  description,
+  links
+}) => (
   <React.Fragment>
     <div className="col l6 s12">
       <h5 className="white-text">{title}</h5>
@@ -52,16 +60,15 @@ export interface FooterProps {
   className?: string;
 }
 
-const Footer = ({
+export const Footer: React.SFC<FooterProps> = ({
   className = '',
   copyright,
   copyrightText,
   year,
   children
-}: FooterProps) => {
-  const footerClass = makeClass({
-    'page-footer': true,
-    [className]: className
+}) => {
+  const footerClass = makeClass(className, {
+    'page-footer': true
   });
 
   return (

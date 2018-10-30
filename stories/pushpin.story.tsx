@@ -1,5 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import * as React from 'react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 
 // eslint-disable-next-line unicorn/import-index
 import Pushpin from '../src/materialize/pushpin';
@@ -8,11 +8,13 @@ import Body from '../src/materialize/body';
 const styles = {
   width: '100%'
 };
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const DummyPage: StoryDecorator = storyFn => (
+  <div style={styles}>{storyFn()}</div>
+);
 
 storiesOf('Javascript/Pushpin', module)
   .addDecorator(DummyPage)
-  . addWithJSX('properties', () => (
+  .addWithJSX('properties', () => (
     <Body>
       <Pushpin top={0} bottom={500}>
         <h1 style={{ margin: 0 }}>Sticky 1</h1>

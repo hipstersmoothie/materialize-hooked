@@ -1,6 +1,6 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from './utils';
+import * as React from 'react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
+import { action } from './utils-ts';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
@@ -13,15 +13,17 @@ const styles = {
   justifyContent: 'center',
   alignItems: 'center'
 };
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const DummyPage: StoryDecorator = storyFn => (
+  <div style={styles}>{storyFn()}</div>
+);
 
 storiesOf('Form/Chip', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Chip
       value={text('value', 'Chip Component')}
-      hasClose={boolean('hasClose')}
+      hasClose={boolean('hasClose', false)}
       image={text('image', 'https://materializecss.com/images/yuna.jpg')}
       onClick={action('onClick')}
       onClickClose={action('onClickClose')}

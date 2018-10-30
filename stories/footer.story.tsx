@@ -1,5 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import * as React from 'react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
@@ -9,12 +9,14 @@ const styles = {
   margin: 'auto',
   maxWidth: 800
 };
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const DummyPage: StoryDecorator = storyFn => (
+  <div style={styles}>{storyFn()}</div>
+);
 
 storiesOf('Components/Footer', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  . addWithJSX('plain', () => (
+  .addWithJSX('plain', () => (
     <Footer>
       <FooterBody
         title={text('title', 'Title')}
@@ -30,7 +32,7 @@ storiesOf('Components/Footer', module)
       />
     </Footer>
   ))
-  . addWithJSX('with copyright', () => (
+  .addWithJSX('with copyright', () => (
     <Footer year="2018" copyrightText="Andrew Lisowski">
       <FooterBody
         title={text('title', 'Title')}

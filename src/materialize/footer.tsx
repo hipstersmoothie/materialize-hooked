@@ -1,8 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import makeClass from 'classnames';
-import PropTypes from 'prop-types';
 
-export const FooterCopyright = ({ text, year, children }) => (
+export interface FooterCopyright {
+  text?: string;
+  year?: string;
+  children?: React.ReactElement<{}>;
+}
+
+export const FooterCopyright = ({ text, year, children }: FooterCopyright) => (
   <div className="footer-copyright">
     <div className="container">
       © {year} {text}
@@ -11,18 +16,13 @@ export const FooterCopyright = ({ text, year, children }) => (
   </div>
 );
 
-FooterCopyright.propTypes = {
-  text: PropTypes.string,
-  year: PropTypes.string.isRequired,
-  children: PropTypes.node
-};
+export interface FooterBodyProps {
+  title: string;
+  description: string;
+  links: string[][];
+}
 
-FooterCopyright.defaultProps = {
-  text: undefined,
-  children: undefined
-};
-
-export const FooterBody = ({ title, description, links }) => (
+export const FooterBody = ({ title, description, links }: FooterBodyProps) => (
   <React.Fragment>
     <div className="col l6 s12">
       <h5 className="white-text">{title}</h5>
@@ -44,13 +44,21 @@ export const FooterBody = ({ title, description, links }) => (
   </React.Fragment>
 );
 
-FooterBody.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  links: PropTypes.array.isRequired
-};
+export interface FooterProps {
+  copyright?: React.ReactNode;
+  copyrightText?: string;
+  year?: string;
+  children: React.ReactElement<{}>;
+  className?: string;
+}
 
-const Footer = ({ className, copyright, copyrightText, year, children }) => {
+const Footer = ({
+  className = '',
+  copyright,
+  copyrightText,
+  year,
+  children
+}: FooterProps) => {
   const footerClass = makeClass({
     'page-footer': true,
     [className]: className
@@ -68,22 +76,6 @@ const Footer = ({ className, copyright, copyrightText, year, children }) => {
       )}
     </footer>
   );
-};
-
-Footer.propTypes = {
-  copyright: PropTypes.node,
-  copyrightText: PropTypes.string,
-  year: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string
-};
-
-Footer.defaultProps = {
-  copyright: undefined,
-  copyrightText: undefined,
-  text: undefined,
-  year: undefined,
-  className: ''
 };
 
 export default Footer;

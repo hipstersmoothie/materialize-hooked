@@ -5,14 +5,12 @@ import { withKnobs, number, text } from '@storybook/addon-knobs';
 // eslint-disable-next-line unicorn/import-index
 import Button from '../src/materialize/button';
 import Toast from '../src/materialize/toast';
-
-const styles = {};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Javascript/Toast', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Toast
       text={text('text', 'I am the toast!')}
       displayLength={number('displayLength', 4000)}

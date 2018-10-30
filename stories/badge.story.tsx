@@ -1,19 +1,12 @@
 import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
 
 import Badge from '../src/materialize/badge';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage: StoryDecorator = storyFn => (
-  <div style={styles}>{storyFn()}</div>
-);
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Components/Badge', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
   .addWithJSX('basic', () => (
     <Badge

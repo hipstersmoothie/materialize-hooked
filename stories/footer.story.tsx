@@ -1,21 +1,19 @@
 import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-// eslint-disable-next-line unicorn/import-index
 import Footer, { FooterBody } from '../src/materialize/footer';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage: StoryDecorator = storyFn => (
-  <div style={styles}>{storyFn()}</div>
-);
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Components/Footer', module)
-  .addDecorator(DummyPage)
   .addDecorator(withKnobs)
+  .addDecorator(
+    createDummyPage({
+      margin: 'auto',
+      maxWidth: 800
+    })
+  )
+  
   .addWithJSX('plain', () => (
     <Footer>
       <FooterBody

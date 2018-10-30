@@ -4,17 +4,12 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
 import Icon from '../src/materialize/icon';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Components/Icon', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Icon
       icon={text('icon', 'publish')}
       isTiny={boolean('isTiny', false)}

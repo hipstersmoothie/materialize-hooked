@@ -1,28 +1,17 @@
 import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action } from './utils-ts';
+import { storiesOf } from '@storybook/react';
+import { action, createDummyPage } from './utils-ts';
 import { withKnobs, number, text, boolean } from '@storybook/addon-knobs';
 // @ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
 
-import { Input } from '../src/materialize/input';
+import InputComponent, { InputProps } from '../src/materialize/input';
 
 const store = new Store({
   value: 'foo'
 });
 
-const styles = {
-  width: '100%',
-  height: '400px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-};
-
-const DummyPage: StoryDecorator = storyFn => (
-  <div style={styles}>{storyFn()}</div>
-);
-
+const Input = (props: InputProps) => <InputComponent {...props} />;
 const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   action('onChange')(e);
   store.set({ value: e.currentTarget.value });
@@ -31,8 +20,9 @@ onChange.toString = () => 'onChange';
 
 storiesOf('Form/Input', module)
   .addDecorator(StateDecorator(store))
-  .addDecorator(DummyPage)
   .addDecorator(withKnobs)
+  .addDecorator(createDummyPage())
+  
   .addWithJSX('basic', () => (
     <Input
       id="input"

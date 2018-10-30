@@ -5,17 +5,12 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
 import Button from '../src/materialize/button';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Components/Button', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Button
       className={text('className', 'scale-transition scale-in')}
       text={text('text')}

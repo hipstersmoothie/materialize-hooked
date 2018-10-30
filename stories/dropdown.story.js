@@ -11,17 +11,12 @@ import {
 
 // eslint-disable-next-line unicorn/import-index
 import Dropdown, { DropdownItem, Divider } from '../src/materialize/dropdown';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Javascript/Dropdown', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Dropdown
       text={text('text', 'Drop Me!')}
       alignment={select('alignment', { left: 'left', right: 'right' }, 'left')}
@@ -38,7 +33,7 @@ storiesOf('Javascript/Dropdown', module)
       <DropdownItem onClick={action('Two')}>two</DropdownItem>
     </Dropdown>
   ))
-  . addWithJSX('with divider', () => (
+  .addWithJSX('with divider', () => (
     <Dropdown text="Drop Me!">
       <DropdownItem>one</DropdownItem>
       <DropdownItem>two</DropdownItem>

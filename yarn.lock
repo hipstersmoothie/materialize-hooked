@@ -1054,6 +1054,18 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
+"@storybook/addon-backgrounds@^4.0.0":
+  version "4.0.0"
+  resolved "https://artifact.intuit.com:443/artifactory/api/npm/npm-intuit/@storybook/addon-backgrounds/-/addon-backgrounds-4.0.0.tgz#a7a2ffa4dd3a72c746d2284565b0d03f4b03d040"
+  integrity sha1-p6L/pN06csdG0ihFZbDQP0sD0EA=
+  dependencies:
+    "@emotion/styled" "^0.10.6"
+    "@storybook/addons" "4.0.0"
+    "@storybook/core-events" "4.0.0"
+    global "^4.3.2"
+    prop-types "^15.6.2"
+    util-deprecate "^1.0.2"
+
 "@storybook/addon-info@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-4.0.0.tgz#6d3b9b1f154f39158fb2c58c9b028e17aef5c359"

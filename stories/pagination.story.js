@@ -5,17 +5,12 @@ import { action } from './utils';
 
 // eslint-disable-next-line unicorn/import-index
 import Pagination from '../src/materialize/pagination';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Components/Pagination', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Pagination
       visibleRadius={number('visibleRadius', 2)}
       currentPage={number('currentPage', 1)}

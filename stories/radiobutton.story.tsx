@@ -1,22 +1,11 @@
 import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action } from './utils-ts';
+import { storiesOf } from '@storybook/react';
+import { action, createDummyPage } from './utils-ts';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 // @ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
 
 import Radio from '../src/materialize/radioButton';
-
-const styles = {
-  width: '100%',
-  height: '400px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-};
-const DummyPage: StoryDecorator = storyFn => (
-  <div style={styles}>{storyFn()}</div>
-);
 
 const store = new Store({
   isChecked: false
@@ -30,8 +19,8 @@ onClick.toString = () => 'onClick';
 
 storiesOf('Form/Radio', module)
   .addDecorator(StateDecorator(store))
-  .addDecorator(DummyPage)
   .addDecorator(withKnobs)
+  .addDecorator(createDummyPage())
   .addWithJSX('basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>

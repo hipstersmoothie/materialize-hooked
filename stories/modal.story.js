@@ -6,9 +6,13 @@ import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 import Modal from '../src/materialize/modal';
 
 const styles = {
-  margin: 'auto',
-  maxWidth: 800
+  width: '100%',
+  height: '400px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 };
+
 const DummyPage = storyFn => {
   return (
     <div style={styles}>

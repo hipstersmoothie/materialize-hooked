@@ -15,7 +15,7 @@ const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
 storiesOf('Components/Card', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  . addWithJSX('CardPanel', () => (
+  .addWithJSX('CardPanel', () => (
     <CardPanel className={text('className', 'teal white-text')}>
       {text(
         'content',
@@ -23,7 +23,7 @@ storiesOf('Components/Card', module)
       )}
     </CardPanel>
   ))
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Card
       title={text('title', 'Card Title')}
       isSmall={boolean('isSmall', false)}
@@ -42,7 +42,7 @@ storiesOf('Components/Card', module)
       )}
     </Card>
   ))
-  . addWithJSX('with and image', () => (
+  .addWithJSX('with and image', () => (
     <div className="row">
       <div className="col s9">
         <Card
@@ -70,7 +70,7 @@ storiesOf('Components/Card', module)
       </div>
     </div>
   ))
-  . addWithJSX('with and image with fab', () => (
+  .addWithJSX('with and image with fab', () => (
     <div className="row">
       <div className="col s6">
         <Card
@@ -99,7 +99,7 @@ storiesOf('Components/Card', module)
       </div>
     </div>
   ))
-  . addWithJSX('with tabs', () => (
+  .addWithJSX('with tabs', () => (
     <div className="row">
       <div className="col s6">
         <Card
@@ -127,7 +127,7 @@ storiesOf('Components/Card', module)
       </div>
     </div>
   ))
-  . addWithJSX('reveal content', () => (
+  .addWithJSX('reveal content', () => (
     <div className="row">
       <div className="col s6">
         <Card

@@ -4,20 +4,15 @@ import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
 import { LinearProgress, CircularProgress } from '../src/materialize/preloader';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import { createDummyPage } from './utils-ts';
 
 storiesOf('Components/Preloader', module)
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  . addWithJSX('LinearProgress', () => (
+  .addWithJSX('LinearProgress', () => (
     <LinearProgress progress={number('progress', undefined)} />
   ))
-  . addWithJSX('CircularProgress', () => (
+  .addWithJSX('CircularProgress', () => (
     <CircularProgress
       isLarge={boolean('isLarge')}
       isBlue={boolean('isBlue')}

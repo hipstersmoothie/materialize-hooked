@@ -1,11 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 
-// eslint-disable-next-line unicorn/import-index
-import Button from '../src/materialize/Button';
-import Toast from '../src/materialize/toast';
-import { createDummyPage } from './utils-ts';
+import Button from '../Button';
+import { createDummyPage } from '../../../stories/utils-ts';
+import Toast from '.';
 
 storiesOf('Javascript/Toast', module)
   .addDecorator(createDummyPage())

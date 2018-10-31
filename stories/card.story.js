@@ -1,9 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
-// eslint-disable-next-line unicorn/import-index
-import Tabs, { Tab } from '../src/materialize/tabs';
+import Tabs, { Tab } from '../src/materialize/Tabs';
 import Card, { CardPanel } from '../src/materialize/card';
 
 const styles = {

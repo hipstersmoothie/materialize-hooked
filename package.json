@@ -50,6 +50,7 @@
     "@storybook/addon-options": "^4.0.0",
     "@types/classnames": "^2.2.6",
     "@types/materialize-css": "^1.0.5",
+    "@types/nouislider": "^9.0.4",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-knobs": "^3.4.1",
     "@types/storybook__react": "^3.0.9",

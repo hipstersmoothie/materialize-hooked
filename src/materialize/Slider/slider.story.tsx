@@ -1,30 +1,21 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
-// eslint-disable-next-line unicorn/import-index
-import MaterialBox from '../src/materialize/materialBox';
-import Slider, { SliderImage } from '../src/materialize/slider';
+import { createDummyPage } from '../../../stories/utils-ts';
+import SliderExample, { SliderImage, SliderProps } from '.';
 
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const Slider: React.SFC<SliderProps> = props => <SliderExample {...props} />;
 
 storiesOf('Javascript/Media', module)
-  .addDecorator(DummyPage)
+  .addDecorator(
+    createDummyPage({
+      margin: 'auto',
+      maxWidth: 800
+    })
+  )
   .addDecorator(withKnobs)
-  . addWithJSX('MaterialBox', () => (
-    <MaterialBox
-      src={text('src', 'https://materializecss.com/images/sample-1.jpg')}
-      caption={text('caption', 'A pretty picture')}
-      width={number('width', 650)}
-      inDuration={number('inDuration', 275)}
-      outDuration={number('outDuration', 200)}
-    />
-  ))
-  . addWithJSX('Slider', () => (
+  .addWithJSX('Slider', () => (
     <Slider
       indicators={boolean('indicators', true)}
       isFullscreen={boolean('isFullscreen', false)}

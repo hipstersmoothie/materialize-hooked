@@ -1,21 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from './utils';
+import { action, createDummyPage } from '../../../stories/utils-ts';
 import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 
-// eslint-disable-next-line unicorn/import-index
-import Tabs, { Tab } from '../src/materialize/tabs';
-
-const styles = {
-  margin: 'auto',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+import Tabs, { Tab } from '.';
 
 storiesOf('Form/Tabs', module)
-  .addDecorator(DummyPage)
+  .addDecorator(
+    createDummyPage({
+      margin: 'auto',
+      maxWidth: 800
+    })
+  )
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <React.Fragment>
       <Tabs
         duration={number('duration', 300)}

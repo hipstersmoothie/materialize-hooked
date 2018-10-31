@@ -1,5 +1,4 @@
-import React from 'react';
-import { action } from './utils';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
   withKnobs,
@@ -10,13 +9,13 @@ import {
 } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
-import Dropdown, { DropdownItem, Divider } from '../src/materialize/dropdown';
-import { createDummyPage } from './utils-ts';
+import { action, createDummyPage } from '../../../stories/utils-ts';
+import Dropdown, { DropdownItem, Divider } from '.';
 
 storiesOf('Javascript/Dropdown', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Dropdown
       text={text('text', 'Drop Me!')}
       alignment={select('alignment', { left: 'left', right: 'right' }, 'left')}
@@ -33,7 +32,7 @@ storiesOf('Javascript/Dropdown', module)
       <DropdownItem onClick={action('Two')}>two</DropdownItem>
     </Dropdown>
   ))
-  .addWithJSX('with divider', () => (
+  .add('with divider', () => (
     <Dropdown text="Drop Me!">
       <DropdownItem>one</DropdownItem>
       <DropdownItem>two</DropdownItem>

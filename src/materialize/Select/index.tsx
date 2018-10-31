@@ -1,16 +1,30 @@
-import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import makeClass from 'classnames';
-import { FormSelect } from 'materialize-css';
+import { FormSelect, FormSelectOptions } from 'materialize-css';
 
-export const useFormSelect = (ref, options) => {
+const { useEffect, useRef } = React;
+
+export const useFormSelect = (
+  ref: React.RefObject<HTMLSelectElement>,
+  options: FormSelectOptions
+) => {
   useEffect(() => {
-    FormSelect.init(ref.current, options);
-    console.log(ref.current);
+    if (ref.current) {
+      FormSelect.init(ref.current, options);
+    }
   });
 };
 
-export const SelectItem = ({
+export interface SelectItemProps {
+  children?: React.ReactNode;
+  value?: string;
+  isDisabled?: boolean;
+  isSelected?: boolean;
+  isIconLeft?: boolean;
+  icon?: string;
+}
+
+export const SelectItem: React.SFC<SelectItemProps> = ({
   children,
   value,
   isDisabled,
@@ -31,15 +45,6 @@ export const SelectItem = ({
   );
 };
 
-SelectItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  value: PropTypes.string.isRequired,
-  isDisabled: PropTypes.bool,
-  isSelected: PropTypes.bool,
-  isIconLeft: PropTypes.bool,
-  icon: PropTypes.string
-};
-
 SelectItem.defaultProps = {
   isDisabled: false,
   isSelected: false,
@@ -47,27 +52,39 @@ SelectItem.defaultProps = {
   icon: undefined
 };
 
-export const SelectGroup = ({ label, children, isDisabled, isSelected }) => {
+export interface SelectGroupProps {
+  children: React.ReactNode;
+  label: string;
+  isDisabled?: boolean;
+  isSelected?: boolean;
+}
+
+export const SelectGroup: React.SFC<SelectGroupProps> = ({
+  label,
+  children,
+  isDisabled
+}) => {
   return (
-    <optgroup label={label} disabled={isDisabled} selected={isSelected}>
+    <optgroup label={label} disabled={isDisabled}>
       {children}
     </optgroup>
   );
 };
 
-SelectGroup.propTypes = {
-  children: PropTypes.node.isRequired,
-  label: PropTypes.string.isRequired,
-  isDisabled: PropTypes.bool,
-  isSelected: PropTypes.bool
-};
-
 SelectGroup.defaultProps = {
-  isDisabled: false,
-  isSelected: false
+  isDisabled: false
 };
 
-const FormSelectComponent = ({
+export interface FormSelectProps extends Partial<FormSelectOptions> {
+  children: React.ReactNode;
+  label?: string;
+  isMultiple?: boolean;
+  isDisabled?: boolean;
+  isBrowserDefault?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+const FormSelectComponent: React.SFC<FormSelectProps> = ({
   children,
   label,
   isMultiple,
@@ -76,8 +93,8 @@ const FormSelectComponent = ({
   onChange,
   ...options
 }) => {
-  const select = useRef();
-  useFormSelect(select, options);
+  const select = useRef<HTMLSelectElement>();
+  useFormSelect(select, options as FormSelectOptions);
   const wrapperSelectClass = makeClass({
     'input-field': !isBrowserDefault
   });
@@ -102,17 +119,6 @@ const FormSelectComponent = ({
       {isBrowserDefault && labelComponent}
     </div>
   );
-};
-
-FormSelectComponent.propTypes = {
-  children: PropTypes.node.isRequired,
-  label: PropTypes.string,
-  isMultiple: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  isBrowserDefault: PropTypes.bool,
-  onChange: PropTypes.func,
-  classes: PropTypes.string,
-  dropdownOptions: PropTypes.object
 };
 
 FormSelectComponent.defaultProps = {

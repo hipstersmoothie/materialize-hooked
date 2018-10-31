@@ -1,8 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 import makeClass from 'classnames';
-import PropTypes from 'prop-types';
 
-const Button = ({
+export interface ButtonProps {
+  className?: string;
+  id?: string;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void;
+  icon?: string;
+  text?: string;
+  isPulsing?: boolean;
+  isFlat?: boolean;
+  isFloating?: boolean;
+  isLarge?: boolean;
+  isSmall?: boolean;
+  isDisabled?: boolean;
+  isIconLeft?: boolean;
+  isSubmit?: boolean;
+}
+
+const Button: React.SFC<ButtonProps> = ({
   className,
   id,
   onClick,
@@ -17,8 +34,7 @@ const Button = ({
   isIconLeft,
   isSubmit
 }) => {
-  const buttonClass = makeClass({
-    [className]: true,
+  const buttonClass = makeClass(className, {
     'waves-effect waves-light': !isFloating,
     'btn-flat': isFlat,
     'btn-floating': isFloating,
@@ -58,22 +74,6 @@ const Button = ({
       {text}
     </a>
   );
-};
-
-Button.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  onClick: PropTypes.func,
-  icon: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  isPulsing: PropTypes.bool,
-  isFlat: PropTypes.bool,
-  isFloating: PropTypes.bool,
-  isLarge: PropTypes.bool,
-  isSmall: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  isIconLeft: PropTypes.bool,
-  isSubmit: PropTypes.bool
 };
 
 Button.defaultProps = {

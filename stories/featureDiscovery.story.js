@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import FeatureDiscovery, {
   useFeatureDiscovery
 } from '../src/materialize/featureDiscovery';
-import Button from '../src/materialize/button';
+import Button from '../src/materialize/Button';
 import Fab from '../src/materialize/fixedActionButton';
 
 const styles = {

@@ -1,21 +1,23 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from './utils';
+import * as React from 'react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
+import { action } from '../../../stories/utils-ts';
 import { withKnobs } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
-import Breadcrumbs, { Breadcrumb } from '../src/materialize/breadcrumbs';
+import Breadcrumbs, { Breadcrumb } from '.';
 
 const styles = {
   margin: 'auto',
   maxWidth: 800
 };
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const DummyPage: StoryDecorator = storyFn => (
+  <div style={styles}>{storyFn()}</div>
+);
 
 storiesOf('Components/Breadcrumbs', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Breadcrumbs>
       <Breadcrumb value="First" onClick={action('First onClick')} />
       <Breadcrumb value="Second" onClick={action('Second onClick')} />

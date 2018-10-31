@@ -4,12 +4,12 @@ import { action } from './utils';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
-import Button from '../src/materialize/button';
+import Button from '../src/materialize/Button';
 import Fab from '../src/materialize/fixedActionButton';
 
 storiesOf('Components/FixedActionButton', module)
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Fab
       icon={text('icon', 'publish')}
       hoverEnabled={boolean('hoverEnabled', true)}

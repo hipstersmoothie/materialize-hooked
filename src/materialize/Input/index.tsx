@@ -157,7 +157,7 @@ export const Input: React.SFC<InputProps> = (
   },
   ref
 ) => {
-  const input = ref && ref.current ? ref : useRef();
+  const input = ref ? ref : useRef();
   const wrapperClass = makeClass(className, {
     'input-field': true,
     inline: isInline

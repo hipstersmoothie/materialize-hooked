@@ -60,7 +60,7 @@ Tab.defaultProps = {
 
 export interface TabsComponentProps extends Partial<TabsOptions> {
   children: React.ReactNode;
-  content: React.ReactNode;
+  content?: React.ReactNode;
   className?: string;
   isFixedWidth?: boolean;
 }

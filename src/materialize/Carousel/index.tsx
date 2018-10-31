@@ -1,15 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import * as React from 'react';
 import makeClass from 'classnames';
-import PropTypes from 'prop-types';
-import { Carousel } from 'materialize-css';
+import { Carousel, CarouselOptions } from 'materialize-css';
 
-export const useCarousel = (ref, options) => {
+const { useEffect, useRef } = React;
+
+export const useCarousel = (
+  ref: React.RefObject<HTMLDivElement>,
+  options: CarouselOptions
+) => {
   useEffect(() => {
-    Carousel.init(ref.current, options);
+    if (ref.current) {
+      Carousel.init(ref.current, options);
+    }
   });
 };
 
-const CarouselComponent = ({
+export interface CarouselProps extends Partial<CarouselOptions> {
+  className?: string;
+  children?: React.ReactNode;
+  isSlider?: boolean;
+  isCentered?: boolean;
+  images?: string[];
+}
+
+export const CarouselComponent: React.SFC<CarouselProps> = ({
   className,
   images,
   isSlider,
@@ -17,14 +31,13 @@ const CarouselComponent = ({
   children,
   ...options
 }) => {
-  const carousel = useRef();
+  const carousel = useRef<HTMLDivElement>();
   useCarousel(carousel, {
     ...options,
-    fullWidth: options.fullWidth || isSlider
-  });
-  const carouselClass = makeClass({
+    fullWidth: options.fullWidth || isSlider || false
+  } as CarouselOptions);
+  const carouselClass = makeClass(className, {
     carousel: true,
-    [className]: className,
     'carousel-slider': isSlider,
     center: isCentered
   });
@@ -40,23 +53,6 @@ const CarouselComponent = ({
       {children}
     </div>
   );
-};
-
-CarouselComponent.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-  isSlider: PropTypes.bool,
-  isCentered: PropTypes.bool,
-  duration: PropTypes.number,
-  dist: PropTypes.number,
-  shift: PropTypes.number,
-  padding: PropTypes.number,
-  numVisible: PropTypes.number,
-  fullWidth: PropTypes.bool,
-  indicators: PropTypes.bool,
-  noWrap: PropTypes.bool,
-  onCycleTo: PropTypes.func,
-  images: PropTypes.arrayOf(PropTypes.string)
 };
 
 CarouselComponent.defaultProps = {

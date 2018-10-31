@@ -1,21 +1,21 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, array, boolean, number } from '@storybook/addon-knobs';
+import { createDummyPage } from '../../../stories/utils-ts';
+import Component from '.';
 
-// eslint-disable-next-line unicorn/import-index
-import Carousel from '../src/materialize/carousel';
-
-const styles = {
-  margin: 'auto',
-  backgroundColor: 'black',
-  maxWidth: 800
-};
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const Carousel = (props: any) => <Component {...props} />;
 
 storiesOf('Javascript/Carousel', module)
-  .addDecorator(DummyPage)
+  .addDecorator(
+    createDummyPage({
+      margin: 'auto',
+      backgroundColor: 'black',
+      maxWidth: 800
+    })
+  )
   .addDecorator(withKnobs)
-  . addWithJSX('basic', () => (
+  .addWithJSX('basic', () => (
     <Carousel
       images={array('images', [
         'https://vignette.wikia.nocookie.net/animaljam/images/7/78/Lil_bub_the_cat-250x250.jpg/revision/latest?cb=20140510201421',
@@ -35,7 +35,7 @@ storiesOf('Javascript/Carousel', module)
       isSlider={boolean('isSlider', false)}
     />
   ))
-  . addWithJSX('Full width slider', () => (
+  .addWithJSX('Full width slider', () => (
     <Carousel
       isSlider={boolean('isSlider', true)}
       fullWidth={boolean('fullWidth', true)}
@@ -47,7 +47,7 @@ storiesOf('Javascript/Carousel', module)
       ]}
     />
   ))
-  . addWithJSX('Content', () => (
+  .addWithJSX('Content', () => (
     <Carousel
       isCentered={boolean('isSlider', true)}
       isSlider={boolean('isSlider', true)}
@@ -57,18 +57,22 @@ storiesOf('Javascript/Carousel', module)
       <div className="carousel-fixed-item center">
         <a className="btn waves-effect white grey-text darken-text-2">button</a>
       </div>
+      // @ts-ignore
       <div className="carousel-item red white-text" href="#one!">
         <h2>First Panel</h2>
         <p className="white-text">This is your first panel</p>
       </div>
+      // @ts-ignore
       <div className="carousel-item amber white-text" href="#two!">
         <h2>Second Panel</h2>
         <p className="white-text">This is your second panel</p>
       </div>
+      // @ts-ignore
       <div className="carousel-item green white-text" href="#three!">
         <h2>Third Panel</h2>
         <p className="white-text">This is your third panel</p>
       </div>
+      // @ts-ignore
       <div className="carousel-item blue white-text" href="#four!">
         <h2>Fourth Panel</h2>
         <p className="white-text">This is your fourth panel</p>

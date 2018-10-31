@@ -6,6 +6,7 @@ import JSXAddon from 'storybook-addon-jsx';
 
 setAddon(JSXAddon);
 
+const ts1 = require.context('../src', true, /.story.tsx$/);
 const ts = require.context('../stories', true, /.story.tsx$/);
 const js = require.context('../stories', true, /.story.js$/);
 
@@ -27,6 +28,7 @@ addDecorator(
 );
 
 function loadStories() {
+  ts1.keys().forEach(filename => ts1(filename));
   ts.keys().forEach(filename => ts(filename));
   js.keys().forEach(filename => js(filename));
 }

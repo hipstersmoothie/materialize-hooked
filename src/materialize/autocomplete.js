@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import makeClass from 'classnames';
 import { Autocomplete } from 'materialize-css';
 
-import Input from './input';
+import Input from './Input';
 
 export const useAutocomplete = (ref, options) => {
   useEffect(() => {

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Datepicker } from 'materialize-css';
 
-import Input from './input';
+import Input from './Input';
 
 export const useDatePicker = (ref, options) => {
   useEffect(() => {

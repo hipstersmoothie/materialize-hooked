@@ -16,7 +16,12 @@ export const usePushpin = (
 };
 
 export interface PushpinProps extends Partial<PushpinOptions> {
+  /** The element to pin */
   children: React.ReactNode;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 

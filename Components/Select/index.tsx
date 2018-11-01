@@ -126,9 +126,7 @@ FormSelectComponent.defaultProps = {
   isMultiple: false,
   isDisabled: false,
   onChange: () => undefined,
-  isBrowserDefault: false,
-  classes: '',
-  dropdownOptions: {}
+  isBrowserDefault: false
 };
 
 export default FormSelectComponent;

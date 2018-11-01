@@ -65,16 +65,7 @@ CarouselComponent.defaultProps = {
   children: undefined,
   images: undefined,
   isSlider: false,
-  isCentered: false,
-  duration: 200,
-  dist: -100,
-  shift: 0,
-  padding: 0,
-  numVisible: 5,
-  fullWidth: false,
-  indicators: false,
-  noWrap: false,
-  onCycleTo: () => undefined
+  isCentered: false
 };
 
 // For storybook

@@ -68,14 +68,7 @@ export const ModalWrapper: React.SFC<ModalProps> = props => (
 ModalComponent.defaultProps = {
   footer: undefined,
   isBottomSheet: false,
-  hasFixedFooter: false,
-  opacity: 0.5,
-  inDuration: 250,
-  outDuration: 250,
-  preventScrolling: true,
-  dismissible: true,
-  startingTop: '4%',
-  endingTop: '10%'
+  hasFixedFooter: false
 };
 
 export default ModalComponent;

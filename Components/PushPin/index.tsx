@@ -45,10 +45,7 @@ export const PushpinComponent: React.SFC<PushpinProps> = ({
 };
 
 PushpinComponent.defaultProps = {
-  className: undefined,
-  bottom: Infinity,
-  offset: 0,
-  onPositionChange: () => undefined
+  className: undefined
 };
 
 export default PushpinComponent;

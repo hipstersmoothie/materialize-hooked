@@ -69,31 +69,4 @@ export const DatePicker: React.SFC<DatePickerProps> = ({
   );
 };
 
-//@ts-ignore
-DatePicker.defaultProps = {
-  ...Input.defaultProps,
-  autoClose: false,
-  placeholder: undefined,
-  format: 'mmm dd, yyyy',
-  parse: undefined,
-  defaultDate: undefined,
-  setDefaultDate: false,
-  disableWeekends: false,
-  disableDayFn: undefined,
-  firstDay: 0,
-  minDate: undefined,
-  maxDate: undefined,
-  yearRange: 10,
-  isRTL: false,
-  showMonthAfterYear: false,
-  showDaysInNextAndPreviousMonths: false,
-  showClearBtn: false,
-  i18n: {},
-  events: [],
-  onSelect: () => undefined,
-  onOpen: () => undefined,
-  onClose: () => undefined,
-  onDraw: () => undefined
-};
-
 export default DatePicker;

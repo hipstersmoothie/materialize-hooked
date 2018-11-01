@@ -52,13 +52,7 @@ const MaterialBox: React.SFC<MaterialBoxProps> = ({
 MaterialBox.defaultProps = {
   className: '',
   width: undefined,
-  caption: '',
-  inDuration: 275,
-  outDuration: 200,
-  onOpenStart: undefined,
-  onOpenEnd: undefined,
-  onCloseStart: undefined,
-  onCloseEnd: undefined
+  caption: ''
 };
 
 export default MaterialBox;

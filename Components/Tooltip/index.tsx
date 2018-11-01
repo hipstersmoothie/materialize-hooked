@@ -48,15 +48,7 @@ const TooltipComponent: React.SFC<TooltipProps> = ({
 };
 
 TooltipComponent.defaultProps = {
-  className: undefined,
-  position: 'bottom',
-  exitDelay: 0,
-  enterDelay: 200,
-  html: undefined,
-  margin: 5,
-  inDuration: 300,
-  outDuration: 250,
-  transitionMovement: 10
+  className: undefined
 };
 
 export default TooltipComponent;

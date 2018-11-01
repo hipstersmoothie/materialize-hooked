@@ -1,6 +1,9 @@
 import * as React from 'react';
 import makeClass from 'classnames';
-import { Collapsible, CollapsibleOptions } from 'materialize-css';
+import {
+  Collapsible as CollapsibleAnimation,
+  CollapsibleOptions
+} from 'materialize-css';
 
 const { useEffect, useRef } = React;
 
@@ -10,14 +13,17 @@ export const useCollapsible = (
 ) => {
   useEffect(() => {
     if (ref.current) {
-      Collapsible.init(ref.current, options);
+      CollapsibleAnimation.init(ref.current, options);
     }
   });
 };
 
 export interface CollapsibleItemProps {
+  /** Title of the collapsible item */
   header: React.ReactNode | string;
+  /** Whether the item is open */
   isActive?: boolean;
+  /** Item content */
   children: React.ReactNode;
 }
 
@@ -36,23 +42,28 @@ CollapsibleItem.defaultProps = {
   isActive: false
 };
 
-export interface CollapsibleComponentProps extends Partial<CollapsibleOptions> {
+export interface CollapsibleProps extends Partial<CollapsibleOptions> {
+  /** Collapsible Item children */
   children: React.ReactNode;
+  /** A className to attach to the root component */
   className?: string;
+  /** Animate the items to pop out when expanding */
   isPopout?: boolean;
 }
 
-const CollapsibleComponent: React.SFC<CollapsibleComponentProps> = ({
+export const Collapsible: React.SFC<CollapsibleProps> = ({
   children,
   isPopout,
   className,
   ...options
 }) => {
   const collapsible = useRef<HTMLUListElement>();
+  console.log(options);
   useCollapsible(collapsible, options as CollapsibleOptions);
   const collapsibleClass = makeClass(className, {
     collapsible: true,
-    popout: isPopout
+    popout: isPopout,
+    expandable: true
   });
 
   return (
@@ -62,9 +73,9 @@ const CollapsibleComponent: React.SFC<CollapsibleComponentProps> = ({
   );
 };
 
-CollapsibleComponent.defaultProps = {
-  isPopout: true,
+Collapsible.defaultProps = {
+  isPopout: false,
   className: undefined
 };
 
-export default CollapsibleComponent;
+export default Collapsible;

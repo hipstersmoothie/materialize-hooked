@@ -47,22 +47,22 @@ function loadStories() {
   require('../Components/FloatingActionButton/floatingActionButton.story');
   require('../Components/Footer/footer.story');
   require('../Components/Icon/icon.story');
-  // require('../Components/NavBar/navBar.story');
-  // require('../Components/Pagination/pagination.story');
-  // require('../Components/Preloader/preloader.story');
+  require('../Components/NavBar/navBar.story');
+  require('../Components/Pagination/pagination.story');
+  require('../Components/Preloader/preloader.story');
 
   // // Javascript
-  // require('../Components/Carousel/carousel.story');
-  // require('../Components/Collapsible/collapsible.story');
-  // require('../Components/Dropdown/dropdown.story');
-  // require('../Components/FeatureDiscovery/featureDiscovery.story');
+  require('../Components/Carousel/carousel.story');
+  require('../Components/Collapsible/collapsible.story');
+  require('../Components/Dropdown/dropdown.story');
+  require('../Components/FeatureDiscovery/featureDiscovery.story');
   // require('../Components/MaterialBox/materialBox.story');
   // require('../Components/Slider/slider.story');
   // require('../Components/Modal/modal.story');
   // require('../Components/Parallax/parallax.story');
   // require('../Components/PushPin/pushPin.story');
   // require('../Components/ScrollSpy/scrollSpy.story');
-  // require('../Components/Tabs/tabs.story');
+  require('../Components/Tabs/tabs.story');
   // require('../Components/Toast/toast.story');
   // require('../Components/Tooltip/tooltip.story');
 

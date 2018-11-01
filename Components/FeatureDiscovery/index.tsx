@@ -12,7 +12,6 @@ export const useFeatureDiscovery = (
   useEffect(() => {
     if (!tapTarget && ref.current) {
       const target = TapTarget.init(ref.current, options);
-      console.log({ target });
       setTapTarget(target);
     }
   });
@@ -27,13 +26,18 @@ export interface FeatureDiscoveryProps {
   children: React.ReactNode;
 }
 
-const FeatureDiscovery: React.SFC<FeatureDiscoveryProps> = (
+export const FeatureDiscovery: React.SFC<FeatureDiscoveryProps> = (
   { children, target },
-  ref: React.RefObject<HTMLDivElement>
-) => (
-  <div ref={ref} className="tap-target" data-target={target}>
-    {children}
-  </div>
-);
+  ref
+) => {
+  // For storybook
+  ref = !ref.hasOwnProperty('current') ? React.createRef() : ref;
+
+  return (
+    <div ref={ref} className="tap-target" data-target={target}>
+      {children}
+    </div>
+  );
+};
 
 export default forwardRef(FeatureDiscovery);

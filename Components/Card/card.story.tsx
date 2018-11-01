@@ -80,7 +80,6 @@ storiesOf('Components/Card', module)
       <div className="row">
         <div className="col s6">
           <Card
-            isLarge={boolean('isLarge', false)}
             title={text('title', 'Card Title')}
             image={text(
               'image',
@@ -181,25 +180,25 @@ storiesOf('Components/Card', module)
       <div className="col s6 offset-s3">
         <Card
           tabs={
-            <Tabs isFixedWidth>
+            <Tabs
+              isFixedWidth
+              content={
+                <div className="card-content">
+                  <div id="test1">Test 1</div>
+                  <div id="test2">Test 2</div>
+                  <div id="test3">Test 3</div>
+                </div>
+              }
+            >
               <Tab link="#test1" text="Test 1" />
               <Tab link="#test2" text="Test 2" />
               <Tab link="#test3" text="Test 3" />
             </Tabs>
           }
-          tabContent={
-            <>
-              <div id="test1">Test 1</div>
-              <div id="test2">Test 2</div>
-              <div id="test3">Test 3</div>
-            </>
-          }
         >
-          <p>
-            I am a very simple card. I am good at containing small bits of
-            information. I am convenient because I require little markup to use
-            effectively.
-          </p>
+          I am a very simple card. I am good at containing small bits of
+          information. I am convenient because I require little markup to use
+          effectively.
         </Card>
       </div>
     </div>

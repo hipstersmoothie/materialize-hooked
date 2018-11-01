@@ -84,7 +84,12 @@ const TabsComponent: React.SFC<TabsComponentProps> = ({
       <ul ref={tabs} className={tabsClass}>
         {children}
       </ul>
-      <div style={{ display: hasLoaded ? 'initial' : 'none' }}>{content}</div>
+      <div
+        className="nav-content"
+        style={{ display: hasLoaded ? 'initial' : 'none' }}
+      >
+        {content}
+      </div>
     </>
   );
 };

@@ -4,8 +4,14 @@ import makeClass from 'classnames';
 import { getVisiblePages } from 'bulma-pagination-react';
 
 export interface ArrowProps {
+  /** Direction of the arrow */
   direction: 'left' | 'right';
+  /** Called when arrow is clicked */
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  /**
+   * Disable the arrow button
+   * @default false
+   */
   isDisabled?: boolean;
 }
 
@@ -31,8 +37,11 @@ const Ellipses: React.SFC = () => (
 );
 
 export interface PageProps {
+  /** Called when the page number is clicked */
   onClick: (newPage: number) => void;
+  /** Number for the page to display */
   number: number;
+  /** Current page of the pagination component */
   currentPage: number;
 }
 
@@ -47,14 +56,25 @@ Page.defaultProps = {
 };
 
 export interface PaginationProps {
+  /** Called when a page number is clicked */
   onChange?: (newPage: number) => void;
+  /**
+   * How many pages to show around the current page.
+   * @default false
+   */
   visibleRadius?: number;
+  /** The page in the component that should display as active */
   currentPage: number;
+  /** The total number of pages the component should display */
   pages: number;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 
-export const Pagination: React.SFC<PaginationProps> = ({
+const Pagination: React.SFC<PaginationProps> = ({
   className,
   onChange,
   visibleRadius,

@@ -2,7 +2,12 @@ import * as React from 'react';
 import makeClass from 'classnames';
 
 export interface LinearProgressProps {
+  /** How far the progress bar has progressed */
   progress?: number;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 
@@ -54,12 +59,40 @@ CircularProgressPart.defaultProps = {
 };
 
 export interface CircularProgressProps {
-  isLarge?: boolean;
+  /**
+   * Render a blue spinner.
+   * @default false
+   */
   isBlue?: boolean;
+  /**
+   * Render a red spinner.
+   * @default false
+   */
   isRed?: boolean;
+  /**
+   * Render a green spinner.
+   * @default false
+   */
   isGreen?: boolean;
+  /**
+   * Render a yelllow spinner.
+   * @default false
+   */
   isYellow?: boolean;
+  /**
+   * Render a large spinner.
+   * @default false
+   */
+  isLarge?: boolean;
+  /**
+   * Render a small spinner.
+   * @default false
+   */
   isSmall?: boolean;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 

@@ -39,10 +39,6 @@ export const stylesheetBase = {
     margin: '20px auto',
     maxWidth: 1000
   },
-  infoContent: {
-    marginBottom: 0
-  },
-  infoStory: {},
   jsxInfoContent: {
     borderTop: '1px solid #eee',
     margin: '20px 0 0 0'
@@ -82,6 +78,7 @@ export const stylesheetBase = {
 interface IInfoParams {
   text?: string;
   styles: { [key: string]: any };
+  components?: any;
   propTablesExclude?: React.StatelessComponent<any>[];
 }
 
@@ -91,6 +88,9 @@ export const wInfo = (
 ) => {
   const out: IInfoParams = {
     styles: stylesheetBase,
+    components: {
+      p: ({ children }: any) => <p>{children}</p>
+    },
     propTablesExclude: propTablesExclude
       ? [...propTablesExclude, Wrapper]
       : [Wrapper]

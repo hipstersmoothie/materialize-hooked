@@ -9,13 +9,16 @@ import {
 } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import Dropdown, { DropdownItem, Divider } from '.';
 
 storiesOf('Javascript/Dropdown', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo('Add a dropdown list to any button.')
+  })
+  .add('Basic', () => (
     <Dropdown
       text={text('text', 'Drop Me!')}
       alignment={select('alignment', { left: 'left', right: 'right' }, 'left')}
@@ -32,7 +35,7 @@ storiesOf('Javascript/Dropdown', module)
       <DropdownItem onClick={action('Two')}>two</DropdownItem>
     </Dropdown>
   ))
-  .add('with divider', () => (
+  .add('Divider', () => (
     <Dropdown text="Drop Me!">
       <DropdownItem>one</DropdownItem>
       <DropdownItem>two</DropdownItem>

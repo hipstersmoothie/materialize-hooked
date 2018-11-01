@@ -1,7 +1,8 @@
 import * as React from 'react';
+import makeClass from 'classnames';
 import { Sidenav, SidenavOptions } from 'materialize-css';
 
-const { useEffect, useRef, Fragment } = React;
+const { useEffect, useRef } = React;
 
 type OnChangeCallback = (event: React.ChangeEvent<HTMLInputElement>) => void;
 
@@ -17,7 +18,9 @@ export const useSideNav = (
 };
 
 export interface NavSearchProps {
+  /** Called when search value changes */
   onChange: OnChangeCallback;
+  /** The value of the search input */
   value: string;
 }
 
@@ -42,11 +45,25 @@ export const NavSearch: React.SFC<NavSearchProps> = ({ onChange, value }) => (
 );
 
 export interface NavItemProps {
+  /**
+   * The nav item is active
+   * @default false
+   */
   isActive?: boolean;
+  /**
+   * The nav item is a button
+   * @default false
+   */
   isButton?: boolean;
+  /** Called when the nav item is clicked */
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   href: string;
+  icon?: string;
   text?: string;
+  iconLeft?: boolean;
+  iconRight?: boolean;
+  className?: string;
+  anchorClassName?: string;
   children?: React.ReactNode;
 }
 
@@ -56,18 +73,37 @@ export const NavItem: React.SFC<NavItemProps> = ({
   isActive,
   children,
   isButton,
+  iconLeft,
+  iconRight,
+  className,
+  anchorClassName,
+  icon,
   onClick
-}) => (
-  <li className={isActive ? 'active' : ''}>
-    <a
-      className={isButton ? 'waves-effect waves-light btn' : ''}
-      href={href}
-      onClick={onClick}
-    >
-      {text || children}
-    </a>
-  </li>
-);
+}) => {
+  const itemClass = makeClass(className, {
+    active: isActive
+  });
+  const anchorClass = makeClass(anchorClassName, {
+    'waves-effect waves-light btn': isButton
+  });
+
+  return (
+    <li className={itemClass}>
+      <a className={anchorClass} href={href} onClick={onClick}>
+        {text || children}
+        {icon && (
+          <i
+            className={`material-icons ${
+              iconLeft ? 'left' : iconRight ? 'right' : ''
+            }`}
+          >
+            {icon}
+          </i>
+        )}
+      </a>
+    </li>
+  );
+};
 
 NavItem.defaultProps = {
   onClick: undefined,
@@ -78,15 +114,40 @@ NavItem.defaultProps = {
 };
 
 export interface NavProps {
+  /** String to be used in the brand section of the nav bar */
   logo: string;
+  /** Target for mobile sidebar toggle */
   target?: string;
+  /**
+   * Wether the nav should use a mobile sidebar
+   * @default false
+   */
   useSideNav?: boolean;
+  /** NavItem components in nav bar */
   children: React.ReactNode;
+  /** Extra content to display in the navBar */
   content?: React.ReactNode | string;
+  /**
+   * Displayed the navItems on the left
+   * @default false
+   */
   isLeft?: boolean;
+  /**
+   * Use a fixed header
+   * @default false
+   */
   isFixed?: boolean;
+  /**
+   * Keep Logo Centered
+   * @default false
+   */
   hasCenteredLogo?: boolean;
+  /**
+   * Render teh nav as a search bar
+   * @default false
+   */
   isSearch?: boolean;
+  /** Called when the logo is clicked */
   onClickLogo?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -107,41 +168,27 @@ const Nav: React.SFC<NavProps> = ({
   const logoAlignment = hasCenteredLogo ? 'center' : isLeft ? 'right' : '';
 
   return (
-    <Fragment>
-      <div className={isFixed ? 'navbar-fixed' : ''}>
-        <nav className={content ? 'nav-extended' : ''}>
-          {isSearch ? (
-            children
-          ) : (
-            <div className="nav-wrapper">
-              <a
-                className={`brand-logo ${logoAlignment}`}
-                onClick={onClickLogo}
-              >
-                {logo}
+    <div className={isFixed ? 'navbar-fixed' : ''}>
+      <nav className={content ? 'nav-extended' : ''}>
+        {isSearch ? (
+          children
+        ) : (
+          <div className="nav-wrapper">
+            <a className={`brand-logo ${logoAlignment}`} onClick={onClickLogo}>
+              {logo}
+            </a>
+            {finalTarget && (
+              <a href="#" data-target={finalTarget} className="sidenav-trigger">
+                <i className="material-icons">menu</i>
               </a>
-              {finalTarget && (
-                <a
-                  href="#"
-                  data-target={finalTarget}
-                  className="sidenav-trigger"
-                >
-                  <i className="material-icons">menu</i>
-                </a>
-              )}
-              <ul className={`${alignment} hide-on-med-and-down`}>
-                {children}
-              </ul>
-            </div>
-          )}
+            )}
+            <ul className={`${alignment} hide-on-med-and-down`}>{children}</ul>
+          </div>
+        )}
 
-          {content && <div className="nav-content">{content}</div>}
-        </nav>
-      </div>
-
-      {useSideNav &&
-        finalTarget && <SideNav target={finalTarget}>{children}</SideNav>}
-    </Fragment>
+        {content && <div className="nav-content">{content}</div>}
+      </nav>
+    </div>
   );
 };
 
@@ -157,7 +204,9 @@ Nav.defaultProps = {
 };
 
 export interface SideNavProps extends Partial<SidenavOptions> {
+  /** The id that will open the sidebar */
   target: string;
+  /** The navItems to display */
   children: React.ReactNode;
 }
 
@@ -176,15 +225,18 @@ export const SideNav: React.SFC<SideNavProps> = ({
   );
 };
 
-SideNav.defaultProps = {
-  edge: 'left',
-  draggable: true,
-  inDuration: 250,
-  outDuration: 200,
-  onOpenStart: undefined,
-  onOpenEnd: undefined,
-  onCloseStart: undefined,
-  onCloseEnd: undefined
+const NavBar: React.SFC<NavProps> = props => {
+  const { children, target, useSideNav } = props;
+  const finalTarget = useSideNav ? 'mobile-sidebar' : target;
+
+  return (
+    <>
+      <Nav {...props} />
+      {useSideNav
+        ? finalTarget && <SideNav target={finalTarget}>{children}</SideNav>
+        : null}
+    </>
+  );
 };
 
-export default Nav;
+export default NavBar;

@@ -16,10 +16,15 @@ export const useCarousel = (
 };
 
 export interface CarouselProps extends Partial<CarouselOptions> {
+  /** A className to attach to the root component */
   className?: string;
+  /** Items in carousel to display */
   children?: React.ReactNode;
+  /** Display the carousel as a slider */
   isSlider?: boolean;
+  /** Center the carousel content */
   isCentered?: boolean;
+  /** Images for the carousel to display */
   images?: string[];
 }
 
@@ -71,5 +76,12 @@ CarouselComponent.defaultProps = {
   noWrap: false,
   onCycleTo: () => undefined
 };
+
+// For storybook
+export const CarouselWrapper: React.SFC<CarouselProps> = props => (
+  <div>
+    <CarouselComponent {...props} />
+  </div>
+);
 
 export default CarouselComponent;

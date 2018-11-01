@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 
 import ScrollSpy from '.';
+import { wInfo } from '../utils-ts';
 
 const styles = {
   margin: 'auto',
@@ -13,6 +14,11 @@ const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
 storiesOf('Javascript/ScrollSpy', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
+  .addParameters({
+    info: wInfo(
+      "Scrollspy is a jQuery plugin that tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every documentation page to the right. Clicking on these links will also scroll the page to that element."
+    )
+  })
   .add('basic', () => (
     <ScrollSpy
       throttle={number('throttle', 100)}

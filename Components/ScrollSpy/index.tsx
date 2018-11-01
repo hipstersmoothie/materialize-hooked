@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import { ScrollSpy, ScrollSpyOptions } from 'materialize-css';
+
+const { useEffect } = React;
 
 export const useScrollSpy = (options: ScrollSpyOptions) => {
   useEffect(() => {
@@ -9,10 +11,11 @@ export const useScrollSpy = (options: ScrollSpyOptions) => {
 };
 
 export interface ScrollSpyProps extends Partial<ScrollSpyOptions> {
+  /** Elements to spy on */
   children: React.ReactNode;
 }
 
-const ScrollSpyComponent: React.SFC<ScrollSpyProps> = ({
+export const ScrollSpyComponent: React.SFC<ScrollSpyProps> = ({
   children,
   ...options
 }) => {
@@ -24,13 +27,6 @@ const ScrollSpyComponent: React.SFC<ScrollSpyProps> = ({
   useScrollSpy(options as ScrollSpyOptions);
 
   return <>{children}</>;
-};
-
-ScrollSpyComponent.defaultProps = {
-  throttle: 100,
-  scrollOffset: 200,
-  activeClass: 'active',
-  getActiveElement: undefined
 };
 
 export default ScrollSpyComponent;

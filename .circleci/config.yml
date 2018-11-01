@@ -47,7 +47,7 @@ jobs:
             mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: Deploy Storybook
-          command: deploy-storybook
+          command: yarn deploy-storybook
 
 workflows:
   version: 2

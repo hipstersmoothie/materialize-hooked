@@ -30,21 +30,11 @@ jobs:
           key: auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
           paths:
             - node_modules
-
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
-  release:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/auto-release-test
       - run:
           name: 'Make sure we can commit to Intuit github'
           command: |
             mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run: ls
       - run:
           name: Deploy Storybook
           command: yarn deploy-storybook

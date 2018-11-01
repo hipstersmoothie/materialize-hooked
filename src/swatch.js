@@ -64,7 +64,7 @@ export const BulmaApp = ({ swatch, random, children }) => {
     useBulmaSwatch(swatch);
   }
 
-  return <React.Fragment>{children}</React.Fragment>;
+  return <>{children}</>;
 };
 
 BulmaApp.propTypes = {

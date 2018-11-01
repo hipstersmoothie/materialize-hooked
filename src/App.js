@@ -25,7 +25,7 @@ const App = () => {
   const [value, setValue] = useState();
 
   return (
-    <React.Fragment>
+    <>
       <Nav useSideNav isRight isFixed logo="Logo">
         <NavItem href="sass.html" text="Sass" />
         <NavItem href="badges.html" text="Components" />
@@ -157,7 +157,7 @@ const App = () => {
           </div>
         </FeatureDiscovery>
       </Body>
-    </React.Fragment>
+    </>
   );
 };
 

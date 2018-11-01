@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
-import { createDummyPage } from '../utils-ts';
+import { createDummyPage, wInfo } from '../utils-ts';
 import SliderExample, { SliderImage, SliderProps } from '.';
 
 const Slider: React.SFC<SliderProps> = props => <SliderExample {...props} />;
@@ -15,6 +15,11 @@ storiesOf('Javascript/Media', module)
     })
   )
   .addDecorator(withKnobs)
+  .addParameters({
+    info: wInfo(
+      'Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider.'
+    )
+  })
   .add('Slider', () => (
     <Slider
       indicators={boolean('indicators', true)}

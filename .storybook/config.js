@@ -56,8 +56,8 @@ function loadStories() {
   require('../Components/Collapsible/collapsible.story');
   require('../Components/Dropdown/dropdown.story');
   require('../Components/FeatureDiscovery/featureDiscovery.story');
-  // require('../Components/MaterialBox/materialBox.story');
-  // require('../Components/Slider/slider.story');
+  require('../Components/MaterialBox/materialBox.story');
+  require('../Components/Slider/slider.story');
   // require('../Components/Modal/modal.story');
   // require('../Components/Parallax/parallax.story');
   // require('../Components/PushPin/pushPin.story');

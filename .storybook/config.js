@@ -60,7 +60,7 @@ function loadStories() {
   require('../Components/Slider/slider.story');
   require('../Components/Modal/modal.story');
   require('../Components/Parallax/parallax.story');
-  require('../Components/PushPin/pushPin.story');
+  // require('../Components/PushPin/pushPin.story');
   require('../Components/ScrollSpy/scrollSpy.story');
   require('../Components/Tabs/tabs.story');
   // require('../Components/Toast/toast.story');

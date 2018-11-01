@@ -79,12 +79,14 @@ interface IInfoParams {
   text?: string;
   styles: { [key: string]: any };
   components?: any;
-  propTablesExclude?: React.StatelessComponent<any>[];
+  propTablesExclude?: (React.StatelessComponent<any> | React.ReactNode)[];
 }
 
 export const wInfo = (
   text?: string,
-  propTablesExclude?: React.StatelessComponent<any>[]
+  propTablesExclude?: (
+    | React.StatelessComponent<any>
+    | React.ComponentType<{}>)[]
 ) => {
   const out: IInfoParams = {
     styles: stylesheetBase,
@@ -92,8 +94,8 @@ export const wInfo = (
       p: ({ children }: any) => <p>{children}</p>
     },
     propTablesExclude: propTablesExclude
-      ? [...propTablesExclude, Wrapper]
-      : [Wrapper]
+      ? [...propTablesExclude, Wrapper, React.Fragment]
+      : [Wrapper, React.Fragment]
   };
 
   if (text) {

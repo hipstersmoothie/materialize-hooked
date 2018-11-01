@@ -16,14 +16,25 @@ export const useModal = (
 };
 
 export interface ModalProps extends Partial<ModalOptions> {
+  /** The id of the modal */
   id: string;
+  /**
+   * Render the modal with a fixed footer
+   * @default
+   */
   hasFixedFooter?: boolean;
+  /**
+   * Render the modal as a bottom sheet
+   * @default
+   */
   isBottomSheet?: boolean;
+  /** Footer actions to render with the modal */
   footer?: React.ReactNode;
+  /** Content of the modal */
   children: React.ReactNode;
 }
 
-const ModalComponent: React.SFC<ModalProps> = ({
+export const ModalComponent: React.SFC<ModalProps> = ({
   children,
   footer,
   id,
@@ -46,6 +57,13 @@ const ModalComponent: React.SFC<ModalProps> = ({
     </div>
   );
 };
+
+// For storybook
+export const ModalWrapper: React.SFC<ModalProps> = props => (
+  <div>
+    <ModalComponent {...props} />
+  </div>
+);
 
 ModalComponent.defaultProps = {
   footer: undefined,

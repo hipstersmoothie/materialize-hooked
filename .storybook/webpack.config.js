@@ -12,5 +12,10 @@ module.exports = (baseConfig, env, config) => {
   config.plugins.push(new TSDocgenPlugin()); // optional
   config.resolve.extensions.push('.ts', '.tsx');
 
+  config.resolve.modules = [
+    ...(config.resolve.modules || []),
+    path.resolve('./')
+  ];
+
   return config;
 };

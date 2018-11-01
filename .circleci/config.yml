@@ -30,7 +30,8 @@ jobs:
           key: auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
           paths:
             - node_modules
-      - run: ls
+      - run: ls -alt
+      - run: ls Components -alt
       - run:
           name: Deploy Storybook
           command: yarn deploy-storybook

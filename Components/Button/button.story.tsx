@@ -8,6 +8,9 @@ import Button from '.';
 storiesOf('Components/Button', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
+  .addParameters({
+    info: wInfo()
+  })
   .addWithJSX('basic', () => (
     <Button
       className={text('className', 'scale-transition scale-in')}

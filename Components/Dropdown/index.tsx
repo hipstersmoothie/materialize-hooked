@@ -19,7 +19,9 @@ export const useDropdown = (
 };
 
 export interface DropdownItemProps {
+  /** Called when the dropdown item is clicked */
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  /** Content of the dropdown item */
   children: React.ReactNode;
 }
 
@@ -39,9 +41,19 @@ DropdownItem.defaultProps = {
 export const Divider = () => <li className="divider" tabIndex={-1} />;
 
 export interface DropdownProps extends Partial<DropdownOptions> {
+  /** Text for the dropdown button */
   text: string;
+  /**
+   * Whether the dropdown is open
+   * @default false
+   */
   open?: boolean;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
+  /** Dropdown items to display */
   children: React.ReactNode;
 }
 

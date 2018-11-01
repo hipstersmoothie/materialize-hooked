@@ -15,9 +15,16 @@ export const useMaterialBox = (
 };
 
 export interface MaterialBoxProps extends Partial<MaterialboxOptions> {
+  /** Image to display */
   src: string;
+  /** Width of the image */
   width?: number;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
+  /** A caption to reveal below the image */
   caption?: string;
 }
 

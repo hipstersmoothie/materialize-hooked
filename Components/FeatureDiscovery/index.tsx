@@ -22,7 +22,9 @@ export const useFeatureDiscovery = (
 };
 
 export interface FeatureDiscoveryProps {
+  /** Element Id to attach the feature discovery to */
   target: string;
+  /** Body of the feature discovery */
   children: React.ReactNode;
 }
 

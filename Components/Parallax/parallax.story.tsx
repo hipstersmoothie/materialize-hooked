@@ -3,6 +3,7 @@ import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 
 import Parallax from './index';
+import { wInfo } from '../utils-ts';
 
 const styles = {};
 const DummyPage: StoryDecorator = storyFn => (
@@ -12,7 +13,12 @@ const DummyPage: StoryDecorator = storyFn => (
 storiesOf('Javascript/Parallax', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo(
+      'Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.'
+    )
+  })
+  .add('Basic', () => (
     <>
       <Parallax src="https://materializecss.com/images/parallax1.jpg" />
       <div className="section white">

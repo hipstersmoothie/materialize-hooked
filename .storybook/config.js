@@ -37,47 +37,66 @@ addDecorator(
   ])
 );
 
+const Components = [
+  'Badge',
+  'Button',
+  'Breadcrumbs',
+  'Card',
+  'Collection',
+  'FloatingActionButton',
+  'Footer',
+  'Icon',
+  'NavBar',
+  'Pagination',
+  'Preloader'
+];
+
+const Javascript = [
+  'Carousel',
+  'Collapsible',
+  'Dropdown',
+  'FeatureDiscovery',
+  'MaterialBox',
+  'Slider',
+  'Modal',
+  'Parallax',
+  'PushPin',
+  'ScrollSpy',
+  'Tabs',
+  'Toast',
+  'Tooltip'
+];
+
+const stories = require.context('..', true, /.story\.tsx?$/);
+
 function loadStories() {
   // Components
-  require('../Components/Badge/badge.story');
-  require('../Components/Button/button.story');
-  require('../Components/Breadcrumbs/breadcrumbs.story');
-  require('../Components/Card/card.story');
-  require('../Components/Collection/collection.story');
-  require('../Components/FloatingActionButton/floatingActionButton.story');
-  require('../Components/Footer/footer.story');
-  require('../Components/Icon/icon.story');
-  require('../Components/NavBar/navBar.story');
-  require('../Components/Pagination/pagination.story');
-  require('../Components/Preloader/preloader.story');
+  stories.keys().forEach(key => {
+    if (Components.find(Component => key.includes(Component))) {
+      stories(key);
+    }
+  });
 
   // // Javascript
-  require('../Components/Carousel/carousel.story');
-  require('../Components/Collapsible/collapsible.story');
-  require('../Components/Dropdown/dropdown.story');
-  require('../Components/FeatureDiscovery/featureDiscovery.story');
-  require('../Components/MaterialBox/materialBox.story');
-  require('../Components/Slider/slider.story');
-  require('../Components/Modal/modal.story');
-  require('../Components/Parallax/parallax.story');
-  require('../Components/PushPin/pushPin.story');
-  require('../Components/ScrollSpy/scrollSpy.story');
-  require('../Components/Tabs/tabs.story');
-  // require('../Components/Toast/toast.story');
-  // require('../Components/Tooltip/tooltip.story');
+  // Components
+  stories.keys().forEach(key => {
+    if (Javascript.find(Component => key.includes(Component))) {
+      stories(key);
+    }
+  });
 
   // // Forms
-  // require('../Components/Autocomplete/autocomplete.story');
-  // require('../Components/CheckBox/checkBox.story');
-  // require('../Components/Chip/chip.story');
-  // require('../Components/ChipInput/chipInput.story');
-  // require('../Components/DatePicker/datepicker.story');
-  // require('../Components/Input/input.story');
-  // require('../Components/RadioButton/radioButton.story');
-  // require('../Components/Range/range.story');
-  // require('../Components/Select/select.story');
-  // require('../Components/Switch/switch.story');
-  // require('../Components/TimePicker/timePicker.story');
+  // require('./Components/Autocomplete/autocomplete.story');
+  // require('./Components/CheckBox/checkBox.story');
+  // require('./Components/Chip/chip.story');
+  // require('./Components/ChipInput/chipInput.story');
+  // require('./Components/DatePicker/datepicker.story');
+  // require('./Components/Input/input.story');
+  // require('./Components/RadioButton/radioButton.story');
+  // require('./Components/Range/range.story');
+  // require('./Components/Select/select.story');
+  // require('./Components/Switch/switch.story');
+  // require('./Components/TimePicker/timePicker.story');
 }
 
 configure(loadStories, module);

@@ -1,0 +1,67 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/auto-release-test
+  docker:
+    - image: circleci/node:latest-browsers
+  environment:
+    TZ: '/usr/share/zoneinfo/America/Los_Angeles'
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package.json checksum
+            # when this file is changed, this key will fail
+            - auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+            - auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - auto-release-test-{{ .Branch }}
+            # Find the most recent cache used from any branch
+            - auto-release-test-master
+            - auto-release-test-
+      - run: date
+      - run:
+          name: Install Dependencies
+          command: npm i
+      - save_cache:
+          key: auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+          paths:
+            - node_modules
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/auto-release-test
+      - run:
+          name: 'Make sure we can commit to Intuit github'
+          command: |
+            mkdir ~/.ssh/ && echo -e "Host github.intuit.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run:
+          name: Deploy Storybook
+          command: deploy-storybook
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - install:
+          filters:
+            tags:
+              only: /.*/
+
+      - release:
+          requires:
+            - install
+          filters:
+            branches:
+              only:
+                - master

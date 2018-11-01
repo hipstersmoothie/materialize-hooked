@@ -15,11 +15,16 @@ export const useParallax = (
   });
 };
 
-export interface ParallaxProps {
+export interface ParallaxProps extends Partial<ParallaxOptions> {
+  /** Image to use in the parallax effect */
   src: string;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
+  /** Height of the parallax image */
   height?: number;
-  responsiveThreshold?: number;
 }
 
 export const ParallaxComponent: React.SFC<ParallaxProps> = ({
@@ -45,8 +50,7 @@ export const ParallaxComponent: React.SFC<ParallaxProps> = ({
 
 ParallaxComponent.defaultProps = {
   className: undefined,
-  height: 500,
-  responsiveThreshold: 0
+  height: 500
 };
 
 export default ParallaxComponent;

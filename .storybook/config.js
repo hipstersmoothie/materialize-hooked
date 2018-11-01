@@ -77,8 +77,7 @@ function loadStories() {
     }
   });
 
-  // // Javascript
-  // Components
+  // Javascript
   stories.keys().forEach(key => {
     if (Javascript.find(Component => key.includes(Component))) {
       stories(key);

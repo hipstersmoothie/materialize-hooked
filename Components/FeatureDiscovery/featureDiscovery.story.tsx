@@ -39,4 +39,4 @@ storiesOf('Javascript/FeatureDiscovery', module)
     })
   )
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => <Example />);
+  .add('basic', () => <Example />);

@@ -33,7 +33,7 @@ storiesOf('Form/Switch', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => {
+  .add('basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: any) => boolean('isChecked', state.isChecked));
 

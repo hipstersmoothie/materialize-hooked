@@ -21,7 +21,7 @@ storiesOf('Form/CheckBox', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => {
+  .add('basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>
       boolean('isChecked', state.isChecked)

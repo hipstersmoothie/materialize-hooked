@@ -8,10 +8,10 @@ import { LinearProgress, CircularProgress } from './index';
 storiesOf('Components/Preloader', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('LinearProgress', () => (
+  .add('LinearProgress', () => (
     <LinearProgress progress={number('progress', 50)} />
   ))
-  .addWithJSX('CircularProgress', () => (
+  .add('CircularProgress', () => (
     <CircularProgress
       isLarge={boolean('isLarge', false)}
       isBlue={boolean('isBlue', false)}

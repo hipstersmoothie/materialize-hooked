@@ -13,7 +13,7 @@ storiesOf('Form/Tabs', module)
     })
   )
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <>
       <Tabs
         duration={number('duration', 300)}

@@ -8,7 +8,7 @@ import MaterialBox from '.';
 storiesOf('Javascript/Media', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('MaterialBox', () => (
+  .add('MaterialBox', () => (
     <MaterialBox
       src={text('src', 'https://materializecss.com/images/sample-1.jpg')}
       caption={text('caption', 'A pretty picture')}

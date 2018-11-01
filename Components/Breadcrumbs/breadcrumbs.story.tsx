@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action } from '../utils-ts';
+import { action, wInfo } from '../utils-ts';
 import { withKnobs } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line unicorn/import-index
@@ -17,8 +17,13 @@ const DummyPage: StoryDecorator = storyFn => (
 storiesOf('Components/Breadcrumbs', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
+  .addParameters({
+    info: wInfo(
+      'Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.'
+    )
+  })
   .addWithJSX('basic', () => (
-    <Breadcrumbs>
+    <Breadcrumbs className="row">
       <Breadcrumb value="First" onClick={action('First onClick')} />
       <Breadcrumb value="Second" onClick={action('Second onClick')} />
       <Breadcrumb value="Third" onClick={action('Third onClick')} />

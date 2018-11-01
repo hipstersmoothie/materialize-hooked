@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action } from '../utils-ts';
+import { action, wInfo } from '../utils-ts';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Collection, { CollectionItem } from './index';
@@ -21,7 +21,10 @@ const icon = (icon: string) => (
 storiesOf('Components/Collection', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .addWithJSX('normal list', () => (
+  .addParameters({
+    info: wInfo('Collections allow you to group list objects together.')
+  })
+  .add('Basic', () => (
     <Collection header={text('header', '')}>
       <CollectionItem
         isActive={boolean('isActive', false)}
@@ -33,7 +36,7 @@ storiesOf('Components/Collection', module)
       <CollectionItem onClick={action('Item 3')}>Theodore</CollectionItem>
     </Collection>
   ))
-  .addWithJSX('link list', () => (
+  .add('Links', () => (
     <Collection isLinks header={text('header', '')}>
       <CollectionItem href="#" isActive={boolean('isActive', false)}>
         Alvin
@@ -42,7 +45,7 @@ storiesOf('Components/Collection', module)
       <CollectionItem href="#">Theodore</CollectionItem>
     </Collection>
   ))
-  .addWithJSX('Secondary Content', () => (
+  .add('Secondary Content', () => (
     <Collection isLinks header={text('header', '')}>
       <CollectionItem
         href="#"
@@ -59,7 +62,7 @@ storiesOf('Components/Collection', module)
       </CollectionItem>
     </Collection>
   ))
-  .addWithJSX('Avatar Content', () => (
+  .add('Avatar Content', () => (
     <Collection header={text('header', '')}>
       <CollectionItem
         image="https://materializecss.com/images/yuna.jpg"

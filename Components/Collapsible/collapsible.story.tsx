@@ -15,7 +15,7 @@ storiesOf('Javascript/Collapsible', module)
     })
   )
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Collapsible
       isPopout={boolean('isPopout', false)}
       accordion={boolean('accordion', true)}

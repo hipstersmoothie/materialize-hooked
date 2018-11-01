@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import { createDummyPage } from '../utils-ts';
+import { createDummyPage, wInfo } from '../utils-ts';
 import Footer, { FooterBody } from '.';
 
 storiesOf('Components/Footer', module)
@@ -13,7 +13,12 @@ storiesOf('Components/Footer', module)
       maxWidth: 800
     })
   )
-  .addWithJSX('plain', () => (
+  .addParameters({
+    info: wInfo(
+      'Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once they have finished scrolling through the current page or are looking for additional information about your website.'
+    )
+  })
+  .addWithJSX('Basic', () => (
     <Footer>
       <FooterBody
         title={text('title', 'Title')}
@@ -29,7 +34,7 @@ storiesOf('Components/Footer', module)
       />
     </Footer>
   ))
-  .addWithJSX('with copyright', () => (
+  .addWithJSX('With Copyright', () => (
     <Footer year="2018" copyrightText="Andrew Lisowski">
       <FooterBody
         title={text('title', 'Title')}

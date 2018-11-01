@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { action as _action } from '@storybook/addon-actions';
 import { StoryDecorator } from '@storybook/react';
+// @ts-ignore
+import { baseFonts } from '@storybook/components';
 
 export const action = (name: string) => {
   const tempAction = _action(name);
@@ -10,14 +12,93 @@ export const action = (name: string) => {
 
 const styles = {
   width: '100%',
-  height: '400px',
+  minHeight: 100,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
 };
 
-export const createDummyPage = (
-  overrides?: object
-): StoryDecorator => storyFn => (
-  <div style={overrides || styles}>{storyFn()}</div>
+export const Wrapper = ({ children, style }: any) => (
+  <div style={style || styles}>{children}</div>
 );
+
+export const createDummyPage = (style?: object): StoryDecorator => storyFn => {
+  return <Wrapper style={style}>{storyFn()}</Wrapper>;
+};
+
+export const stylesheetBase = {
+  infoBody: {
+    ...baseFonts,
+    fontWeight: 300,
+    lineHeight: 1.45,
+    fontSize: '15px',
+    border: '2px solid #eee',
+    padding: '30px 40px',
+    borderRadius: '3px',
+    backgroundColor: '#fff',
+    margin: '20px auto',
+    maxWidth: 1000
+  },
+  infoContent: {
+    marginBottom: 0
+  },
+  infoStory: {},
+  jsxInfoContent: {
+    borderTop: '1px solid #eee',
+    margin: '20px 0 0 0'
+  },
+  header: {
+    h1: {
+      margin: '2rem 0',
+      padding: 0,
+      fontSize: '35px'
+    },
+    h2: {
+      margin: '0 0 10px 0',
+      padding: 0,
+      fontWeight: 400,
+      fontSize: '22px'
+    },
+    body: {
+      borderBottom: '1px solid #eee',
+      paddingTop: 10,
+      marginBottom: 10
+    }
+  },
+  source: {
+    h1: {
+      margin: '3rem 0px 2rem',
+      padding: '0 0 10px 0',
+      fontSize: '25px',
+      borderBottom: '1px solid #EEE'
+    }
+  },
+  propTableHead: {
+    margin: '20px 0px',
+    fontSize: 20
+  }
+};
+
+interface IInfoParams {
+  text?: string;
+  styles: { [key: string]: any };
+  propTablesExclude?: React.StatelessComponent<any>[];
+}
+
+export const wInfo = (
+  text?: string,
+  propTablesExclude?: React.StatelessComponent<any>[]
+) => {
+  const out: IInfoParams = {
+    styles: stylesheetBase,
+    propTablesExclude: propTablesExclude
+      ? [...propTablesExclude, Wrapper]
+      : [Wrapper]
+  };
+
+  if (text) {
+    out.text = text;
+  }
+
+  return out;
+};

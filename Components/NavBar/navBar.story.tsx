@@ -7,7 +7,7 @@ import Nav, { NavItem, NavSearch } from './index';
 
 storiesOf('Components/Nav', module)
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Nav
       useSideNav={boolean('useSideNav', true)}
       logo={text('logo', 'Logo')}
@@ -31,7 +31,7 @@ storiesOf('Components/Nav', module)
       <NavItem href="!#" text="Mobile" onClick={action('Mobile onClick')} />
     </Nav>
   ))
-  .addWithJSX('with buttons', () => (
+  .add('with buttons', () => (
     <Nav logo="logo">
       <NavItem href="!#" isButton text="Sass" />
       <NavItem href="!#" text="Components" />
@@ -40,7 +40,7 @@ storiesOf('Components/Nav', module)
     </Nav>
   ))
 
-  .addWithJSX('extra content', () => (
+  .add('extra content', () => (
     <Nav
       useSideNav={boolean('useSideNav', true)}
       logo={text('logo', 'Logo')}
@@ -81,7 +81,7 @@ storiesOf('Components/Nav', module)
       <NavItem href="!#" text="Mobile" />
     </Nav>
   ))
-  .addWithJSX('as a search bar', () => (
+  .add('as a search bar', () => (
     <Nav isSearch logo="logo">
       <NavSearch onChange={() => undefined} value={text('value', null)} />
     </Nav>

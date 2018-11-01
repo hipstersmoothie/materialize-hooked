@@ -31,7 +31,7 @@ const DummyPage: StoryDecorator = storyFn => {
 storiesOf('Javascript/Modal', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .addWithJSX('basic', (fixedFooter = boolean('hasFixedFooter', false)) => (
+  .add('basic', (fixedFooter = boolean('hasFixedFooter', false)) => (
     <Modal
       id="modal1"
       hasFixedFooter={fixedFooter}

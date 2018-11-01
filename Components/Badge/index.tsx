@@ -2,7 +2,10 @@ import * as React from 'react';
 import makeClass from 'classnames';
 
 export interface BadgeProps {
-  /** The badge is in a 'new' states */
+  /**
+   * The badge is in a 'new' states
+   * @default false
+   */
   isNew?: boolean;
   /** The number for the badge to display */
   value: number;
@@ -15,12 +18,7 @@ export interface BadgeProps {
   className?: string;
 }
 
-export const Badge: React.SFC<BadgeProps> = ({
-  className,
-  isNew,
-  caption,
-  value
-}) => {
+const Badge: React.SFC<BadgeProps> = ({ className, isNew, caption, value }) => {
   const badgeClass = makeClass(className, {
     badge: true,
     new: isNew

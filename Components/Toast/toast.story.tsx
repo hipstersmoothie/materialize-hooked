@@ -9,7 +9,7 @@ import Toast from '.';
 storiesOf('Javascript/Toast', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Toast
       text={text('text', 'I am the toast!')}
       displayLength={number('displayLength', 4000)}

@@ -2,9 +2,12 @@ import * as React from 'react';
 import makeClass from 'classnames';
 
 export interface FooterCopyrightProps {
+  /** Text of the copyright */
   text?: string;
+  /** Year of the copyright */
   year?: string;
-  children?: React.ReactElement<{}>;
+  /** Other elements to display in the copyright, usually links. */
+  children?: React.ReactNode;
 }
 
 export const FooterCopyright: React.SFC<FooterCopyrightProps> = ({
@@ -21,8 +24,11 @@ export const FooterCopyright: React.SFC<FooterCopyrightProps> = ({
 );
 
 export interface FooterBodyProps {
+  /** Footer title */
   title: string;
+  /** Footer description */
   description: string;
+  /** Link list to display in footer */
   links: string[][];
 }
 
@@ -52,11 +58,19 @@ export const FooterBody: React.SFC<FooterBodyProps> = ({
   </>
 );
 
-export interface FooterProps {
+export interface FooterProps extends FooterCopyrightProps {
+  /** Your own copyright element */
   copyright?: React.ReactNode;
+  /** Text of the copyright. Not used when copyright component provided */
   copyrightText?: string;
+  /** Text of the copyright. Not used when copyright component provided*/
   year?: string;
-  children: React.ReactElement<{}>;
+  /** Content of the footer */
+  children: React.ReactNode;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Dropdown, DropdownOptions } from 'materialize-css';
 
-const { useEffect, useRef, Fragment } = React;
+const { useEffect, useRef } = React;
 
 export const useDropdown = (
   ref: React.RefObject<HTMLAnchorElement>,
@@ -55,7 +55,7 @@ export const DropdownComponent: React.SFC<DropdownProps> = ({
   useDropdown(dropdown, options as DropdownProps);
 
   return (
-    <Fragment>
+    <div>
       <a
         ref={dropdown}
         className={`dropdown-trigger btn ${className}`}
@@ -68,7 +68,7 @@ export const DropdownComponent: React.SFC<DropdownProps> = ({
       <ul id="dropdown1" className="dropdown-content">
         {children}
       </ul>
-    </Fragment>
+    </div>
   );
 };
 

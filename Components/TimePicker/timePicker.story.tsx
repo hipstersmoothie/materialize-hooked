@@ -8,7 +8,7 @@ import TimePicker from '.';
 storiesOf('Form/TimePicker', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <TimePicker
       id="id"
       placeholder={text('placeholder', null)}

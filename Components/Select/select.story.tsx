@@ -8,7 +8,7 @@ import Select, { SelectItem, SelectGroup } from '.';
 storiesOf('Form/Select', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Select
       label={text('label', null)}
       isMultiple={boolean('isMultiple', false)}
@@ -26,7 +26,7 @@ storiesOf('Form/Select', module)
       <SelectItem value="Barry" />
     </Select>
   ))
-  .addWithJSX('with icons', () => (
+  .add('with icons', () => (
     <Select
       label={text('label', null)}
       isMultiple={boolean('isMultiple', false)}
@@ -49,7 +49,7 @@ storiesOf('Form/Select', module)
       <SelectItem value="Barry" />
     </Select>
   ))
-  .addWithJSX('with groups', () => (
+  .add('with groups', () => (
     <Select
       label={text('label', null)}
       isMultiple={boolean('isMultiple', false)}

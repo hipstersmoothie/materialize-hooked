@@ -12,7 +12,7 @@ const DummyPage: StoryDecorator = storyFn => (
 storiesOf('Javascript/Parallax', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <>
       <Parallax src="https://materializecss.com/images/parallax1.jpg" />
       <div className="section white">

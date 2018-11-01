@@ -8,7 +8,7 @@ import Pagination from '.';
 storiesOf('Components/Pagination', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Pagination
       visibleRadius={number('visibleRadius', 2)}
       currentPage={number('currentPage', 1)}

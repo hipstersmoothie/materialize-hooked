@@ -22,7 +22,7 @@ storiesOf('Form/Autocomplete', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Autocomplete
       id="id"
       placeholder={text('placeholder', null)}

@@ -23,7 +23,7 @@ storiesOf('Form/Input', module)
   .addDecorator(withKnobs)
   .addDecorator(createDummyPage())
 
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Input
       id="input"
       label={text('label', 'Label')}
@@ -39,7 +39,7 @@ storiesOf('Form/Input', module)
       onChange={onChange}
     />
   ))
-  .addWithJSX('File Input', () => (
+  .add('File Input', () => (
     <Input
       id="input"
       type="file"

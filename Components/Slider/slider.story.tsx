@@ -15,7 +15,7 @@ storiesOf('Javascript/Media', module)
     })
   )
   .addDecorator(withKnobs)
-  .addWithJSX('Slider', () => (
+  .add('Slider', () => (
     <Slider
       indicators={boolean('indicators', true)}
       isFullscreen={boolean('isFullscreen', false)}

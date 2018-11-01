@@ -8,7 +8,7 @@ import Chip from '.';
 storiesOf('Form/Chip', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Chip
       value={text('value', 'Chip Component')}
       hasClose={boolean('hasClose', false)}

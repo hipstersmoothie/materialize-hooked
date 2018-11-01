@@ -14,7 +14,7 @@ const DummyPage: StoryDecorator = storyFn => (
 
 storiesOf('Javascript/Pushpin', module)
   .addDecorator(DummyPage)
-  .addWithJSX('properties', () => (
+  .add('properties', () => (
     <Body>
       <Pushpin top={0} bottom={500}>
         <h1 style={{ margin: 0 }}>Sticky 1</h1>

@@ -13,7 +13,7 @@ const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
 storiesOf('Javascript/ScrollSpy', module)
   .addDecorator(DummyPage)
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <ScrollSpy
       throttle={number('throttle', 100)}
       scrollOffset={number('scrollOffset', 200)}

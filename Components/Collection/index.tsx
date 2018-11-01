@@ -2,14 +2,32 @@ import * as React from 'react';
 import makeClass from 'classnames';
 
 export interface CollectionItemProps {
+  /** HREF for the item if in link list */
   href?: string;
+  /** Content of the item */
   children: string | React.ReactNode;
+  /**
+   * Whether the collection item is styled as active
+   * @default false
+   */
   isActive?: boolean;
+  /** Called when clicking the item */
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  /** Extra info to display with the item, usually an icon */
   secondaryContent?: React.ReactNode;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
+  /** Image to display with the item */
   image?: string;
+  /** Icon to display with icon. only image or icon is used */
   icon?: string;
+  /**
+   * A className to attach to the image/icon component
+   * @default
+   */
   imageClassName?: string;
 }
 

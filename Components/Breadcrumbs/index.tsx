@@ -1,7 +1,9 @@
 import * as React from 'react';
 
 export interface BreadcrumbProps {
+  /** Will be called when the breadcrumb is clicked */
   onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  /** Text value of the breadcrumb */
   value: string;
 }
 export const Breadcrumb: React.SFC<BreadcrumbProps> = ({ value, onClick }) => (
@@ -11,7 +13,12 @@ export const Breadcrumb: React.SFC<BreadcrumbProps> = ({ value, onClick }) => (
 );
 
 export interface BreadcrumbsProps {
+  /** Breadcrumb components to display */
   children: React.ReactNode;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 

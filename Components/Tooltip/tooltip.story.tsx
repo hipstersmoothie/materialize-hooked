@@ -15,7 +15,7 @@ const positions = {
 storiesOf('Javascript/Tooltip', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Tooltip
       className="waves-effect waves-light"
       position={select('position', positions, 'top')}

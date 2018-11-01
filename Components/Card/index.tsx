@@ -2,7 +2,12 @@ import * as React from 'react';
 import makeClass from 'classnames';
 
 export interface CardPanelProps {
+  /** Content of the card */
   children: React.ReactNode;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 
@@ -16,21 +21,60 @@ CardPanel.defaultProps = {
 };
 
 export interface CardProps {
+  /** The body of the card */
   children: React.ReactNode;
+  /** Actions to display with the card */
   actions?: React.ReactNode;
+  /** Secondary content to reveal. */
   reveal?: React.ReactNode;
+  /** Title to display for the card */
   title?: string;
+  /** Image to display with the card */
   image?: string;
+  /**
+   * A className to attach to the content div
+   * @default
+   */
   contentClassName?: string;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
+  /** Floating Action Button Component to use with the card */
   fab?: React.ReactNode;
+  /**The FAB button for the card is large.
+   * @default false
+   */
+  hasLargeFab?: boolean;
+  /** tabs to display at the bottom of a card */
   tabs?: React.ReactNode;
+  /** Content for the tabs to reveal */
   tabContent?: React.ReactNode;
-  isNew?: boolean;
+  /**
+   * Render the card horizontally
+   * @default false
+   */
   isHorizontal?: boolean;
+  /**
+   * Render a small card
+   * @default false
+   */
   isSmall?: boolean;
+  /**
+   * Render a medium card
+   * @default false
+   */
   isMedium?: boolean;
+  /**
+   * Render a large card
+   * @default false
+   */
   isLarge?: boolean;
+  /**
+   * When reveal is set, stick the actions to the bottom
+   * @default false
+   */
   stickyAction?: boolean;
 }
 
@@ -39,6 +83,7 @@ const Card: React.SFC<CardProps> = ({
   className,
   image,
   fab,
+  hasLargeFab,
   tabs,
   tabContent,
   isHorizontal,
@@ -48,7 +93,6 @@ const Card: React.SFC<CardProps> = ({
   stickyAction,
   reveal,
   contentClassName,
-  isNew,
   title,
   actions
 }) => {
@@ -58,8 +102,7 @@ const Card: React.SFC<CardProps> = ({
     horizontal: isHorizontal,
     small: isSmall,
     medium: isMedium,
-    large: isLarge,
-    new: isNew
+    large: isLarge
   });
   const contentClass = makeClass(contentClassName, {
     'card-content': true
@@ -77,21 +120,25 @@ const Card: React.SFC<CardProps> = ({
   const imageClass = makeClass({
     activator: reveal
   });
-  const Wrapper = React.Fragment;
+  const Wrapper = isHorizontal
+    ? ({ children }: { children: React.ReactNode }) => (
+        <div className="card-stacked">{children}</div>
+      )
+    : React.Fragment;
 
   return (
     <div className={cardClass}>
       {image && (
         <div className={imageWrapperClass}>
           <img className={imageClass} src={image} />
-          {!reveal && titleComponent}
+          {!reveal && !hasLargeFab && titleComponent}
           {fab}
         </div>
       )}
 
       <Wrapper>
         <div className={contentClass}>
-          {title && (!image || reveal) && titleComponent}
+          {title && (!image || reveal || hasLargeFab) && titleComponent}
           {children}
         </div>
         {actions && <div className="card-action">{actions}</div>}
@@ -104,7 +151,6 @@ const Card: React.SFC<CardProps> = ({
 };
 
 Card.defaultProps = {
-  isNew: false,
   fab: undefined,
   tabs: undefined,
   tabContent: undefined,
@@ -116,6 +162,7 @@ Card.defaultProps = {
   isSmall: false,
   isMedium: false,
   isLarge: false,
+  hasLargeFab: false,
   stickyAction: false,
   contentClassName: '',
   className: ''

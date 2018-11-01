@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
-import { createDummyPage } from '../utils-ts';
+import { createDummyPage, Wrapper, wInfo } from '../utils-ts';
 
 import NavBar, { NavItem } from '../NavBar';
 import Collapsible, { CollapsibleItem } from '../Collapsible';
@@ -11,6 +11,11 @@ import Dropdown, { DropdownItem } from '../Dropdown';
 import Badge from '.';
 
 storiesOf('Components/Badge', module)
+  .addParameters({
+    info: wInfo(
+      'Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.'
+    )
+  })
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
   .addWithJSX('basic', () => (
@@ -23,6 +28,9 @@ storiesOf('Components/Badge', module)
   ));
 
 storiesOf('Components/Badge', module)
+  .addParameters({
+    info: wInfo(undefined, [Collection, CollectionItem, Wrapper])
+  })
   .addDecorator(
     createDummyPage({
       maxWidth: 400,
@@ -48,30 +56,41 @@ storiesOf('Components/Badge', module)
   ));
 
 storiesOf('Components/Badge', module)
-  .addDecorator(createDummyPage())
-  .add('Badges in Dropdown', () => (
-    <Dropdown text="Dropdown">
-      <DropdownItem>
-        <Badge value={1} /> one
-      </DropdownItem>
-      <DropdownItem>
-        <Badge isNew value={1} /> two
-      </DropdownItem>
-      <DropdownItem>three</DropdownItem>
-    </Dropdown>
+  .addParameters({
+    info: wInfo(undefined, [DropdownItem, Dropdown, Wrapper])
+  })
+  .addWithJSX('Badges in Dropdown', () => (
+    <Wrapper>
+      <Dropdown text="Dropdown">
+        <DropdownItem>
+          <Badge value={1} /> one
+        </DropdownItem>
+        <DropdownItem>
+          <Badge isNew value={1} /> two
+        </DropdownItem>
+        <DropdownItem>three</DropdownItem>
+      </Dropdown>
+    </Wrapper>
   ));
 
-storiesOf('Components/Badge', module).add('Badges in Navbar', () => (
-  <NavBar logo="Logo">
-    <NavItem href="!#" text="HTML" />
-    <NavItem href="!#">
-      CSS <Badge isNew value={1} />
-    </NavItem>
-    <NavItem href="!#">Javascript</NavItem>
-  </NavBar>
-));
+storiesOf('Components/Badge', module)
+  .addParameters({
+    info: wInfo(undefined, [NavItem, NavBar, Wrapper])
+  })
+  .addWithJSX('Badges in Navbar', () => (
+    <NavBar logo="Logo">
+      <NavItem href="!#" text="HTML" />
+      <NavItem href="!#">
+        CSS <Badge isNew value={1} />
+      </NavItem>
+      <NavItem href="!#">Javascript</NavItem>
+    </NavBar>
+  ));
 
 storiesOf('Components/Badge', module)
+  .addParameters({
+    info: wInfo(undefined, [Collapsible, CollapsibleItem, Wrapper])
+  })
   .addDecorator(
     createDummyPage({
       maxWidth: 400,
@@ -81,7 +100,7 @@ storiesOf('Components/Badge', module)
     })
   )
   .addDecorator(createDummyPage())
-  .add('Badges in Collapsible', () => (
+  .addWithJSX('Badges in Collapsible', () => (
     <Collapsible>
       <CollapsibleItem
         header={

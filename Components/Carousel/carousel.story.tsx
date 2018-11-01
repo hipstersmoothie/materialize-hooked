@@ -15,7 +15,7 @@ storiesOf('Javascript/Carousel', module)
     })
   )
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .add('basic', () => (
     <Carousel
       images={array('images', [
         'https://vignette.wikia.nocookie.net/animaljam/images/7/78/Lil_bub_the_cat-250x250.jpg/revision/latest?cb=20140510201421',
@@ -35,7 +35,7 @@ storiesOf('Javascript/Carousel', module)
       isSlider={boolean('isSlider', false)}
     />
   ))
-  .addWithJSX('Full width slider', () => (
+  .add('Full width slider', () => (
     <Carousel
       isSlider={boolean('isSlider', true)}
       fullWidth={boolean('fullWidth', true)}
@@ -47,7 +47,7 @@ storiesOf('Javascript/Carousel', module)
       ]}
     />
   ))
-  .addWithJSX('Content', () => (
+  .add('Content', () => (
     <Carousel
       isCentered={boolean('isSlider', true)}
       isSlider={boolean('isSlider', true)}

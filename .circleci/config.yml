@@ -42,7 +42,7 @@ jobs:
           at: ~/auto-release-test
       - run:
           name: Release
-          command: yarn run release
+          command: yarn run deploy-storybook
 
 workflows:
   version: 2

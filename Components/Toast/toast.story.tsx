@@ -20,7 +20,7 @@ storiesOf('Javascript/Toast', module)
       displayLength={number('displayLength', 4000)}
       inDuration={number('inDuration', 300)}
       outDuration={number('outDuration', 375)}
-      classes={text('classes', 'rounded')}
+      classes={text('classes', '')}
       activationPercent={number('activationPercent', 0.8)}
     >
       {onClick => <Button text="Click me" onClick={onClick} />}

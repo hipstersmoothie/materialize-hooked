@@ -5,8 +5,14 @@ import { Tooltip, TooltipOptions } from 'materialize-css';
 const { useEffect, useRef } = React;
 
 export interface TooltipProps extends TooltipOptions {
+  /** Content of tooltip */
   children: React.ReactNode | string;
+  /** Content of tooltip */
   text: string;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 
@@ -21,7 +27,7 @@ export const useTooltip = (
   });
 };
 
-const TooltipComponent: React.SFC<TooltipProps> = ({
+export const TooltipComponent: React.SFC<TooltipProps> = ({
   children,
   className,
   text,

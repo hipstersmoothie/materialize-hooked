@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, text, select } from '@storybook/addon-knobs';
 
-import { createDummyPage } from '../utils-ts';
+import { createDummyPage, wInfo } from '../utils-ts';
 import Tooltip from '.';
 
 const positions = {
@@ -15,7 +15,12 @@ const positions = {
 storiesOf('Javascript/Tooltip', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo(
+      'Tooltips are small, interactive, textual hints for mainly graphical elements. When using icons for actions you can use a tooltip to give people clarification on its function.'
+    )
+  })
+  .add('Basic', () => (
     <Tooltip
       className="waves-effect waves-light"
       position={select('position', positions, 'top')}

@@ -91,6 +91,8 @@ SelectGroup.defaultProps = {
 };
 
 export interface FormSelectProps extends Partial<FormSelectOptions> {
+  /** ID for the input */
+  id: string;
   /** Form select items */
   children: React.ReactNode;
   /** Label for the select */
@@ -112,6 +114,8 @@ export interface FormSelectProps extends Partial<FormSelectOptions> {
   isBrowserDefault?: boolean;
   /** Called when the select value changes */
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  /** Aria label for the file input */
+  ariaLabel?: string;
 }
 
 const FormSelectComponent: React.SFC<FormSelectProps> = ({
@@ -121,6 +125,8 @@ const FormSelectComponent: React.SFC<FormSelectProps> = ({
   isDisabled,
   isBrowserDefault,
   onChange,
+  ariaLabel,
+  id,
   ...options
 }) => {
   const select = useRef<HTMLSelectElement>();
@@ -131,7 +137,7 @@ const FormSelectComponent: React.SFC<FormSelectProps> = ({
   const selectClass = makeClass({
     'browser-default': isBrowserDefault
   });
-  const labelComponent = <label>{label}</label>;
+  const labelComponent = <label htmlFor={id}>{label}</label>;
 
   return (
     <div className={wrapperSelectClass}>
@@ -139,6 +145,8 @@ const FormSelectComponent: React.SFC<FormSelectProps> = ({
 
       <select
         ref={select}
+        id={id}
+        aria-label={label ? undefined : ariaLabel}
         className={selectClass}
         multiple={isMultiple}
         disabled={isDisabled}
@@ -146,7 +154,8 @@ const FormSelectComponent: React.SFC<FormSelectProps> = ({
       >
         {children}
       </select>
-      {isBrowserDefault && labelComponent}
+
+      {!isBrowserDefault && labelComponent}
     </div>
   );
 };

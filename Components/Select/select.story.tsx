@@ -13,10 +13,11 @@ storiesOf('Form/Select', module)
   })
   .add('Basic', () => (
     <Select
+      id="SelectComponent"
+      aria-label="Select Component"
       label={text('label', null)}
       isMultiple={boolean('isMultiple', false)}
       isDisabled={boolean('isDisabled', false)}
-      isBrowserDefault={boolean('isBrowserDefault', false)}
       onChange={action('onChange')}
     >
       <SelectItem
@@ -37,6 +38,8 @@ storiesOf('Form/Select', module)
   .add('Multiple', () => (
     <Select
       isMultiple
+      id="SelectComponent"
+      aria-label="Select Component"
       label={text('label', null)}
       onChange={action('onChange')}
     >
@@ -52,6 +55,8 @@ storiesOf('Form/Select', module)
   .add('with groups', () => (
     <Select
       label={text('label', null)}
+      id="SelectComponent"
+      aria-label="Select Component"
       isMultiple={boolean('isMultiple', false)}
       isBrowserDefault={boolean('isBrowserDefault', false)}
     >
@@ -84,6 +89,8 @@ storiesOf('Form/Select', module)
   .add('with icons', () => (
     <Select
       label={text('label', null)}
+      id="SelectComponent"
+      aria-label="Select Component"
       isMultiple={boolean('isMultiple', false)}
       isBrowserDefault={boolean('isBrowserDefault', false)}
     >
@@ -111,6 +118,7 @@ storiesOf('Form/Select', module)
   })
   .add('Disabled Styles', () => (
     <Select
+      id="Select Component"
       label={text('label', null)}
       isDisabled={boolean('isDisabled', false)}
     >

@@ -26,6 +26,7 @@ storiesOf('Form/Range', module)
   })
   .add('HTML5 Range', () => (
     <Range
+      ariaLabel="Range Input"
       isDisabled={boolean('isDisabled', false)}
       min={number('min', 0)}
       max={number('max', 200)}

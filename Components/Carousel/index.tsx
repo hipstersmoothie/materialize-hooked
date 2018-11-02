@@ -25,7 +25,7 @@ export interface CarouselProps extends Partial<CarouselOptions> {
   /** Center the carousel content */
   isCentered?: boolean;
   /** Images for the carousel to display */
-  images?: string[];
+  images?: (string | [string, string])[];
 }
 
 export const CarouselComponent: React.SFC<CarouselProps> = ({
@@ -47,12 +47,21 @@ export const CarouselComponent: React.SFC<CarouselProps> = ({
     center: isCentered
   });
 
+  let data: string[][] = [];
+
+  if (images) {
+    data = images.map(
+      (image, index) =>
+        Array.isArray(image) ? image : [image, `Carousel Image ${index}`]
+    );
+  }
+
   return (
     <div ref={carousel} className={carouselClass}>
-      {images &&
-        images.map(image => (
+      {data &&
+        data.map(([image, alt]) => (
           <a key={image} className="carousel-item">
-            <img src={image} />
+            <img src={image} alt="" />
           </a>
         ))}
       {children}

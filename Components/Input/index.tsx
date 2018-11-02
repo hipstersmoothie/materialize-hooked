@@ -41,6 +41,8 @@ export interface FileInputProps extends Partial<InputProps> {
    * @default false
    */
   isMultiple?: boolean;
+  /** Aria label for the file input */
+  ariaLabel: string;
 }
 
 export const FileInput: React.SFC<FileInputProps> = ({
@@ -52,6 +54,7 @@ export const FileInput: React.SFC<FileInputProps> = ({
   isMultiple,
   isDisabled,
   errorText,
+  ariaLabel,
   successText,
   help,
   icon
@@ -68,6 +71,7 @@ export const FileInput: React.SFC<FileInputProps> = ({
         <span>{fileButtonText}</span>
         <input
           type="file"
+          aria-label={ariaLabel}
           disabled={isDisabled}
           multiple={isMultiple}
           onChange={onChange}
@@ -77,6 +81,7 @@ export const FileInput: React.SFC<FileInputProps> = ({
         <input
           className="file-path validate"
           type="text"
+          aria-label={ariaLabel}
           disabled={isDisabled}
           placeholder={placeholder}
         />
@@ -138,6 +143,8 @@ export interface InputProps {
     | 'week';
   /** Label for the input. Floats above */
   label?: string | React.ReactNode;
+  /** Aria label for input if no label is provided */
+  ariaLabel?: string;
   /** Placeholder to display before typing */
   placeholder?: string;
   /**
@@ -203,7 +210,8 @@ export const Input: React.SFC<InputProps> = (
     noValidate,
     length,
     errorText,
-    successText
+    successText,
+    ariaLabel
   },
   ref
 ) => {
@@ -225,9 +233,14 @@ export const Input: React.SFC<InputProps> = (
   useCharacterCount(input, length);
 
   if (type === 'file') {
+    if (!ariaLabel) {
+      throw new TypeError('Aria label is required for file inputs.');
+    }
+
     return (
       <FileInput
         className={className}
+        ariaLabel={ariaLabel}
         iconClassName={iconClassName}
         fileButtonText={fileButtonText}
         isMultiple={isMultiple}
@@ -253,10 +266,13 @@ export const Input: React.SFC<InputProps> = (
         className={inputClass}
         data-length={length}
         onChange={onChange}
+        aria-label={!label ? ariaLabel : undefined}
       />
-      <label className={labelClass} htmlFor={id}>
-        {label}
-      </label>
+      {label && (
+        <label className={labelClass} htmlFor={id}>
+          {label}
+        </label>
+      )}
       {help && (
         <span
           className="helper-text"

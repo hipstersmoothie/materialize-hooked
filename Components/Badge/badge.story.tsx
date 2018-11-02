@@ -28,6 +28,7 @@ storiesOf('Components/Badge', module)
   ));
 
 storiesOf('Components/Badge', module)
+  .addDecorator(withKnobs)
   .addParameters({
     info: wInfo(undefined, [Collection, CollectionItem, Wrapper])
   })
@@ -40,7 +41,7 @@ storiesOf('Components/Badge', module)
     })
   )
   .addDecorator(createDummyPage())
-  .add('Collections', () => (
+  .addWithJSX('Collections', () => (
     <Collection isLinks>
       <CollectionItem href="!#">
         <Badge value={1} /> Mary
@@ -61,7 +62,7 @@ storiesOf('Components/Badge', module)
   })
   .addWithJSX('Badges in Dropdown', () => (
     <Wrapper>
-      <Dropdown text="Dropdown">
+      <Dropdown text="Dropdown" className="red">
         <DropdownItem>
           <Badge value={1} /> one
         </DropdownItem>
@@ -99,8 +100,7 @@ storiesOf('Components/Badge', module)
       margin: 'auto'
     })
   )
-  .addDecorator(createDummyPage())
-  .addWithJSX('Badges in Collapsible', () => (
+  .add('Badges in Collapsible', () => (
     <Collapsible>
       <CollapsibleItem
         header={

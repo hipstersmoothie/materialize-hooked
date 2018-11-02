@@ -24,8 +24,10 @@ export interface MaterialBoxProps extends Partial<MaterialboxOptions> {
    * @default
    */
   className?: string;
-  /** A caption to reveal below the image */
+  /** A caption to reveal below the image. Will be used as alt text */
   caption?: string;
+  /** An alternate name for the image. Will not be used if caption is used */
+  alt?: string;
 }
 
 const MaterialBox: React.SFC<MaterialBoxProps> = ({
@@ -33,6 +35,7 @@ const MaterialBox: React.SFC<MaterialBoxProps> = ({
   src,
   className,
   caption,
+  alt,
   ...options
 }) => {
   const materialBox = useRef<HTMLImageElement>();
@@ -45,6 +48,7 @@ const MaterialBox: React.SFC<MaterialBoxProps> = ({
       width={width}
       src={src}
       data-caption={caption}
+      alt={caption || alt}
     />
   );
 };
@@ -52,7 +56,8 @@ const MaterialBox: React.SFC<MaterialBoxProps> = ({
 MaterialBox.defaultProps = {
   className: '',
   width: undefined,
-  caption: ''
+  caption: '',
+  alt: ''
 };
 
 export default MaterialBox;

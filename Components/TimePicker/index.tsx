@@ -27,6 +27,7 @@ const TimePicker: React.SFC<TimePickerProps> = ({
   label,
   placeholder,
   className,
+  ariaLabel,
   inputClassName,
   isDisabled,
   isInline,
@@ -63,6 +64,7 @@ const TimePicker: React.SFC<TimePickerProps> = ({
       value={value}
       label={label}
       placeholder={placeholder}
+      ariaLabel={ariaLabel}
       inputClassName={inputClassName}
       isDisabled={isDisabled}
       isInline={isInline}

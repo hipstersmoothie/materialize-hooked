@@ -31,6 +31,7 @@ export const AutoComplete: React.SFC<AutoCompleteProps> = ({
   inputClassName,
   isDisabled,
   isInline,
+  ariaLabel,
   ...options
 }) => {
   const autocomplete = useRef<HTMLInputElement>();
@@ -65,6 +66,7 @@ export const AutoComplete: React.SFC<AutoCompleteProps> = ({
       help={help}
       value={value}
       label={label}
+      ariaLabel={ariaLabel}
       placeholder={placeholder}
       className={className}
       isDisabled={isDisabled}

@@ -15,6 +15,7 @@ storiesOf('Form/Chip', module)
   })
   .add('Input', () => (
     <Chips
+      ariaLabel="Chip Input"
       placeholder={text('placeholder', 'Add some tags')}
       secondaryPlaceholder={text('secondaryPlaceholder', 'Anything else?')}
       limit={number('limit', Infinity)}
@@ -23,6 +24,7 @@ storiesOf('Form/Chip', module)
   ))
   .add('Input with data', () => (
     <Chips
+      ariaLabel="Chip Input"
       data={[
         {
           tag: 'Apple'
@@ -38,6 +40,7 @@ storiesOf('Form/Chip', module)
   ))
   .add('Input with autocomplete', () => (
     <Chips
+      ariaLabel="Chip Input"
       autocompleteOptions={{
         data: {
           Apple: null,

@@ -60,10 +60,12 @@ export interface RangeProps extends Partial<noUiSlider.Options> {
    * @default false
    */
   isFancy?: boolean;
+  /** Aria label for the file input */
+  ariaLabel?: string;
 }
 
 export const Range: React.SFC<RangeProps> = props => {
-  const { min, max, step, value, className, isFancy } = props;
+  const { min, max, step, value, className, isFancy, ariaLabel } = props;
   const slider = useRef<HTMLDivElement & noUiSlider.Instance>();
   useFancySlider(slider, {
     ...props,
@@ -87,6 +89,7 @@ export const Range: React.SFC<RangeProps> = props => {
       <input
         type="range"
         id="test5"
+        aria-label={ariaLabel}
         style={{ color: props.isDisabled ? 'grey' : undefined }}
         disabled={props.isDisabled}
         min={min}

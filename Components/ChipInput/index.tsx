@@ -25,12 +25,15 @@ export interface ChipsProps extends Partial<ChipsOptions> {
    * @default
    */
   className?: string;
+  /** Aria label for the chip input */
+  ariaLabel: string;
 }
 
 export const ChipsComponent: React.SFC<ChipsProps> = ({
   className,
   inputClassName,
   onChange,
+  ariaLabel,
   ...options
 }) => {
   const chipInput = useRef<HTMLDivElement>();
@@ -62,7 +65,7 @@ export const ChipsComponent: React.SFC<ChipsProps> = ({
 
   return (
     <div ref={chipInput} className={chipClass}>
-      <input className={inputClassName} />
+      <input className={inputClassName} aria-label={ariaLabel} />
     </div>
   );
 };

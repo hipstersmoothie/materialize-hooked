@@ -16,6 +16,7 @@ storiesOf('Form/Picker', module)
   .add('Date', () => (
     <DatePicker
       id="id"
+      ariaLabel="Date Picker Input"
       placeholder={text('placeholder', null)}
       help={text('help', null)}
       label={text('label', null)}

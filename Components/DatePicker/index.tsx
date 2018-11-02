@@ -29,6 +29,7 @@ export const DatePicker: React.SFC<DatePickerProps> = ({
   placeholder,
   className,
   inputClassName,
+  ariaLabel,
   isDisabled,
   isInline,
   ...options
@@ -59,6 +60,7 @@ export const DatePicker: React.SFC<DatePickerProps> = ({
       help={help}
       value={value}
       label={label}
+      ariaLabel={ariaLabel}
       placeholder={placeholder}
       inputClassName={inputClassName}
       isDisabled={isDisabled}

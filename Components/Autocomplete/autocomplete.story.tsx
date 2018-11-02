@@ -30,6 +30,7 @@ storiesOf('Form/Autocomplete', module)
   .add('Basic', () => (
     <Autocomplete
       id="id"
+      ariaLabel="Autocomplete Input"
       placeholder={text('placeholder', null)}
       help={text('help', null)}
       label={text('label', null)}

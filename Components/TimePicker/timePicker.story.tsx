@@ -16,6 +16,7 @@ storiesOf('Form/Picker', module)
   .add('Time', () => (
     <TimePicker
       id="id"
+      ariaLabel="Time Picker Input"
       placeholder={text('placeholder', null)}
       help={text('help', null)}
       label={text('label', null)}

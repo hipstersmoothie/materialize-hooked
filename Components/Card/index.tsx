@@ -51,6 +51,8 @@ export interface CardProps {
   tabs?: React.ReactNode;
   /** Content for the tabs to reveal */
   tabContent?: React.ReactNode;
+  /** Alt text for image */
+  imageDescription?: string;
   /**
    * Render the card horizontally
    * @default false
@@ -82,6 +84,7 @@ const Card: React.SFC<CardProps> = ({
   children,
   className,
   image,
+  imageDescription,
   fab,
   hasLargeFab,
   tabs,
@@ -130,7 +133,11 @@ const Card: React.SFC<CardProps> = ({
     <div className={cardClass}>
       {image && (
         <div className={imageWrapperClass}>
-          <img className={imageClass} src={image} />
+          <img
+            className={imageClass}
+            src={image}
+            alt={imageDescription || 'Image for Card'}
+          />
           {!reveal && !hasLargeFab && titleComponent}
           {fab}
         </div>

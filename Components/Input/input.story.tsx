@@ -53,6 +53,7 @@ storiesOf('Form/Input', module)
   .add('Custom Error or Success Messages', () => (
     <Input
       id="input"
+      ariaLabel="Errors and Messages"
       errorText={text('errorText', 'Errorz')}
       successText={text('successText', 'Woo hoo!')}
       value={store.get('value')}
@@ -72,6 +73,7 @@ storiesOf('Form/Input', module)
     <Input
       isTextArea
       id="input"
+      ariaLabel="Text Area Input"
       value={store.get('value')}
       onChange={onChange}
     />
@@ -85,6 +87,7 @@ storiesOf('Form/Input', module)
     <FileInput
       id="input"
       type="file"
+      ariaLabel="File Input"
       help={text('help', null)}
       icon={text('icon', null)}
       placeholder={text('placeholder', 'Placeholder')}
@@ -101,6 +104,7 @@ storiesOf('Form/Input', module)
   .add('Character Counter', () => (
     <Input
       id="input"
+      ariaLabel="Character Count Input"
       length={number('length', 10)}
       value={store.get('value')}
       onChange={onChange}

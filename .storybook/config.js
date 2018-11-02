@@ -3,6 +3,7 @@ import { withOptions } from '@storybook/addon-options';
 import { withInfo } from '@storybook/addon-info';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
 import { Wrapper } from '../Components/utils-ts';
+import { checkA11y } from '@storybook/addon-a11y';
 import JSXAddon from 'storybook-addon-jsx';
 
 import * as React from 'react';
@@ -11,19 +12,22 @@ import * as PropTypes from 'prop-types';
 // @ts-ignore
 React.Fragment = ({ children }) => children;
 React.Fragment.propTypes = {
-  //@ts-ignore
+  //@ts-ignoreyarn
   children: PropTypes.node.isRequired
 };
 React.Fragment.displayName = 'React.Fragment';
 
 setAddon(JSXAddon);
 
+addDecorator(checkA11y);
 addDecorator(
-  withInfo({ inline: true, propTablesExclude: [Wrapper, React.Fragment] })
+  withInfo({
+    inline: true
+  })
 );
 addDecorator(
   withOptions({
-    name: 'material-hooked',
+    name: 'materialize-hooked',
     url: 'https://github.com/hipstersmoothie/material-hooked'
   })
 );

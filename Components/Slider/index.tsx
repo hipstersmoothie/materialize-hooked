@@ -18,6 +18,8 @@ export const useSlider = (
 export interface SliderImageProps {
   /** The image path/url to display */
   src: string;
+  /** The image alt text. Use if you dont have a caption */
+  alt: string;
   /**
    * Class name for the caption div
    * @default ''
@@ -30,17 +32,19 @@ export interface SliderImageProps {
 export const SliderImage: React.SFC<SliderImageProps> = ({
   src,
   captionClass,
-  caption
+  caption,
+  alt
 }) => (
   <li>
-    <img src={src} />
+    <img src={src} alt={alt} />
     {caption && <div className={`caption ${captionClass}`}>{caption}</div>}
   </li>
 );
 
 SliderImage.defaultProps = {
   captionClass: '',
-  caption: undefined
+  caption: undefined,
+  alt: ''
 };
 
 export interface SliderProps extends Partial<SliderOptions> {

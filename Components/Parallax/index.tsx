@@ -25,12 +25,15 @@ export interface ParallaxProps extends Partial<ParallaxOptions> {
   className?: string;
   /** Height of the parallax image */
   height?: number;
+  /** Content of the parallax section */
+  children?: React.ReactNode;
 }
 
 export const ParallaxComponent: React.SFC<ParallaxProps> = ({
   className,
   src,
   height,
+  children,
   ...options
 }) => {
   const parallax = useRef<HTMLDivElement>();
@@ -42,8 +45,9 @@ export const ParallaxComponent: React.SFC<ParallaxProps> = ({
   return (
     <div ref={parallax} className={parallaxClass} style={{ height }}>
       <div className="parallax">
-        <img src={src} />
+        <img src={src} alt="" />
       </div>
+      {children && <div style={{ height: '100%' }}>{children}</div>}
     </div>
   );
 };

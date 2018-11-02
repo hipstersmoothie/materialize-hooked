@@ -80,6 +80,7 @@ export const stylesheetBase = {
 interface IInfoParams {
   text?: string;
   styles: { [key: string]: any };
+  inline?: boolean;
   components?: any;
   propTablesExclude?: (React.StatelessComponent<any> | React.ReactNode)[];
 }
@@ -91,6 +92,7 @@ export const wInfo = (
     | React.ComponentType<{}>)[]
 ) => {
   const out: IInfoParams = {
+    inline: true,
     styles: stylesheetBase,
     components: {
       p: ({ children }: any) => <p>{children}</p>

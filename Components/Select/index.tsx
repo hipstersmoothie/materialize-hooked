@@ -16,11 +16,26 @@ export const useFormSelect = (
 };
 
 export interface SelectItemProps {
+  /** The value/children of the select item */
   children?: React.ReactNode;
+  /** The value/children of the select item */
   value?: string;
+  /**
+   * Render a disabled item
+   * @default false
+   */
   isDisabled?: boolean;
+  /**
+   * Render a selected item
+   * @default false
+   */
   isSelected?: boolean;
+  /**
+   * Render the icon the left
+   * @default false
+   */
   isIconLeft?: boolean;
+  /** Icon to use for the item */
   icon?: string;
 }
 
@@ -76,11 +91,26 @@ SelectGroup.defaultProps = {
 };
 
 export interface FormSelectProps extends Partial<FormSelectOptions> {
+  /** Form select items */
   children: React.ReactNode;
+  /** Label for the select */
   label?: string;
+  /**
+   * The select can select multiple values
+   * @default false
+   */
   isMultiple?: boolean;
+  /**
+   * Render a disabled select
+   * @default false
+   */
   isDisabled?: boolean;
+  /**
+   * Use the browser default select
+   * @default false
+   */
   isBrowserDefault?: boolean;
+  /** Called when the select value changes */
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 

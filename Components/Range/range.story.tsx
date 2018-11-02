@@ -8,19 +8,23 @@ import {
   select
 } from '@storybook/addon-knobs';
 
-import { createDummyPage, action } from '../utils-ts';
+import { createDummyPage, action, wInfo } from '../utils-ts';
 import Range from '.';
 
 storiesOf('Form/Range', module)
   .addDecorator(
     createDummyPage({
-      width: '100%',
-      height: '400px',
-      padding: '10rem 100px'
+      width: 800,
+      display: 'block',
+      margin: 'auto',
+      padding: '4rem 0'
     })
   )
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo('Add a range slider for values with a wide range.')
+  })
+  .add('HTML5 Range', () => (
     <Range
       isDisabled={boolean('isDisabled', false)}
       min={number('min', 0)}
@@ -29,7 +33,18 @@ storiesOf('Form/Range', module)
       value={number('value', 50)}
     />
   ))
-  .add('fancy', () => (
+  .addParameters({
+    info: wInfo(
+      `
+      We have two different types of sliders. nouiSlider is a 3rd party plugin which we've modified. 
+
+      You will have to manually link the \`nouislider.css\`
+
+      See noUiSlider's official documentation [here](https://refreshless.com/nouislider/) to see a variety of slider options
+      `
+    )
+  })
+  .add('noUiSlider', () => (
     <Range
       isFancy
       isDisabled={boolean('isDisabled', false)}
@@ -60,7 +75,7 @@ storiesOf('Form/Range', module)
       min={number('min', 0)}
       max={number('max', 400)}
       step={number('step', 1)}
-      limit={number('limit', 0)}
+      connect={boolean('connect', true)}
       onChange={action('onChange')}
     />
   ));

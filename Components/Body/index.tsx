@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 export interface BodyProps {
+  /** The content of the body */
   children: React.ReactNode;
   /** A className to attach to the root component */
   className?: string;

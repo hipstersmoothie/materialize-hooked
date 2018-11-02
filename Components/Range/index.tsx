@@ -41,6 +41,7 @@ export interface RangeProps extends Partial<noUiSlider.Options> {
   value?: number;
   /** The min value of the slider */
   min: number;
+  /** The max value of the slider */
   max: number;
   /** The value of each step of the slider */
   step?: number;

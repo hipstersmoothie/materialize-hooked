@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Chip from '.';
@@ -8,12 +8,29 @@ import Chip from '.';
 storiesOf('Form/Chip', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo(
+      'Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.'
+    )
+  })
+  .add('Basic', () => (
     <Chip
       value={text('value', 'Chip Component')}
       hasClose={boolean('hasClose', false)}
       image={text('image', 'https://materializecss.com/images/yuna.jpg')}
       onClick={action('onClick')}
+      onClickClose={action('onClickClose')}
+    />
+  ))
+  .addParameters({
+    info: wInfo(
+      'To create a tag chip just add a close icon inside with the prop `To create a tag chip just add a close icon inside with the class prop `hasClose`.'
+    )
+  })
+  .add('Basic', () => (
+    <Chip
+      value={text('value', 'Chip Component')}
+      hasClose
       onClickClose={action('onClickClose')}
     />
   ));

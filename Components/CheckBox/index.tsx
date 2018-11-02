@@ -4,15 +4,39 @@ import makeClass from 'classnames';
 const { useEffect, useRef } = React;
 
 export interface CheckBoxProps {
+  /** The id of the checkbox */
   id?: string;
+  /** The value/label of the checkbox */
   children?: React.ReactNode;
+  /** The value/label of the checkbox */
   value?: string;
+  /** Called when the value changes */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Render a checked checkBox button
+   * @default false
+   */
   isChecked?: boolean;
+  /**
+   * Render a filled in checkBox button
+   * @default false
+   */
   isFilledIn?: boolean;
+  /**
+   * Render a indeterminate checkBox button
+   * @default false
+   */
   isIndeterminate?: boolean;
-  className?: string;
+  /**
+   * Render a disabled checkBox button
+   * @default false
+   */
   isDisabled?: boolean;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
+  className?: string;
 }
 
 const CheckBox: React.SFC<CheckBoxProps> = ({

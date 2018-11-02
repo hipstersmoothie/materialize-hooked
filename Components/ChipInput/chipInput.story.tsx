@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 
 import Chips from '.';
 
-storiesOf('Form/ChipInput', module)
+storiesOf('Form/Chip', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo(
+      'To add tags, just enter your tag text and press enter. You can delete them by clicking on the close icon or by using your delete button.'
+    )
+  })
+  .add('Input', () => (
     <Chips
       placeholder={text('placeholder', 'Add some tags')}
       secondaryPlaceholder={text('secondaryPlaceholder', 'Anything else?')}
@@ -16,7 +21,7 @@ storiesOf('Form/ChipInput', module)
       onChange={action('onChange')}
     />
   ))
-  .add('with data', () => (
+  .add('Input with data', () => (
     <Chips
       data={[
         {
@@ -31,7 +36,7 @@ storiesOf('Form/ChipInput', module)
       ]}
     />
   ))
-  .add('with autocomplete', () => (
+  .add('Input with autocomplete', () => (
     <Chips
       autocompleteOptions={{
         data: {

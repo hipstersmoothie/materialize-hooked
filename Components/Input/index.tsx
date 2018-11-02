@@ -33,16 +33,14 @@ export interface IChangeElement extends HTMLElement {
 
 type OnChangeCallback = (event: React.ChangeEvent<IChangeElement>) => void;
 
-export interface FileInputProps {
-  onChange?: OnChangeCallback;
-  help?: string;
-  icon?: string;
+export interface FileInputProps extends Partial<InputProps> {
+  /** If file button, text for file button */
   fileButtonText?: string;
-  placeholder?: string;
+  /**
+   * If file input, allow multiple files
+   * @default false
+   */
   isMultiple?: boolean;
-  isDisabled?: boolean;
-  iconClassName?: string;
-  className?: string;
 }
 
 export const FileInput: React.SFC<FileInputProps> = ({
@@ -53,6 +51,8 @@ export const FileInput: React.SFC<FileInputProps> = ({
   placeholder,
   isMultiple,
   isDisabled,
+  errorText,
+  successText,
   help,
   icon
 }) => {
@@ -81,7 +81,11 @@ export const FileInput: React.SFC<FileInputProps> = ({
           placeholder={placeholder}
         />
         {help && (
-          <span className="helper-text" data-error="wrong" data-success="right">
+          <span
+            className="helper-text"
+            data-error={errorText}
+            data-success={successText}
+          >
             {help}
           </span>
         )}
@@ -103,12 +107,19 @@ FileInput.defaultProps = {
 };
 
 export interface InputProps {
+  /** ID for the input */
   id: string;
+  /** Called when the input value changes */
   onChange?: OnChangeCallback;
+  /** Value to display in the input */
   value?: string;
+  /** Icon to dispaly to the left of the input */
   icon?: string;
+  /** Max length of input value */
   length?: number;
+  /** Text below a label */
   help?: string;
+  /** Type of input */
   type?:
     | 'color'
     | 'date'
@@ -125,17 +136,49 @@ export interface InputProps {
     | 'time'
     | 'url'
     | 'week';
+  /** Label for the input. Floats above */
   label?: string | React.ReactNode;
+  /** Placeholder to display before typing */
   placeholder?: string;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
+  /** ClassName to attach to the icon */
   iconClassName?: string;
+  /** ClassName to attach to the input */
   inputClassName?: string;
+  /**
+   * Render a disabled input
+   * @default
+   */
   isDisabled?: boolean;
+  /**
+   * Render a sensitive input (password)
+   * @default
+   */
   isSensitive?: boolean;
+  /**
+   * Render a text area
+   * @default
+   */
   isTextArea?: boolean;
+  /**
+   * Render an inline input
+   * @default
+   */
   isInline?: boolean;
+  /** If file input, text for the button */
   fileButtonText?: string;
+  /** If file input, upload multiple files */
   isMultiple?: boolean;
+  /** Do not try to run HTML validation on the inputted value */
+  noValidate?: boolean;
+  /** Text to display when validation fails */
+  errorText?: string;
+  /** Text to display when validation succeeds  */
+  successText?: string;
 }
 
 export const Input: React.SFC<InputProps> = (
@@ -157,17 +200,20 @@ export const Input: React.SFC<InputProps> = (
     isTextArea,
     isMultiple,
     fileButtonText,
-    length
+    noValidate,
+    length,
+    errorText,
+    successText
   },
   ref
 ) => {
-  const input = ref ? ref : useRef();
+  const input = !ref.hasOwnProperty('current') ? useRef() : ref;
   const wrapperClass = makeClass(className, {
     'input-field': true,
     inline: isInline
   });
   const inputClass = makeClass(inputClassName, {
-    validate: true,
+    validate: !noValidate,
     'materialize-textarea': isTextArea
   });
   const labelClass = makeClass({
@@ -212,7 +258,11 @@ export const Input: React.SFC<InputProps> = (
         {label}
       </label>
       {help && (
-        <span className="helper-text" data-error="wrong" data-success="right">
+        <span
+          className="helper-text"
+          data-error={errorText}
+          data-success={successText}
+        >
           {help}
         </span>
       )}
@@ -234,6 +284,7 @@ Input.defaultProps = {
   label: undefined,
   isDisabled: false,
   isSensitive: false,
+  noValidate: false,
   isTextArea: false,
   isInline: false,
   fileButtonText: 'File',

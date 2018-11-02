@@ -52,7 +52,7 @@ storiesOf('Javascript/FeatureDiscovery', module)
     )
   })
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .add('Basic', () => (
     <div>
       <FeatureDiscovery target="fab">
         <div className="tap-target-content white-text">

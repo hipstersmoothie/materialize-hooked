@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
 
 import TimePicker from '.';
 
-storiesOf('Form/TimePicker', module)
+storiesOf('Form/Picker', module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo(
+      'The TimePicker allows users to select a date from an interactive clock.'
+    )
+  })
+  .add('Time', () => (
     <TimePicker
       id="id"
       placeholder={text('placeholder', null)}

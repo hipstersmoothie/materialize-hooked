@@ -16,8 +16,14 @@ export const useChips = (
 };
 
 export interface ChipsProps extends Partial<ChipsOptions> {
+  /** ClassName to attach to the input element */
   inputClassName?: string;
+  /** Called when the chip input value changes */
   onChange?: (data: string[]) => void;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 

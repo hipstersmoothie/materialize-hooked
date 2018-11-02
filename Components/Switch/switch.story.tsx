@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action } from '../utils-ts';
+import { storiesOf } from '@storybook/react';
+import { action, wInfo, createDummyPage } from '../utils-ts';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 // @ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
@@ -8,34 +8,28 @@ import { StateDecorator, Store } from '@sambego/storybook-state';
 // eslint-disable-next-line unicorn/import-index
 import Switch from './index';
 
-const styles = {
-  width: '100%',
-  height: '400px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-};
-const DummyPage: StoryDecorator = storyFn => (
-  <div style={styles}>{storyFn()}</div>
-);
-
 const store = new Store({
-  isChecked: false
+  isOn: false
 });
 
 const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   action('onChange')(e);
-  store.set({ isChecked: !store.get('isChecked') });
+  store.set({ isOn: !store.get('isOn') });
 };
 onChange.toString = () => 'onChange';
 
 storiesOf('Form/Switch', module)
   .addDecorator(StateDecorator(store))
-  .addDecorator(DummyPage)
+  .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => {
-    boolean('isChecked', store.get('isChecked'));
-    store.subscribe((state: any) => boolean('isChecked', state.isChecked));
+  .addParameters({
+    info: wInfo(
+      'Switches are special checkboxes used for binary states such as on / off'
+    )
+  })
+  .add('Basic', () => {
+    boolean('isOn', store.get('isOn'));
+    store.subscribe((state: any) => boolean('isOn', state.isOn));
 
     return (
       <Switch

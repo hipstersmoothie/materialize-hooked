@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import { withKnobs, number, text, boolean } from '@storybook/addon-knobs';
 // @ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
 
-import InputComponent, { InputProps } from '.';
+import { FileInput, Input } from '.';
 
 const store = new Store({
   value: 'foo'
 });
 
-const Input = (props: InputProps) => <InputComponent {...props} />;
 const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   action('onChange')(e);
   store.set({ value: e.currentTarget.value });
@@ -22,11 +21,23 @@ storiesOf('Form/Input', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)
   .addDecorator(createDummyPage())
+  .addParameters({
+    info: wInfo(
+      `
+      Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.
 
-  .add('basic', () => (
+      Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing.
+
+      The validate class leverages HTML5 validation and will add a valid and invalid class accordingly.
+      `
+    )
+  })
+  .add('Basic', () => (
     <Input
       id="input"
       label={text('label', 'Label')}
+      errorText={text('errorText', 'Label')}
+      successText={text('successText', 'Label')}
       value={store.get('value')}
       help={text('help', null)}
       length={number('length', 10)}
@@ -39,8 +50,39 @@ storiesOf('Form/Input', module)
       onChange={onChange}
     />
   ))
-  .add('File Input', () => (
+  .add('Custom Error or Success Messages', () => (
     <Input
+      id="input"
+      errorText={text('errorText', 'Errorz')}
+      successText={text('successText', 'Woo hoo!')}
+      value={store.get('value')}
+      onChange={onChange}
+    />
+  ))
+  .addParameters({
+    info: wInfo(
+      `
+      Textareas allow larger expandable user input. The border should light up simply and clearly indicating which field the user is currently editing./
+
+      ***Textareas will auto resize to the text inside.***
+      `
+    )
+  })
+  .add('Textarea', () => (
+    <Input
+      isTextArea
+      id="input"
+      value={store.get('value')}
+      onChange={onChange}
+    />
+  ))
+  .addParameters({
+    info: wInfo(
+      'If you want to style an input button with a path input we provide this structure.'
+    )
+  })
+  .add('File Input', () => (
+    <FileInput
       id="input"
       type="file"
       help={text('help', null)}
@@ -49,5 +91,18 @@ storiesOf('Form/Input', module)
       isDisabled={boolean('isDisabled', false)}
       isMultiple={boolean('isMultiple', false)}
       fileButtonText={text('fileButtonText', 'File')}
+    />
+  ))
+  .addParameters({
+    info: wInfo(
+      'Use a character counter in fields where a character restriction is in place.'
+    )
+  })
+  .add('Character Counter', () => (
+    <Input
+      id="input"
+      length={number('length', 10)}
+      value={store.get('value')}
+      onChange={onChange}
     />
   ));

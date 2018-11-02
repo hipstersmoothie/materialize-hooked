@@ -15,6 +15,10 @@ export interface ChipProps {
   children?: React.ReactNode;
   /** Whether the chip should display the close button */
   hasClose?: boolean;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 

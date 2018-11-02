@@ -30,6 +30,10 @@ jobs:
           key: auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
           paths:
             - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 
   release:
     <<: *defaults

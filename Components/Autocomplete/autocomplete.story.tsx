@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 //@ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
@@ -22,7 +22,12 @@ storiesOf('Form/Autocomplete', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => (
+  .addParameters({
+    info: wInfo(
+      'Add an autocomplete dropdown below your input to suggest possible values in your form. You can populate the list of autocomplete options dynamically as well.'
+    )
+  })
+  .add('Basic', () => (
     <Autocomplete
       id="id"
       placeholder={text('placeholder', null)}

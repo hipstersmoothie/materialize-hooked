@@ -17,38 +17,38 @@
     font-size: 30px !important;
   }
 
-  table {
+  #root>div>div>div>div>div table {
     border-collapse: collapse !important;
     margin-bottom: 4rem !important;
     width: 100% !important;
     overflow: scroll !important;
   }
 
-  thead {
+  #root>div>div>div>div>div table>thead {
     border-bottom: 1px grey solid !important;
   }
 
-  td+td+td+td+td {
+  #root>div>div>div>div>div>table td+td+td+td+td {
     max-width: inherit;
   }
 
-  td,
-  th,
-  td+td,
-  th+th {
+  #root>div>div>div>div>div>table td,
+  #root>div>div>div>div>div>table th,
+  #root>div>div>div>div>div>table td+td,
+  #root>div>div>div>div>div>table th+th {
     max-width: 150px;
     overflow: scroll;
   }
 
-  td:nth-child(1) {
+  #root>div>div>div>div>div>table td:nth-child(1) {
     color: #f44336;
   }
 
-  td:nth-child(2) {
+  #root>div>div>div>div>div>table td:nth-child(2) {
     color: #4caf50;
   }
 
-  th {
+  #root>div>div>div>div>div table th {
     padding-right: 20px !important;
     padding-bottom: 10px !important;
     text-align: left !important;
@@ -59,7 +59,7 @@
     border-bottom: 1px solid #ccc !important;
   }
 
-  td {
+  #root>div>div>div>div>div table td {
     padding-right: 20px !important;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
@@ -67,13 +67,13 @@
     border: none !important;
   }
 
-  td:last-child {
+  #root>div>div>div>div>div table>td:last-child {
     isolate: false;
     width: '99%';
     paddingRight: 0;
   }
 
-  td p:last-child {
+  #root>div>div>div>div>div table>td p:last-child {
     isolate: false;
     marginBottom: 0;
   }

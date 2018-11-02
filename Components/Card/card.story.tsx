@@ -20,7 +20,7 @@ storiesOf('Components/Card', module)
       'Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.'
     )
   })
-  .addWithJSX('basic', () => (
+  .addWithJSX('Basic', () => (
     <Card
       title={text('title', 'Card Title')}
       isSmall={boolean('isSmall', false)}

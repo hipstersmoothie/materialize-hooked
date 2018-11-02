@@ -19,7 +19,7 @@ export const useAutocomplete = (
 
 type AutoCompleteProps = InputProps & Partial<AutocompleteOptions>;
 
-const AutoComplete: React.SFC<AutoCompleteProps> = ({
+export const AutoComplete: React.SFC<AutoCompleteProps> = ({
   id,
   icon,
   help,

@@ -21,13 +21,14 @@ storiesOf('Form/Radio', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)
   .addDecorator(createDummyPage())
-  .add('basic', () => {
+  .add('Basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>
       boolean('isChecked', state.isChecked)
     );
     return (
       <Radio
+        id="radio"
         className="waves-effect waves-light"
         withGap={boolean('withGap', false)}
         isChecked={boolean('isChecked', false)}

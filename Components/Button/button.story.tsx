@@ -11,7 +11,7 @@ storiesOf('Components/Button', module)
   .addParameters({
     info: wInfo()
   })
-  .addWithJSX('basic', () => (
+  .addWithJSX('Basic', () => (
     <Button
       className={text('className', 'scale-transition scale-in')}
       text={text('text', null)}

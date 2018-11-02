@@ -2,11 +2,32 @@ import * as React from 'react';
 import makeClass from 'classnames';
 
 export interface SwitchProps {
+  /** Called when the switch value changes */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * The switch is disabled
+   * @default false
+   */
   isDisabled?: boolean;
-  isChecked?: boolean;
+  /**
+   * The switch is on
+   * @default false
+   */
+  isOn?: boolean;
+  /**
+   * The on state text
+   * @default on
+   */
   on?: string;
+  /**
+   * The off state text
+   * @default off
+   */
   off?: string;
+  /**
+   * A className to attach to the root component
+   * @default
+   */
   className?: string;
 }
 
@@ -15,7 +36,7 @@ export const Switch: React.SFC<SwitchProps> = ({
   off,
   className,
   isDisabled,
-  isChecked,
+  isOn,
   onChange
 }) => {
   const switchClass = makeClass(className, {
@@ -28,7 +49,7 @@ export const Switch: React.SFC<SwitchProps> = ({
         {off}
         <input
           disabled={isDisabled}
-          checked={isChecked}
+          checked={isOn}
           type="checkbox"
           onChange={onChange}
         />
@@ -44,7 +65,7 @@ Switch.defaultProps = {
   off: 'Off',
   className: '',
   isDisabled: false,
-  isChecked: false,
+  isOn: false,
   onChange: () => undefined
 };
 

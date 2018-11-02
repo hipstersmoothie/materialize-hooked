@@ -14,7 +14,7 @@ storiesOf('Components/FloatingActionButton', module)
       [Button]
     )
   })
-  .addWithJSX('basic', () => (
+  .addWithJSX('Basic', () => (
     <Fab
       icon={text('icon', 'publish')}
       hoverEnabled={boolean('hoverEnabled', true)}

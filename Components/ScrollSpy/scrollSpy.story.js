@@ -19,7 +19,7 @@ storiesOf('Javascript/ScrollSpy', module)
       "Scrollspy is a jQuery plugin that tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every documentation page to the right. Clicking on these links will also scroll the page to that element."
     )
   })
-  .add('basic', () => (
+  .add('Basic', () => (
     <ScrollSpy
       throttle={number('throttle', 100)}
       scrollOffset={number('scrollOffset', 200)}

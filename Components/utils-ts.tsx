@@ -3,6 +3,8 @@ import { action as _action } from '@storybook/addon-actions';
 import { StoryDecorator } from '@storybook/react';
 // @ts-ignore
 import { baseFonts } from '@storybook/components';
+//@ts-ignore
+import { State } from '@sambego/storybook-state';
 
 export const action = (name: string) => {
   const tempAction = _action(name);
@@ -94,8 +96,8 @@ export const wInfo = (
       p: ({ children }: any) => <p>{children}</p>
     },
     propTablesExclude: propTablesExclude
-      ? [...propTablesExclude, Wrapper, React.Fragment]
-      : [Wrapper, React.Fragment]
+      ? [...propTablesExclude, Wrapper, React.Fragment, State]
+      : [Wrapper, React.Fragment, State]
   };
 
   if (text) {

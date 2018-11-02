@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage } from '../utils-ts';
+import { action, createDummyPage, wInfo } from '../utils-ts';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 // @ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
@@ -21,7 +21,18 @@ storiesOf('Form/CheckBox', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('basic', () => {
+  .addParameters({
+    info: wInfo(
+      `
+      Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.
+
+      Text fields allow user input. The border should light up simply and clearly indicating which field the user is currently editing.
+
+      The validate class leverages HTML5 validation and will add a valid and invalid class accordingly.
+      `
+    )
+  })
+  .addWithJSX('Basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>
       boolean('isChecked', state.isChecked)

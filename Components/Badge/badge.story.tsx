@@ -18,7 +18,7 @@ storiesOf('Components/Badge', module)
   })
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('basic', () => (
+  .addWithJSX('Basic', () => (
     <Badge
       isNew={boolean('isNew', true)}
       value={number('value', 1)}

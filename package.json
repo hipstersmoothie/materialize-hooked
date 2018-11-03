@@ -10,14 +10,15 @@
     "prop-types": "^15.6.2"
   },
   "scripts": {
-    "test-screen": "wait-port http://localhost:9001 && jest",
-    "test:watch": "cross-env STORYBOOK_MODE=TEST npm-run-all --parallel storybook test-screen",
-    "build-test:ci": "cross-env STORYBOOK_MODE=TEST CI=true npm-run-all build-storybook jest",
+    "build": "tsc",
+    "lint": "tslint -p . --format stylish",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "lint": "tslint -p . --format stylish",
-    "build": "tsc"
+    "test-snapshots": "jest Components/storyshotsMarkup.test.tsx",
+    "test-all": "wait-port http://localhost:9001 && jest",
+    "test": "cross-env STORYBOOK_MODE=TEST npm-run-all --parallel storybook test-all",
+    "test:ci": "cross-env STORYBOOK_MODE=TEST CI=true npm-run-all build-storybook jest"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -27,7 +28,6 @@
     "@storybook/addon-backgrounds": "^4.0.0",
     "@storybook/addon-info": "^4.0.0",
     "@storybook/addon-knobs": "^4.0.0",
-    "@storybook/addon-links": "^4.0.0",
     "@storybook/addon-notes": "^4.0.0",
     "@storybook/addon-options": "^4.0.0",
     "@storybook/addon-storyshots": "^4.0.2",
@@ -63,7 +63,6 @@
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.7.0-alpha.0",
     "react-test-renderer": "^16.7.0-alpha.0",
-    "storybook-addon-jsx": "^5.4.0",
     "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
@@ -90,6 +89,41 @@
     "*.{js,json,css,md}": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/Components/**.test.+(ts|tsx|js)"
+    ],
+    "setupFiles": [
+      "./setupTests.js"
+    ],
+    "coverageReporters": [
+      "cobertura",
+      "html",
+      "lcov"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "Components/**/*.tsx",
+      "!Components/**/*.story.tsx",
+      "!Components/**/*.test.tsx",
+      "!Components/**/__tests__/**/*"
     ]
   }
 }

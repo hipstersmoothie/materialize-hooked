@@ -45,15 +45,24 @@ export interface PageProps {
   onClick(newPage: number): void;
 }
 
-const Page: React.SFC<PageProps> = ({ num, currentPage, onClick }) => (
-  <li className={`waves-effect ${num === currentPage && 'active'}`}>
-    <a onClick={() => onClick(num)}>{num}</a>
-  </li>
-);
+class Page extends React.PureComponent<PageProps> {
+  public static defaultProps = {
+    onClick: () => undefined
+  };
 
-Page.defaultProps = {
-  onClick: () => undefined
-};
+  public onClick = () => this.props.onClick(this.props.num);
+
+  public render() {
+    const pageClass = makeClass('waves-effect', {
+      active: this.props.num === this.props.currentPage
+    });
+    return (
+      <li className={pageClass}>
+        <a onClick={this.onClick}>{this.props.num}</a>
+      </li>
+    );
+  }
+}
 
 export interface PaginationProps {
   /**
@@ -74,84 +83,90 @@ export interface PaginationProps {
   onChange?(newPage: number): void;
 }
 
-const Pagination: React.SFC<PaginationProps> = ({
-  className,
-  onChange,
-  visibleRadius,
-  currentPage,
-  pages
-}) => {
-  const visiblePages = getVisiblePages(visibleRadius!, currentPage, pages);
-  const paginationClass = makeClass(className, {
-    pagination: true
-  });
-  const pagesComponents: React.ReactNode[] = [];
+class Pagination extends React.PureComponent<PaginationProps> {
+  public static defaultProps = {
+    onChange: () => undefined,
+    visibleRadius: 2,
+    className: ''
+  };
 
-  if (visiblePages[0] >= 2) {
-    pagesComponents.push(
-      <Page
-        key="page-1"
-        num={1}
-        currentPage={currentPage}
-        onClick={onChange!}
-      />
-    );
+  public onClick = (mod: number) => () =>
+    this.props.onChange!(this.props.currentPage + mod);
 
-    if (visiblePages[0] !== 2) {
-      pagesComponents.push(<Ellipses key="ellipses-1" />);
-    }
-  }
+  public render() {
+    const {
+      className,
+      onChange,
+      visibleRadius,
+      currentPage,
+      pages
+    } = this.props;
+    const visiblePages = getVisiblePages(visibleRadius!, currentPage, pages);
+    const paginationClass = makeClass(className, {
+      pagination: true
+    });
+    const pagesComponents: React.ReactNode[] = [];
 
-  visiblePages.map(page =>
-    pagesComponents.push(
-      <Page
-        key={`page-${page}`}
-        num={page}
-        currentPage={currentPage}
-        onClick={onChange!}
-      />
-    )
-  );
+    if (visiblePages[0] >= 2) {
+      pagesComponents.push(
+        <Page
+          key="page-1"
+          num={1}
+          currentPage={currentPage}
+          onClick={onChange!}
+        />
+      );
 
-  if (
-    currentPage <= pages - visibleRadius! - 1 &&
-    visiblePages.length < pages
-  ) {
-    if (currentPage < pages - visibleRadius! - 1) {
-      pagesComponents.push(<Ellipses key="ellipses-2" />);
+      if (visiblePages[0] !== 2) {
+        pagesComponents.push(<Ellipses key="ellipses-1" />);
+      }
     }
 
-    pagesComponents.push(
-      <Page
-        key={`page-${pages}`}
-        num={pages}
-        currentPage={currentPage}
-        onClick={onChange!}
-      />
+    visiblePages.map(page =>
+      pagesComponents.push(
+        <Page
+          key={`page-${page}`}
+          num={page}
+          currentPage={currentPage}
+          onClick={onChange!}
+        />
+      )
+    );
+
+    if (
+      currentPage <= pages - visibleRadius! - 1 &&
+      visiblePages.length < pages
+    ) {
+      if (currentPage < pages - visibleRadius! - 1) {
+        pagesComponents.push(<Ellipses key="ellipses-2" />);
+      }
+
+      pagesComponents.push(
+        <Page
+          key={`page-${pages}`}
+          num={pages}
+          currentPage={currentPage}
+          onClick={onChange!}
+        />
+      );
+    }
+
+    return (
+      <ul className={paginationClass}>
+        <Arrow
+          isDisabled={currentPage === 1}
+          direction="left"
+          onClick={this.onClick(-1)}
+        />
+        {pagesComponents}
+        <Arrow
+          isDisabled={currentPage === pages}
+          direction="right"
+          onClick={this.onClick(1)}
+        />
+      </ul>
     );
   }
-
-  return (
-    <ul className={paginationClass}>
-      <Arrow
-        isDisabled={currentPage === 1}
-        direction="left"
-        onClick={() => onChange!(currentPage - 1)}
-      />
-      {pagesComponents}
-      <Arrow
-        isDisabled={currentPage === pages}
-        direction="right"
-        onClick={() => onChange!(currentPage + 1)}
-      />
-    </ul>
-  );
-};
-
-Pagination.defaultProps = {
-  onChange: () => undefined,
-  visibleRadius: 2,
-  className: ''
-};
+}
 
 export default Pagination;

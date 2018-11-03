@@ -13,7 +13,7 @@ storiesOf('Components/Preloader', module)
       'If you have content that will take a long time to load, you should give the user feedback.\n\n\nTo get an indeterminate progress bar, do not provide a progress value.'
     )
   })
-  .addWithJSX('Linear', () => (
+  .add('Linear', () => (
     <LinearProgress progress={number('progress', 35)} />
   ))
   .addParameters({
@@ -21,7 +21,7 @@ storiesOf('Components/Preloader', module)
       'There are 4 colors and 3 sizes of circular spinners. If no colors are provided the spinner will cycle through the colors.'
     )
   })
-  .addWithJSX('Circular', () => (
+  .add('Circular', () => (
     <CircularProgress
       isBlue={boolean('isBlue', false)}
       isRed={boolean('isRed', false)}

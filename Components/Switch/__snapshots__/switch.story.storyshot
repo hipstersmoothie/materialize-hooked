@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Switch Basic 1`] = `
+<div>
+  <div
+    className="switch"
+  >
+    <label>
+      Off
+      <input
+        checked={false}
+        disabled={false}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="lever"
+      />
+      On
+    </label>
+  </div>
+</div>
+`;

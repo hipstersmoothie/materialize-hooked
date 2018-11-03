@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Breadcrumbs Basic 1`] = `
+<div
+  style={
+    Object {
+      "margin": "auto",
+      "maxWidth": 800,
+    }
+  }
+>
+  <nav
+    className="row"
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <div
+        className="col s12"
+      >
+        <a
+          className="breadcrumb"
+          onClick={[Function]}
+        >
+          First
+        </a>
+        <a
+          className="breadcrumb"
+          onClick={[Function]}
+        >
+          Second
+        </a>
+        <a
+          className="breadcrumb"
+          onClick={[Function]}
+        >
+          Third
+        </a>
+        <a
+          className="breadcrumb"
+          onClick={[Function]}
+        >
+          Fourth
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

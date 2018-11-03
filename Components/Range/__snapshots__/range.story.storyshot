@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Range HTML5 Range 1`] = `
+<div>
+  <p
+    className="range-field"
+  >
+    <input
+      aria-label="Range Input"
+      disabled={false}
+      id="test5"
+      max={200}
+      min={0}
+      onChange={[Function]}
+      step={1}
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      type="range"
+      value={50}
+    />
+  </p>
+</div>
+`;
+
+exports[`Storyshots Form/Range noUiSlider 1`] = `
+<div>
+  <div />
+</div>
+`;

@@ -1,0 +1,399 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Card Basic 1`] = `
+<div>
+  <div
+    className="card"
+  >
+    <div
+      className="card-content"
+    >
+      <span
+        className="card-title activator"
+      >
+        Card Title
+      </span>
+      I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+    </div>
+    <div
+      className="card-action"
+    >
+      <span>
+        <a>
+          This is a link
+        </a>
+        <a>
+          This is a link
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card Card Panel 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s6 offset-s3"
+    >
+      <div
+        className="card-panel teal white-text"
+      >
+        I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card Card Reveal 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s6 offset-s3"
+    >
+      <div
+        className="card"
+      >
+        <div
+          className="card-image waves-effect waves-block waves-light"
+        >
+          <img
+            alt="Image for Card"
+            className="activator"
+            src="https://materializecss.com/images/sample-1.jpg"
+          />
+        </div>
+        <div
+          className="card-content"
+        >
+          <span
+            className="card-title activator"
+          >
+            Card Title
+            <i
+              className="material-icons right"
+            >
+              more_vert
+            </i>
+          </span>
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div
+          className="card-action"
+        >
+          <span>
+            <a>
+              This is a link
+            </a>
+            <a>
+              This is a link
+            </a>
+          </span>
+        </div>
+        <div
+          className="card-reveal"
+        >
+          <span
+            className="card-title grey-text text-darken-4"
+          >
+            Card Title
+            <i
+              className="material-icons right"
+            >
+              close
+            </i>
+          </span>
+          <p>
+            Here is some more information about this product that is only revealed once clicked on.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card Card Sizes 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s6 offset-s3"
+    >
+      <div
+        className="card"
+      >
+        <div
+          className="card-image"
+        >
+          <img
+            alt="Image for Card"
+            className=""
+            src="https://materializecss.com/images/sample-1.jpg"
+          />
+          <span
+            className="card-title activator"
+          />
+        </div>
+        <div
+          className="card-content"
+        >
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div
+          className="card-action"
+        >
+          <span>
+            <a>
+              This is a link
+            </a>
+            <a>
+              This is a link
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card FABs in Cards 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s6"
+    >
+      <div
+        className="card"
+      >
+        <div
+          className="card-image"
+        >
+          <img
+            alt="Image for Card"
+            className=""
+            src="https://materializecss.com/images/sample-1.jpg"
+          />
+          <span
+            className="card-title activator"
+          >
+            Card Title
+          </span>
+          <a
+            className="halfway-fab red waves-effect waves-light btn-floating"
+            onClick={[Function]}
+          >
+            <i
+              className="material-icons"
+            >
+              add
+            </i>
+          </a>
+        </div>
+        <div
+          className="card-content"
+        >
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div
+          className="card-action"
+        >
+          <span>
+            <a>
+              This is a link
+            </a>
+            <a>
+              This is a link
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card Horizontal Card 1`] = `
+<div>
+  <div
+    className="card horizontal"
+  >
+    <div
+      className="card-image"
+    >
+      <img
+        alt="Image for Card"
+        className=""
+        src="https://lorempixel.com/100/190/nature/6"
+      />
+      <span
+        className="card-title activator"
+      />
+    </div>
+    <div
+      className="card-stacked"
+    >
+      <div
+        className="card-content"
+      >
+        I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+      </div>
+      <div
+        className="card-action"
+      >
+        <span>
+          <a>
+            This is a link
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card Image Card 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s9"
+    >
+      <div
+        className="card"
+      >
+        <div
+          className="card-image"
+        >
+          <img
+            alt="Image for Card"
+            className=""
+            src="https://materializecss.com/images/sample-1.jpg"
+          />
+          <span
+            className="card-title activator"
+          >
+            Card Title
+          </span>
+        </div>
+        <div
+          className="card-content"
+        >
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div
+          className="card-action"
+        >
+          <span>
+            <a>
+              This is a link
+            </a>
+            <a>
+              This is a link
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Card Tabs in Cards 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s6 offset-s3"
+    >
+      <div
+        className="card"
+      >
+        <div
+          className="card-content"
+        >
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div
+          className="card-tabs"
+        >
+          <ul
+            className="tabs tabs-fixed-width"
+          >
+            <li
+              className="tab"
+            >
+              <a
+                className=""
+                href="#test1"
+              >
+                Test 1
+              </a>
+            </li>
+            <li
+              className="tab"
+            >
+              <a
+                className=""
+                href="#test2"
+              >
+                Test 2
+              </a>
+            </li>
+            <li
+              className="tab"
+            >
+              <a
+                className=""
+                href="#test3"
+              >
+                Test 3
+              </a>
+            </li>
+          </ul>
+          <div
+            className="nav-content"
+            style={
+              Object {
+                "opacity": 0,
+              }
+            }
+          >
+            <div
+              className="card-content"
+            >
+              <div
+                id="test1"
+              >
+                Test 1
+              </div>
+              <div
+                id="test2"
+              >
+                Test 2
+              </div>
+              <div
+                id="test3"
+              >
+                Test 3
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

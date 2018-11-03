@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Picker Date 1`] = `
+<div>
+  <div
+    className="datepicker input-field"
+  >
+    <i
+      className="material-icons prefix"
+    >
+      account_circle
+    </i>
+    <input
+      aria-label="Date Picker Input"
+      className="validate"
+      disabled={false}
+      id="id"
+      placeholder={null}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Picker Time 1`] = `
+<div>
+  <div
+    className="timepicker input-field"
+  >
+    <i
+      className="material-icons prefix"
+    >
+      access_time
+    </i>
+    <input
+      aria-label="Time Picker Input"
+      className="validate"
+      disabled={false}
+      id="id"
+      onChange={[Function]}
+      placeholder={null}
+      type="text"
+    />
+  </div>
+</div>
+`;

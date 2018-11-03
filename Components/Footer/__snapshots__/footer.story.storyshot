@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Footer Basic 1`] = `
+<div>
+  <footer
+    className="page-footer"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col l6 s12"
+        >
+          <h5
+            className="white-text"
+          >
+            Title
+          </h5>
+          <p
+            className="grey-text text-lighten-4"
+          >
+            I am a very simple footer. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+          </p>
+        </div>
+        <div
+          className="col l4 offset-l2 s12"
+        >
+          <h5
+            className="white-text"
+          >
+            Links
+          </h5>
+          <ul>
+            <li>
+              <a
+                className="grey-text text-lighten-3"
+                href="google.com"
+              >
+                Google
+              </a>
+            </li>
+            <li>
+              <a
+                className="grey-text text-lighten-3"
+                href="facebook.com"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                className="grey-text text-lighten-3"
+                href="twitter.com"
+              >
+                Twiiter
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Components/Footer With Copyright 1`] = `
+<div>
+  <footer
+    className="page-footer"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col l6 s12"
+        >
+          <h5
+            className="white-text"
+          >
+            Title
+          </h5>
+          <p
+            className="grey-text text-lighten-4"
+          >
+            I am a very simple footer. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+          </p>
+        </div>
+        <div
+          className="col l4 offset-l2 s12"
+        >
+          <h5
+            className="white-text"
+          >
+            Links
+          </h5>
+          <ul>
+            <li>
+              <a
+                className="grey-text text-lighten-3"
+                href="google.com"
+              >
+                Google
+              </a>
+            </li>
+            <li>
+              <a
+                className="grey-text text-lighten-3"
+                href="facebook.com"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                className="grey-text text-lighten-3"
+                href="twitter.com"
+              >
+                Twiiter
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      className="footer-copyright"
+    >
+      <div
+        className="container"
+      >
+        © 
+        2018
+         
+        Andrew Lisowski
+      </div>
+    </div>
+  </footer>
+</div>
+`;

@@ -32,7 +32,7 @@ storiesOf('Form/CheckBox', module)
       `
     )
   })
-  .addWithJSX('Basic', () => {
+  .add('Basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>
       boolean('isChecked', state.isChecked)

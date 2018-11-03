@@ -13,7 +13,7 @@ storiesOf('Form/Chip', module)
       'Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Chip
       value={text('value', 'Chip Component')}
       hasClose={boolean('hasClose', false)}
@@ -27,7 +27,7 @@ storiesOf('Form/Chip', module)
       'To create a tag chip just add a close icon inside with the prop `To create a tag chip just add a close icon inside with the class prop `hasClose`.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Close Chip', () => (
     <Chip
       value={text('value', 'Chip Component')}
       hasClose

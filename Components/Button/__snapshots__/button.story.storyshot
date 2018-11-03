@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Button Basic 1`] = `
+<div>
+  <a
+    className="scale-transition scale-in waves-effect waves-light btn"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      attach_file
+    </i>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components/Button Disabled 1`] = `
+<div>
+  <div>
+    <a
+      className="waves-effect waves-light btn-large disabled btn"
+      onClick={[Function]}
+    >
+      button
+    </a>
+    <a
+      className="waves-effect waves-light disabled btn"
+      onClick={[Function]}
+    >
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn-flat disabled"
+      onClick={[Function]}
+    >
+      button
+    </a>
+    <a
+      className="btn-floating disabled"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons"
+      >
+        add
+      </i>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Flat 1`] = `
+<div>
+  <div>
+    <a
+      className="waves-teal waves-effect waves-light btn-flat btn-large"
+      onClick={[Function]}
+    >
+      button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Floating 1`] = `
+<div>
+  <div>
+    <a
+      className="red waves-effect waves-light btn-floating btn-large"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons"
+      >
+        add
+      </i>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large 1`] = `
+<div>
+  <div>
+    <a
+      className="waves-effect waves-light btn-large btn"
+      onClick={[Function]}
+    >
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn-large btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons left"
+      >
+        cloud
+      </i>
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn-large btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons right"
+      >
+        cloud
+      </i>
+      button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Raised 1`] = `
+<div>
+  <div>
+    <a
+      className="waves-effect waves-light btn"
+      onClick={[Function]}
+    >
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons left"
+      >
+        cloud
+      </i>
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons right"
+      >
+        cloud
+      </i>
+      button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small 1`] = `
+<div>
+  <div>
+    <a
+      className="waves-effect waves-light btn-small btn"
+      onClick={[Function]}
+    >
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn-small btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons left"
+      >
+        cloud
+      </i>
+      button
+    </a>
+    <a
+      className="waves-effect waves-light btn-small btn"
+      onClick={[Function]}
+    >
+      <i
+        className="material-icons right"
+      >
+        cloud
+      </i>
+      button
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Submit Button 1`] = `
+<div>
+  <div>
+    <button
+      className="waves-effect waves-light btn"
+      name="action"
+      onClick={[Function]}
+      type="submit"
+    >
+      button
+      <i
+        className="material-icons right"
+      >
+        send
+      </i>
+    </button>
+  </div>
+</div>
+`;

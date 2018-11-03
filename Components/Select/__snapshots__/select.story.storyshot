@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Select Basic 1`] = `
+<div>
+  <div
+    className="input-field"
+  >
+    <select
+      className=""
+      disabled={false}
+      id="SelectComponent"
+      multiple={false}
+      onChange={[Function]}
+    >
+      <option
+        disabled={false}
+        selected={false}
+        value="Clark"
+      >
+        Clark
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Bruce"
+      >
+        Bruce
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Donna"
+      >
+        Donna
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Barry"
+      >
+        Barry
+      </option>
+    </select>
+    <label
+      htmlFor="SelectComponent"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Select Disabled Styles 1`] = `
+<div>
+  <div
+    className="input-field"
+  >
+    <select
+      className=""
+      disabled={false}
+      id="Select Component"
+      multiple={false}
+      onChange={[Function]}
+    >
+      <option
+        disabled={false}
+        selected={false}
+        value="Clark"
+      >
+        Clark
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Bruce"
+      >
+        Bruce
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Donna"
+      >
+        Donna
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Barry"
+      >
+        Barry
+      </option>
+    </select>
+    <label
+      htmlFor="Select Component"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Select Multiple 1`] = `
+<div>
+  <div
+    className="input-field"
+  >
+    <select
+      className=""
+      disabled={false}
+      id="SelectComponent"
+      multiple={true}
+      onChange={[Function]}
+    >
+      <option
+        disabled={false}
+        selected={false}
+        value="Clark"
+      >
+        Clark
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Bruce"
+      >
+        Bruce
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Donna"
+      >
+        Donna
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Barry"
+      >
+        Barry
+      </option>
+    </select>
+    <label
+      htmlFor="SelectComponent"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Select with groups 1`] = `
+<div>
+  <div
+    className="input-field"
+  >
+    <select
+      className=""
+      disabled={false}
+      id="SelectComponent"
+      multiple={false}
+      onChange={[Function]}
+    >
+      <optgroup
+        disabled={false}
+        label="Team A"
+      >
+        <option
+          data-icon="https://materializecss.com/images/sample-1.jpg"
+          disabled={false}
+          selected={false}
+          value="Clark"
+        >
+          Clark
+        </option>
+        <option
+          data-icon="https://materializecss.com/images/office.jpg"
+          disabled={false}
+          selected={false}
+          value="Bruce"
+        >
+          Bruce
+        </option>
+      </optgroup>
+      <optgroup
+        disabled={false}
+        label="Team B"
+      >
+        <option
+          data-icon="https://materializecss.com/images/yuna.jpg"
+          disabled={false}
+          selected={false}
+          value="Donna"
+        >
+          Donna
+        </option>
+        <option
+          disabled={false}
+          selected={false}
+          value="Barry"
+        >
+          Barry
+        </option>
+      </optgroup>
+    </select>
+    <label
+      htmlFor="SelectComponent"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Select with icons 1`] = `
+<div>
+  <div
+    className="input-field"
+  >
+    <select
+      className=""
+      disabled={false}
+      id="SelectComponent"
+      multiple={false}
+      onChange={[Function]}
+    >
+      <option
+        data-icon="https://materializecss.com/images/sample-1.jpg"
+        disabled={false}
+        selected={false}
+        value="Clark"
+      >
+        Clark
+      </option>
+      <option
+        data-icon="https://materializecss.com/images/office.jpg"
+        disabled={false}
+        selected={false}
+        value="Bruce"
+      >
+        Bruce
+      </option>
+      <option
+        data-icon="https://materializecss.com/images/yuna.jpg"
+        disabled={false}
+        selected={false}
+        value="Donna"
+      >
+        Donna
+      </option>
+      <option
+        disabled={false}
+        selected={false}
+        value="Barry"
+      >
+        Barry
+      </option>
+    </select>
+    <label
+      htmlFor="SelectComponent"
+    />
+  </div>
+</div>
+`;

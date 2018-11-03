@@ -13,7 +13,7 @@ storiesOf('Components/Pagination', module)
       'Add pagination links to help split up your long content into shorter, easier to understand blocks.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Pagination
       visibleRadius={number('visibleRadius', 2)}
       currentPage={number('currentPage', 1)}

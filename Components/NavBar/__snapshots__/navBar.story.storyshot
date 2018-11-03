@@ -1,0 +1,968 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Nav Active Items 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo "
+      >
+        Logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Sass
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Components
+          </a>
+        </li>
+        <li
+          className="active"
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Javascript
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Mobile
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Basic 1`] = `
+Array [
+  <div
+    className=""
+  >
+    <nav
+      className=""
+    >
+      <div
+        className="nav-wrapper"
+      >
+        <a
+          className="brand-logo "
+          onClick={[Function]}
+        >
+          Logo
+        </a>
+        <a
+          className="sidenav-trigger"
+          data-target="mobile-sidebar"
+          href="#"
+        >
+          <i
+            className="material-icons"
+          >
+            menu
+          </i>
+        </a>
+        <ul
+          className="right hide-on-med-and-down"
+        >
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Sass
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Components
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Javascript
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Mobile
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>,
+  <ul
+    className="sidenav"
+    id="mobile-sidebar"
+  >
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Sass
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Components
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Javascript
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Mobile
+      </a>
+    </li>
+  </ul>,
+]
+`;
+
+exports[`Storyshots Components/Nav Buttons 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo "
+      >
+        logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className="btn-large waves-effect waves-light btn"
+            href="!#"
+          >
+            Button
+            <i
+              className="material-icons left"
+            >
+              cloud
+            </i>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className="waves-effect waves-light btn"
+            href="!#"
+          >
+            Button
+            <i
+              className="material-icons right"
+            >
+              search
+            </i>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className="btn-small waves-effect waves-light btn"
+            href="!#"
+          >
+            Button
+            <i
+              className="material-icons right"
+            >
+              search
+            </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Centering the logo 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo center"
+      >
+        Logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Sass
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Components
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Javascript
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Mobile
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Extended Navbar with Tabs 1`] = `
+Array [
+  <div
+    className=""
+  >
+    <nav
+      className="nav-extended"
+    >
+      <div
+        className="nav-wrapper"
+      >
+        <a
+          className="brand-logo "
+        >
+          Logo
+        </a>
+        <a
+          className="sidenav-trigger"
+          data-target="mobile-sidebar"
+          href="#"
+        >
+          <i
+            className="material-icons"
+          >
+            menu
+          </i>
+        </a>
+        <ul
+          className="right hide-on-med-and-down"
+        >
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+            >
+              Sass
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+            >
+              Components
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+            >
+              Javascript
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+            >
+              Mobile
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="nav-content"
+      >
+        <ul
+          className="tabs-transparent tabs"
+        >
+          <li
+            className="tab"
+          >
+            <a
+              className=""
+              href="#test1"
+            >
+              Test 1
+            </a>
+          </li>
+          <li
+            className="tab"
+          >
+            <a
+              className=""
+              href="#test2"
+            >
+              Test 2
+            </a>
+          </li>
+          <li
+            className="tab disabled"
+          >
+            <a
+              className=""
+              href="#test3"
+            >
+              TDisabled Tab
+            </a>
+          </li>
+          <li
+            className="tab"
+          >
+            <a
+              className=""
+              href="#test4"
+            >
+              Test 4
+            </a>
+          </li>
+        </ul>
+        <div
+          className="nav-content"
+          style={
+            Object {
+              "opacity": 0,
+            }
+          }
+        />
+        <a
+          className="halfway-fab teal waves-effect waves-light btn-floating btn-large"
+          onClick={[Function]}
+        >
+          <i
+            className="material-icons"
+          >
+            add
+          </i>
+        </a>
+      </div>
+    </nav>
+  </div>,
+  <ul
+    className="sidenav"
+    id="mobile-sidebar"
+  >
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+      >
+        Sass
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+      >
+        Components
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+      >
+        Javascript
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+      >
+        Mobile
+      </a>
+    </li>
+  </ul>,
+]
+`;
+
+exports[`Storyshots Components/Nav Fixed NavBar 1`] = `
+<div
+  className="navbar-fixed"
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo "
+      >
+        Logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Sass
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Components
+          </a>
+        </li>
+        <li
+          className="active"
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Javascript
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Mobile
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Icon + Text 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo "
+      >
+        logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            Link with Left Icon
+            <i
+              className="material-icons left"
+            >
+              cloud
+            </i>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            Link with Right Icon
+            <i
+              className="material-icons right"
+            >
+              search
+            </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Icon Links 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo "
+      >
+        logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className="waves-effect waves-light btn"
+            href="!#"
+          >
+            <i
+              className="material-icons "
+            >
+              cloud
+            </i>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            <i
+              className="material-icons "
+            >
+              search
+            </i>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            <i
+              className="material-icons "
+            >
+              refresh
+            </i>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            <i
+              className="material-icons "
+            >
+              more_vert
+            </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Left Aligned Links 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo right"
+      >
+        Logo
+      </a>
+      <ul
+        className="left hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Sass
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Components
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Javascript
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+            onClick={[Function]}
+          >
+            Mobile
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Nav Mobile Collapse Button 1`] = `
+Array [
+  <div
+    className=""
+  >
+    <nav
+      className=""
+    >
+      <div
+        className="nav-wrapper"
+      >
+        <a
+          className="brand-logo "
+        >
+          Logo
+        </a>
+        <a
+          className="sidenav-trigger"
+          data-target="mobile-sidebar"
+          href="#"
+        >
+          <i
+            className="material-icons"
+          >
+            menu
+          </i>
+        </a>
+        <ul
+          className="right hide-on-med-and-down"
+        >
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Sass
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Components
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Javascript
+            </a>
+          </li>
+          <li
+            className=""
+          >
+            <a
+              className=""
+              href="!#"
+              onClick={[Function]}
+            >
+              Mobile
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>,
+  <ul
+    className="sidenav"
+    id="mobile-sidebar"
+  >
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Sass
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Components
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Javascript
+      </a>
+    </li>
+    <li
+      className=""
+    >
+      <a
+        className=""
+        href="!#"
+        onClick={[Function]}
+      >
+        Mobile
+      </a>
+    </li>
+  </ul>,
+]
+`;
+
+exports[`Storyshots Components/Nav Search 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <form>
+        <div
+          className="input-field"
+        >
+          <input
+            id="search"
+            onChange={[Function]}
+            required={true}
+            type="search"
+            value={null}
+          />
+          <label
+            className="label-icon"
+            htmlFor="search"
+          >
+            <i
+              className="material-icons"
+            >
+              search
+            </i>
+          </label>
+          <i
+            className="material-icons"
+          >
+            close
+          </i>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
+`;

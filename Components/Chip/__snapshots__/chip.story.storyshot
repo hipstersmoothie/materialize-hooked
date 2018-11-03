@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Chip Basic 1`] = `
+<div>
+  <div
+    className="chip"
+    onClick={[Function]}
+  >
+    <img
+      alt="Contact Person"
+      src="https://materializecss.com/images/yuna.jpg"
+    />
+    Chip Component
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Chip Close Chip 1`] = `
+<div>
+  <div
+    className="chip"
+    onClick={[Function]}
+  >
+    Chip Component
+    <i
+      className="close material-icons"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Chip Input 1`] = `
+<div>
+  <div
+    className="chips"
+  >
+    <input
+      aria-label="Chip Input"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Chip Input with autocomplete 1`] = `
+<div>
+  <div
+    className="chips"
+  >
+    <input
+      aria-label="Chip Input"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Chip Input with data 1`] = `
+<div>
+  <div
+    className="chips"
+  >
+    <input
+      aria-label="Chip Input"
+    />
+  </div>
+</div>
+`;

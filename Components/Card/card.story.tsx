@@ -20,7 +20,7 @@ storiesOf('Components/Card', module)
       'Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Card
       title={text('title', 'Card Title')}
       isSmall={boolean('isSmall', false)}
@@ -42,7 +42,7 @@ storiesOf('Components/Card', module)
   .addParameters({
     info: wInfo('Here is the standard card with an image thumbnail.')
   })
-  .addWithJSX('Image Card', () => (
+  .add('Image Card', () => (
     <div className="row">
       <div className="col s9">
         <Card
@@ -73,7 +73,7 @@ storiesOf('Components/Card', module)
   .addParameters({
     info: wInfo('Here is an image card with a Floating Action Button.')
   })
-  .addWithJSX('FABs in Cards', () => {
+  .add('FABs in Cards', () => {
     const hasLargeFab = boolean('hasLargeFab', false);
 
     return (
@@ -114,7 +114,7 @@ storiesOf('Components/Card', module)
   .addParameters({
     info: wInfo('Here is the standard card with a horizontal image.')
   })
-  .addWithJSX('Horizontal Card', () => (
+  .add('Horizontal Card', () => (
     <Card
       isHorizontal
       image="https://lorempixel.com/100/190/nature/6"
@@ -135,7 +135,7 @@ storiesOf('Components/Card', module)
       'Here you can add a card that reveals more information once clicked. Just add the `card-reveal` div with a `span.card-title` inside to make this work. Add the class `activator` to an element inside the card to allow it to open the card reveal.'
     )
   })
-  .addWithJSX('Card Reveal', () => (
+  .add('Card Reveal', () => (
     <div className="row">
       <div className="col s6 offset-s3">
         <Card
@@ -175,7 +175,7 @@ storiesOf('Components/Card', module)
   .addParameters({
     info: wInfo('You can add tabs to your cards.')
   })
-  .addWithJSX('Tabs in Cards', () => (
+  .add('Tabs in Cards', () => (
     <div className="row">
       <div className="col s6 offset-s3">
         <Card
@@ -208,7 +208,7 @@ storiesOf('Components/Card', module)
       'If you want to have uniformly sized cards, you can use our premade size classes. Just add the size class in addition to the card class.'
     )
   })
-  .addWithJSX('Card Sizes', () => (
+  .add('Card Sizes', () => (
     <div className="row">
       <div className="col s6 offset-s3">
         <Card
@@ -236,7 +236,7 @@ storiesOf('Components/Card', module)
       'For a simpler card with less markup, try using a card panel which just has padding and a shadow effect.'
     )
   })
-  .addWithJSX('Card Panel', () => (
+  .add('Card Panel', () => (
     <div className="row">
       <div className="col s6 offset-s3">
         <CardPanel className={text('className', 'teal white-text')}>

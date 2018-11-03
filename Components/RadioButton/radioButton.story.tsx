@@ -3,7 +3,7 @@ import { StateDecorator, Store } from '@sambego/storybook-state';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { action, createDummyPage } from '../utils';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import Radio from '.';
 
@@ -21,6 +21,11 @@ storiesOf('Form/Radio', module)
   .addDecorator(StateDecorator(store))
   .addDecorator(withKnobs)
   .addDecorator(createDummyPage())
+  .addParameters({
+    info: wInfo(
+      'Radio Buttons are used when the user must make only one selection out of a group of items.'
+    )
+  })
   .add('Basic', () => {
     boolean('isChecked', store.get('isChecked'));
     store.subscribe((state: { isChecked: boolean }) =>

@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Javascript/Dropdown Basic 1`] = `
+<div>
+  <div>
+    <a
+      className="dropdown-trigger btn "
+      data-target="dropdown1"
+      href="#"
+    >
+      Drop Me!
+    </a>
+    <ul
+      className="dropdown-content"
+      id="dropdown1"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          one
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          two
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Javascript/Dropdown Divider 1`] = `
+<div>
+  <div>
+    <a
+      className="dropdown-trigger btn "
+      data-target="dropdown1"
+      href="#"
+    >
+      Drop Me!
+    </a>
+    <ul
+      className="dropdown-content"
+      id="dropdown1"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          one
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          two
+        </a>
+      </li>
+      <li
+        className="divider"
+        tabIndex={-1}
+      />
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          three
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          <i
+            className="material-icons"
+          >
+            view_module
+          </i>
+          four
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -11,7 +11,7 @@ storiesOf('Components/Button', module)
   .addParameters({
     info: wInfo()
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Button
       className={text('className', 'scale-transition scale-in')}
       text={text('text', null)}
@@ -44,7 +44,7 @@ storiesOf('Components/Button', module)
     )
   })
   .addDecorator(createDummyPage())
-  .addWithJSX('Raised', () => (
+  .add('Raised', () => (
     <>
       <Button text="button" />
       <Button isIconLeft text="button" icon="cloud" />
@@ -56,7 +56,7 @@ storiesOf('Components/Button', module)
       'The floating circular action button is meant for very important functions.'
     )
   })
-  .addWithJSX('Floating', () => (
+  .add('Floating', () => (
     <Button isFloating withWaves isLarge className="red" icon="add" />
   ))
   .addParameters({
@@ -64,7 +64,7 @@ storiesOf('Components/Button', module)
       'Flat buttons are usually used within elements that already have depth like cards or modals.'
     )
   })
-  .addWithJSX('Flat', () => (
+  .add('Flat', () => (
     <Button isFlat withWaves isLarge className="waves-teal" text="button" />
   ))
   .addParameters({
@@ -72,13 +72,13 @@ storiesOf('Components/Button', module)
       'When you use a button to submit a form, instead of using a input tag, use a button tag with a type submit'
     )
   })
-  .addWithJSX('Submit Button', () => <Button isSubmit text="button" />)
+  .add('Submit Button', () => <Button isSubmit text="button" />)
   .addParameters({
     info: wInfo(
       'This button has a larger height for buttons that need more attention.'
     )
   })
-  .addWithJSX('Large', () => (
+  .add('Large', () => (
     <>
       <Button isLarge text="button" />
       <Button isLarge isIconLeft text="button" icon="cloud" />
@@ -90,7 +90,7 @@ storiesOf('Components/Button', module)
       'When mouse and keyboard are the primary input methods, this smaller button is useful for denser UI layouts.'
     )
   })
-  .addWithJSX('Small', () => (
+  .add('Small', () => (
     <>
       <Button isSmall text="button" />
       <Button isSmall isIconLeft text="button" icon="cloud" />
@@ -100,7 +100,7 @@ storiesOf('Components/Button', module)
   .addParameters({
     info: wInfo('This style can be applied to all button types.')
   })
-  .addWithJSX('Disabled', () => (
+  .add('Disabled', () => (
     <>
       <Button isDisabled isLarge text="button" />
       <Button isDisabled text="button" />

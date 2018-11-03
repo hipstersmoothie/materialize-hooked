@@ -25,6 +25,10 @@ export const Wrapper = ({ children, style }: any) => (
 );
 
 export const createDummyPage = (style?: object): StoryDecorator => storyFn => {
+  if (process.env.NODE_ENV === 'test') {
+    return <div>{storyFn()}</div>;
+  }
+
   return <Wrapper style={style}>{storyFn()}</Wrapper>;
 };
 
@@ -89,6 +93,10 @@ export const wInfo = (
   text?: string,
   propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[]
 ) => {
+  if (process.env.NODE_ENV === 'test') {
+    return { disable: true };
+  }
+
   const out: IInfoParams = {
     inline: true,
     styles: stylesheetBase,

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { number, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number, text } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import Button from '../Button';
-import { createDummyPage, wInfo } from '../utils-ts';
 import Toast from '.';
+import Button from '../Button';
+import { createDummyPage, wInfo } from '../utils';
 
 storiesOf('Javascript/Toast', module)
   .addDecorator(createDummyPage())

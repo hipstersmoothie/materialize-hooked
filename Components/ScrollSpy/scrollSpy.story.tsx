@@ -1,15 +1,17 @@
+import { number, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, number, text } from '@storybook/addon-knobs';
 
 import ScrollSpy from '.';
-import { wInfo } from '../utils-ts';
+import { wInfo } from '../utils';
 
 const styles = {
   margin: 'auto',
   maxWidth: 800
 };
-const DummyPage = storyFn => <div style={styles}>{storyFn()}</div>;
+const DummyPage: StoryDecorator = storyFn => (
+  <div style={styles}>{storyFn()}</div>
+);
 
 storiesOf('Javascript/ScrollSpy', module)
   .addDecorator(DummyPage)

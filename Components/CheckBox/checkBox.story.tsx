@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 // @ts-ignore
 import { StateDecorator, Store } from '@sambego/storybook-state';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import CheckBox from '.';
 

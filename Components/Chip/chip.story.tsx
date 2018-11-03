@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import Chip from '.';
 

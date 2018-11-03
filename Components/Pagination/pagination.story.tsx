@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number } from '@storybook/addon-knobs';
-import { action, createDummyPage, wInfo } from '../utils-ts';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import Pagination from '.';
 

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { createDummyPage, wInfo } from '../utils';
 
-import Icon from '../Icon';
 import Collapsible, { CollapsibleItem } from '.';
+import Icon from '../Icon';
 
 storiesOf('Javascript/Collapsible', module)
   .addDecorator(

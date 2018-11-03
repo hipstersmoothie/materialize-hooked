@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number, boolean } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import { createDummyPage, wInfo } from '../utils-ts';
 import SliderExample, { SliderImage, SliderProps } from '.';
+import { createDummyPage, wInfo } from '../utils';
 
 const Slider: React.SFC<SliderProps> = props => <SliderExample {...props} />;
 

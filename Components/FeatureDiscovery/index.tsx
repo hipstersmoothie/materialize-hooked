@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { TapTarget, TapTargetOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useState, forwardRef } = React;
 
@@ -33,10 +33,10 @@ export const FeatureDiscovery: React.SFC<FeatureDiscoveryProps> = (
   ref
 ) => {
   // For storybook
-  ref = !ref.hasOwnProperty('current') ? React.createRef() : ref;
+  const currentRef = !ref.hasOwnProperty('current') ? React.createRef() : ref;
 
   return (
-    <div ref={ref} className="tap-target" data-target={target}>
+    <div ref={currentRef} className="tap-target" data-target={target}>
       {children}
     </div>
   );

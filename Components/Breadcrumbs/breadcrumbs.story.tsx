@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
 import { withKnobs } from '@storybook/addon-knobs';
+import { storiesOf, StoryDecorator } from '@storybook/react';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
 // eslint-disable-next-line unicorn/import-index
 import Breadcrumbs, { Breadcrumb } from '.';

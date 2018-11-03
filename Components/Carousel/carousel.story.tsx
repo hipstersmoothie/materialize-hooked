@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { array, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, array } from '@storybook/addon-knobs';
-import { createDummyPage, wInfo } from '../utils-ts';
+import * as React from 'react';
+import { createDummyPage, wInfo } from '../utils';
 
 import { CarouselWrapper as Carousel } from '.';
 
@@ -23,7 +23,7 @@ storiesOf('Javascript/Carousel', module)
     <Carousel
       images={array('images', [
         'https://vignette.wikia.nocookie.net/animaljam/images/7/78/Lil_bub_the_cat-250x250.jpg/revision/latest?cb=20140510201421',
-        'http://webfixfast.com/wp-content/uploads/2012/11/cat-1-250x250.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9jWojHYGGqM0ZTIziTBMyv29Ql5Wv-6DSQvxz5m_rZ4CYq5G',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9jWojHYGGqM0ZTIziTBMyv29Ql5Wv-6DSQvxz5m_rZ4CYq5G',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJhL-vJ32eGdFal-LDu5wDRXBteI7vLhQ7PF31cu2fFAzE6uQZ',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx9nLK29Z9NJm43wf3hCcLpew8IOhG2R0xWFVJjC0Dy25Ym6_XaA'

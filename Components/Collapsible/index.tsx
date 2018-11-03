@@ -1,9 +1,9 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import {
   Collapsible as CollapsibleAnimation,
   CollapsibleOptions
 } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -58,7 +58,6 @@ export const Collapsible: React.SFC<CollapsibleProps> = ({
   ...options
 }) => {
   const collapsible = useRef<HTMLUListElement>();
-  console.log(options);
   useCollapsible(collapsible, options as CollapsibleOptions);
   const collapsibleClass = makeClass(className, {
     collapsible: true,

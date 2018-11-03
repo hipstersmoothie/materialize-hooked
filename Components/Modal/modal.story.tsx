@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
+import * as React from 'react';
 
+import { wInfo } from '../utils';
 import { ModalWrapper as Modal } from './index';
-import { wInfo } from '../utils-ts';
 
 const styles = {
   width: '100%',

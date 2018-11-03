@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
-import Select, { SelectItem, SelectGroup } from '.';
+import Select, { SelectGroup, SelectItem } from '.';
 
 storiesOf('Form/Select', module)
   .addDecorator(createDummyPage())

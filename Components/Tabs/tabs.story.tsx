@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import Tabs, { Tab } from '.';
 
@@ -128,7 +128,7 @@ storiesOf('Javascript/Tabs', module)
         text="Test 3"
       />
       <Tab link="#test4" text="Test 4" />
-      <Tab target="_blank" link="http://google.com" text="Google" />
+      <Tab target="_blank" link="https://google.com" text="Google" />
     </Tabs>
   ))
   .addParameters({

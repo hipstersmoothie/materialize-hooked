@@ -1,11 +1,13 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
-import Tabs, { Tab } from '../Tabs';
 import Button from '../Button';
+import Tabs, { Tab } from '../Tabs';
 import Nav, { NavItem, NavSearch } from './index';
+
+const noop = () => undefined;
 
 storiesOf('Components/Nav', module)
   .addDecorator(withKnobs)
@@ -16,7 +18,7 @@ storiesOf('Components/Nav', module)
   })
   .addWithJSX('Basic', () => (
     <Nav
-      useSideNav={boolean('useSideNav', true)}
+      hasSideNav={boolean('hasSideNav', true)}
       logo={text('logo', 'Logo')}
       isLeft={boolean('isLeft', false)}
       isFixed={boolean('isFixed', false)}
@@ -105,7 +107,7 @@ storiesOf('Components/Nav', module)
   })
   .addWithJSX('Extended Navbar with Tabs', () => (
     <Nav
-      useSideNav={boolean('useSideNav', true)}
+      hasSideNav={boolean('hasSideNav', true)}
       logo={text('logo', 'Logo')}
       isLeft={boolean('isLeft', false)}
       isFixed={boolean('isFixed', false)}
@@ -210,14 +212,14 @@ storiesOf('Components/Nav', module)
   })
   .addWithJSX('Search', () => (
     <Nav isSearch logo="logo">
-      <NavSearch onChange={() => undefined} value={text('value', null)} />
+      <NavSearch onChange={noop} value={text('value', null)} />
     </Nav>
   ))
   .addParameters({
     info: wInfo('You can add a search form in the navbar.')
   })
   .addWithJSX('Mobile Collapse Button', () => (
-    <Nav logo="Logo" useSideNav>
+    <Nav logo="Logo" hasSideNav>
       <NavItem href="!#" text="Sass" onClick={action('Sass onClick')} />
       <NavItem
         href="!#"

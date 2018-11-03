@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 type ClickCallback = (event: React.MouseEvent<HTMLElement>) => void;
 

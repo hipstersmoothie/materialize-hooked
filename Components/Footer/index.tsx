@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 export interface FooterCopyrightProps {
   /** Text of the copyright */
@@ -63,7 +63,7 @@ export interface FooterProps extends FooterCopyrightProps {
   copyright?: React.ReactNode;
   /** Text of the copyright. Not used when copyright component provided */
   copyrightText?: string;
-  /** Text of the copyright. Not used when copyright component provided*/
+  /** Text of the copyright. Not used when copyright component provided */
   year?: string;
   /** Content of the footer */
   children: React.ReactNode;

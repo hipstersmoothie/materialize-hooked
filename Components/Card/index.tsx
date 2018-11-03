@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 export interface CardPanelProps {
   /** Content of the card */
@@ -43,7 +43,8 @@ export interface CardProps {
   className?: string;
   /** Floating Action Button Component to use with the card */
   fab?: React.ReactNode;
-  /**The FAB button for the card is large.
+  /**
+   * The FAB button for the card is large.
    * @default false
    */
   hasLargeFab?: boolean;
@@ -124,8 +125,8 @@ const Card: React.SFC<CardProps> = ({
     activator: reveal
   });
   const Wrapper = isHorizontal
-    ? ({ children }: { children: React.ReactNode }) => (
-        <div className="card-stacked">{children}</div>
+    ? (props: { children: React.ReactNode }) => (
+        <div className="card-stacked">{props.children}</div>
       )
     : React.Fragment;
 

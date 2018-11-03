@@ -1,5 +1,6 @@
-import * as React from 'react';
+import makeClass from 'classnames';
 import { Datepicker, DatepickerOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -10,7 +11,6 @@ export const useDatePicker = (
   options: DatepickerOptions
 ) => {
   useEffect(() => {
-    console.log(ref);
     if (ref.current) {
       Datepicker.init(ref.current, options);
     }
@@ -35,10 +35,11 @@ export const DatePicker: React.SFC<DatePickerProps> = ({
   ...options
 }) => {
   const datePicker = useRef<HTMLInputElement>();
+  const dateClass = makeClass(className, 'datepicker');
 
   useDatePicker(datePicker, {
     ...options,
-    onClose: function() {
+    onClose() {
       if (onChange && datePicker.current) {
         onChange({
           target: datePicker.current,
@@ -66,7 +67,7 @@ export const DatePicker: React.SFC<DatePickerProps> = ({
       isDisabled={isDisabled}
       isInline={isInline}
       type="text"
-      className="datepicker"
+      className={dateClass}
     />
   );
 };

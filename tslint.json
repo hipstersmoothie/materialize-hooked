@@ -15,22 +15,13 @@
       "allow-pascal-case"
     ],
     "interface-name": false,
-
-    "no-bitwise": false,
-    "early-exit": false,
-    "no-unused": [true, "ignore-parameters"],
-    "no-dynamic-delete": false,
-    "comment-format": false,
-    "no-require-imports": false,
-    "object-curly-spacing": false,
+    "no-single-line-block-comment": false,
+    "no-redundant-jsdoc": false,
+    "file-name-casing": [true, "camel-case"],
+    "react-this-binding-issue": [true, { "allow-anonymous-listeners": true }],
+    "object-curly-spacing": [true, "always"],
     "object-literal-sort-keys": false,
-    "max-classes-per-file": [true, 5, "exclude-class-expressions"],
-    "underscore-consistent-invocation": [
-      true,
-      {
-        "style": "static"
-      }
-    ],
+    "comment-format": false,
     "no-non-null-assertion": false
   },
   "rulesDirectory": []

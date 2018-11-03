@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 export interface BreadcrumbProps {
-  /** Will be called when the breadcrumb is clicked */
-  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /** Text value of the breadcrumb */
   value: string;
+  /** Will be called when the breadcrumb is clicked */
+  onClick(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 export const Breadcrumb: React.SFC<BreadcrumbProps> = ({ value, onClick }) => (
   <a className="breadcrumb" onClick={onClick}>

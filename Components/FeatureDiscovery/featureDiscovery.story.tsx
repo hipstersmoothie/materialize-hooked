@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import * as React from 'react';
 
-import Button from '../Button';
-import Fab from '../FloatingActionButton';
 import FeatureDiscoveryDefault, {
   FeatureDiscovery,
   useFeatureDiscovery
 } from '.';
-import { createDummyPage, wInfo } from '../utils-ts';
+import Button from '../Button';
+import Fab from '../FloatingActionButton';
+import { createDummyPage, wInfo } from '../utils';
 
 const { useRef } = React;
 
@@ -44,7 +44,7 @@ storiesOf('Javascript/FeatureDiscovery', module)
   .addParameters({
     info: wInfo(
       `
-      Provide value and encourage return visits by introducing users to new features and functionality at contextually relevant moments.  
+      Provide value and encourage return visits by introducing users to new features and functionality at contextually relevant moments.
 
       Feature discovery prompts have more impact when they are presented to the right users at contextually relevant moments. When presented to the wrong user at the wrong time, they can be intrusive and annoying.
       `,

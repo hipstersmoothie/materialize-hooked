@@ -1,10 +1,10 @@
-import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
+import * as React from 'react';
 
 // eslint-disable-next-line unicorn/import-index
-import Body from '../Body';
 import Pushpin from '.';
-import { wInfo } from '../utils-ts';
+import Body from '../Body';
+import { wInfo } from '../utils';
 
 const styles = {
   width: '100%'

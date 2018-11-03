@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import { createDummyPage, wInfo } from '../utils-ts';
-import { LinearProgress, CircularProgress } from './index';
+import { createDummyPage, wInfo } from '../utils';
+import { CircularProgress, LinearProgress } from './index';
 
 storiesOf('Components/Preloader', module)
   .addDecorator(createDummyPage())

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { number, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import Chips from '.';
 

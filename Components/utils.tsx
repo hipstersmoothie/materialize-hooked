@@ -1,10 +1,10 @@
-import * as React from 'react';
+// @ts-ignore
+import { State } from '@sambego/storybook-state';
 import { action as _action } from '@storybook/addon-actions';
-import { StoryDecorator } from '@storybook/react';
 // @ts-ignore
 import { baseFonts } from '@storybook/components';
-//@ts-ignore
-import { State } from '@sambego/storybook-state';
+import { StoryDecorator } from '@storybook/react';
+import * as React from 'react';
 
 export const action = (name: string) => {
   const tempAction = _action(name);
@@ -87,9 +87,7 @@ interface IInfoParams {
 
 export const wInfo = (
   text?: string,
-  propTablesExclude?: (
-    | React.StatelessComponent<any>
-    | React.ComponentType<{}>)[]
+  propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[]
 ) => {
   const out: IInfoParams = {
     inline: true,

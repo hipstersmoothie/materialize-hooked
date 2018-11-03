@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Pushpin, PushpinOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -10,8 +10,6 @@ export interface CheckBoxProps {
   children?: React.ReactNode;
   /** The value/label of the checkbox */
   value?: string;
-  /** Called when the value changes */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /**
    * Render a checked checkBox button
    * @default false
@@ -37,6 +35,8 @@ export interface CheckBoxProps {
    * @default
    */
   className?: string;
+  /** Called when the value changes */
+  onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 const CheckBox: React.SFC<CheckBoxProps> = ({

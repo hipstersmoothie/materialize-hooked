@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import { createDummyPage, wInfo } from '../utils-ts';
-import Tabs, { Tab } from '../Tabs';
 import Card, { CardPanel } from '.';
 import Button from '../Button';
+import Tabs, { Tab } from '../Tabs';
+import { createDummyPage, wInfo } from '../utils';
 
 storiesOf('Components/Card', module)
   .addDecorator(
@@ -75,7 +75,7 @@ storiesOf('Components/Card', module)
   })
   .addWithJSX('FABs in Cards', () => {
     const hasLargeFab = boolean('hasLargeFab', false);
-    console.log(hasLargeFab);
+
     return (
       <div className="row">
         <div className="col s6">

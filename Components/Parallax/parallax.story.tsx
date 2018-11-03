@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { storiesOf, StoryDecorator } from '@storybook/react';
+import * as React from 'react';
 
+import { wInfo } from '../utils';
 import Parallax from './index';
-import { wInfo } from '../utils-ts';
 
 const styles = {};
 const DummyPage: StoryDecorator = storyFn => (

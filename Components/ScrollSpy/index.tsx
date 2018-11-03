@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { ScrollSpy, ScrollSpyOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect } = React;
 

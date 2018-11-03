@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 export interface LinearProgressProps {
   /** How far the progress bar has progressed */

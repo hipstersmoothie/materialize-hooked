@@ -1,18 +1,18 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 import { getVisiblePages } from 'bulma-pagination-react';
 
 export interface ArrowProps {
   /** Direction of the arrow */
   direction: 'left' | 'right';
-  /** Called when arrow is clicked */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /**
    * Disable the arrow button
    * @default false
    */
   isDisabled?: boolean;
+  /** Called when arrow is clicked */
+  onClick?(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 const Arrow: React.SFC<ArrowProps> = ({ direction, isDisabled, onClick }) => (
@@ -37,17 +37,17 @@ const Ellipses: React.SFC = () => (
 );
 
 export interface PageProps {
-  /** Called when the page number is clicked */
-  onClick: (newPage: number) => void;
   /** Number for the page to display */
-  number: number;
+  num: number;
   /** Current page of the pagination component */
   currentPage: number;
+  /** Called when the page number is clicked */
+  onClick(newPage: number): void;
 }
 
-const Page: React.SFC<PageProps> = ({ number, currentPage, onClick }) => (
-  <li className={`waves-effect ${number === currentPage && 'active'}`}>
-    <a onClick={() => onClick(number)}>{number}</a>
+const Page: React.SFC<PageProps> = ({ num, currentPage, onClick }) => (
+  <li className={`waves-effect ${num === currentPage && 'active'}`}>
+    <a onClick={() => onClick(num)}>{num}</a>
   </li>
 );
 
@@ -56,8 +56,6 @@ Page.defaultProps = {
 };
 
 export interface PaginationProps {
-  /** Called when a page number is clicked */
-  onChange?: (newPage: number) => void;
   /**
    * How many pages to show around the current page.
    * @default false
@@ -72,6 +70,8 @@ export interface PaginationProps {
    * @default
    */
   className?: string;
+  /** Called when a page number is clicked */
+  onChange?(newPage: number): void;
 }
 
 const Pagination: React.SFC<PaginationProps> = ({
@@ -91,7 +91,7 @@ const Pagination: React.SFC<PaginationProps> = ({
     pagesComponents.push(
       <Page
         key="page-1"
-        number={1}
+        num={1}
         currentPage={currentPage}
         onClick={onChange!}
       />
@@ -106,7 +106,7 @@ const Pagination: React.SFC<PaginationProps> = ({
     pagesComponents.push(
       <Page
         key={`page-${page}`}
-        number={page}
+        num={page}
         currentPage={currentPage}
         onClick={onChange!}
       />
@@ -124,7 +124,7 @@ const Pagination: React.SFC<PaginationProps> = ({
     pagesComponents.push(
       <Page
         key={`page-${pages}`}
-        number={pages}
+        num={pages}
         currentPage={currentPage}
         onClick={onChange!}
       />

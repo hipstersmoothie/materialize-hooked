@@ -2,7 +2,7 @@ import { addDecorator, setAddon, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 import { withInfo } from '@storybook/addon-info';
 import { withBackgrounds } from '@storybook/addon-backgrounds';
-import { Wrapper } from '../Components/utils-ts';
+import { Wrapper } from '../Components/utils';
 import { checkA11y } from '@storybook/addon-a11y';
 import JSXAddon from 'storybook-addon-jsx';
 

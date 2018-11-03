@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import { createDummyPage, wInfo } from '../utils-ts';
 import Icon from '.';
+import { createDummyPage, wInfo } from '../utils';
 
 storiesOf('Components/Icon', module)
   .addDecorator(createDummyPage())
@@ -17,7 +17,7 @@ storiesOf('Components/Icon', module)
           To be able to use these icons, you must include this line in the <head>portion of your HTML code
 
           ~~~html
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           ~~~
         `)
   })

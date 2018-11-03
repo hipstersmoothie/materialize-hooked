@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { number, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number, text, select } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import { createDummyPage, wInfo } from '../utils-ts';
 import Tooltip from '.';
+import { createDummyPage, wInfo } from '../utils';
 
 const positions = {
   top: 'top',

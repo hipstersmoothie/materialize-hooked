@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
-import Button from '../Button';
 import Fab from '.';
+import Button from '../Button';
 
 storiesOf('Components/FloatingActionButton', module)
   .addDecorator(withKnobs)

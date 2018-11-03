@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Chips, ChipsOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -18,8 +18,6 @@ export const useChips = (
 export interface ChipsProps extends Partial<ChipsOptions> {
   /** ClassName to attach to the input element */
   inputClassName?: string;
-  /** Called when the chip input value changes */
-  onChange?: (data: string[]) => void;
   /**
    * A className to attach to the root component
    * @default
@@ -27,6 +25,8 @@ export interface ChipsProps extends Partial<ChipsOptions> {
   className?: string;
   /** Aria label for the chip input */
   ariaLabel: string;
+  /** Called when the chip input value changes */
+  onChange?(data: string[]): void;
 }
 
 export const ChipsComponent: React.SFC<ChipsProps> = ({
@@ -43,7 +43,7 @@ export const ChipsComponent: React.SFC<ChipsProps> = ({
 
   useChips(chipInput, {
     ...options,
-    onChipDelete: function(...args) {
+    onChipDelete(...args) {
       if (onChange) {
         onChange(args[0][0].M_Chips.chipsData);
       }
@@ -52,7 +52,7 @@ export const ChipsComponent: React.SFC<ChipsProps> = ({
         options.onChipDelete.call(this, ...args);
       }
     },
-    onChipAdd: function(...args) {
+    onChipAdd(...args) {
       if (onChange) {
         onChange(args[0][0].M_Chips.chipsData);
       }

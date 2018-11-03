@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Sidenav, SidenavOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -55,8 +55,6 @@ export interface NavItemProps {
    * @default false
    */
   isButton?: boolean;
-  /** Called when the nav item is clicked */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   href: string;
   icon?: string;
   text?: string;
@@ -65,6 +63,8 @@ export interface NavItemProps {
   className?: string;
   anchorClassName?: string;
   children?: React.ReactNode;
+  /** Called when the nav item is clicked */
+  onClick?(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 export const NavItem: React.SFC<NavItemProps> = ({
@@ -122,7 +122,7 @@ export interface NavProps {
    * Wether the nav should use a mobile sidebar
    * @default false
    */
-  useSideNav?: boolean;
+  hasSideNav?: boolean;
   /** NavItem components in nav bar */
   children: React.ReactNode;
   /** Extra content to display in the navBar */
@@ -148,14 +148,14 @@ export interface NavProps {
    */
   isSearch?: boolean;
   /** Called when the logo is clicked */
-  onClickLogo?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClickLogo?(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 const Nav: React.SFC<NavProps> = ({
   logo,
   children,
   target,
-  useSideNav,
+  hasSideNav,
   content,
   isLeft,
   isFixed,
@@ -163,7 +163,7 @@ const Nav: React.SFC<NavProps> = ({
   isSearch,
   onClickLogo
 }) => {
-  const finalTarget = useSideNav ? 'mobile-sidebar' : target;
+  const finalTarget = hasSideNav ? 'mobile-sidebar' : target;
   const alignment = isLeft ? 'left' : 'right';
   const logoAlignment = hasCenteredLogo ? 'center' : isLeft ? 'right' : '';
 
@@ -193,7 +193,7 @@ const Nav: React.SFC<NavProps> = ({
 };
 
 Nav.defaultProps = {
-  useSideNav: false,
+  hasSideNav: false,
   target: undefined,
   content: undefined,
   onClickLogo: undefined,
@@ -226,13 +226,13 @@ export const SideNav: React.SFC<SideNavProps> = ({
 };
 
 const NavBar: React.SFC<NavProps> = props => {
-  const { children, target, useSideNav } = props;
-  const finalTarget = useSideNav ? 'mobile-sidebar' : target;
+  const { children, target, hasSideNav } = props;
+  const finalTarget = hasSideNav ? 'mobile-sidebar' : target;
 
   return (
     <>
       <Nav {...props} />
-      {useSideNav
+      {hasSideNav
         ? finalTarget && <SideNav target={finalTarget}>{children}</SideNav>
         : null}
     </>

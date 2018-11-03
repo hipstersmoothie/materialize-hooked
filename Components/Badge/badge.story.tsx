@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
-import { createDummyPage, Wrapper, wInfo } from '../utils-ts';
+import * as React from 'react';
+import { createDummyPage, wInfo, Wrapper } from '../utils';
 
-import NavBar, { NavItem } from '../NavBar';
+import Badge from '.';
 import Collapsible, { CollapsibleItem } from '../Collapsible';
-import Icon from '../Icon';
 import Collection, { CollectionItem } from '../Collection';
 import Dropdown, { DropdownItem } from '../Dropdown';
-import Badge from '.';
+import Icon from '../Icon';
+import NavBar, { NavItem } from '../NavBar';
 
 storiesOf('Components/Badge', module)
   .addParameters({

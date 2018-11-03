@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
 
-import { action, createDummyPage, wInfo } from '../utils-ts';
 import Button from '.';
+import { action, createDummyPage, wInfo } from '../utils';
 
 storiesOf('Components/Button', module)
   .addDecorator(createDummyPage())

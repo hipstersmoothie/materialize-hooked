@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Carousel, CarouselOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -25,7 +25,7 @@ export interface CarouselProps extends Partial<CarouselOptions> {
   /** Center the carousel content */
   isCentered?: boolean;
   /** Images for the carousel to display */
-  images?: (string | [string, string])[];
+  images?: string[];
 }
 
 export const CarouselComponent: React.SFC<CarouselProps> = ({
@@ -47,19 +47,10 @@ export const CarouselComponent: React.SFC<CarouselProps> = ({
     center: isCentered
   });
 
-  let data: string[][] = [];
-
-  if (images) {
-    data = images.map(
-      (image, index) =>
-        Array.isArray(image) ? image : [image, `Carousel Image ${index}`]
-    );
-  }
-
   return (
     <div ref={carousel} className={carouselClass}>
-      {data &&
-        data.map(([image, alt]) => (
+      {images &&
+        images.map(image => (
           <a key={image} className="carousel-item">
             <img src={image} alt="" />
           </a>

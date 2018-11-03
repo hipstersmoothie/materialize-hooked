@@ -44,7 +44,9 @@ storiesOf('Javascript/Parallax', module)
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            height: '100%'
+            height: '100%',
+            margin: 0,
+            padding: 0
           }}
         >
           Fancy Header

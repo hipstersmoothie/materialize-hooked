@@ -93,7 +93,10 @@ export const wInfo = (
   text?: string,
   propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[]
 ) => {
-  if (process.env.NODE_ENV === 'test') {
+  if (
+    process.env.NODE_ENV === 'test' ||
+    process.env.STORYBOOK_MODE === 'TEST'
+  ) {
     return { disable: true };
   }
 

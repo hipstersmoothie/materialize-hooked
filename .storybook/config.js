@@ -84,6 +84,15 @@ const Form = [
 const stories = require.context('..', true, /.story\.tsx?$/);
 
 function loadStories() {
+  require('./welcome.story.jsx');
+
+  // CSS
+  stories.keys().forEach(key => {
+    if (key.includes('CSS') || key.includes('Scale')) {
+      stories(key);
+    }
+  });
+
   // Components
   stories.keys().forEach(key => {
     if (Components.find(Component => key.includes(Component))) {

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+export const Divider: React.SFC = () => <div className="divider" />;
+
 export interface BodyProps {
   /** The content of the body */
   children: React.ReactNode;

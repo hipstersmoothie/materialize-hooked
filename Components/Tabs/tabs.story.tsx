@@ -158,8 +158,8 @@ storiesOf('Javascript/Tabs', module)
       }
       onShow={action('onShow')}
     >
-      <Tab link="#test1" text="Test 1" />
-      <Tab isActive link="#test2" text="Test 2" />
+      <Tab isActive link="#test1" text="Test 1" />
+      <Tab link="#test2" text="Test 2" />
       <Tab
         isDisabled={boolean('isDisabled', false)}
         link="#test3"

@@ -340,7 +340,7 @@ exports[`Storyshots Javascript/Tabs Swipeable Tabs 1`] = `
       className="tab"
     >
       <a
-        className=""
+        className="active"
         href="#test1"
       >
         Test 1
@@ -350,7 +350,7 @@ exports[`Storyshots Javascript/Tabs Swipeable Tabs 1`] = `
       className="tab"
     >
       <a
-        className="active"
+        className=""
         href="#test2"
       >
         Test 2

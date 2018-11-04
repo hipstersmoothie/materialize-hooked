@@ -1,5 +1,8 @@
 # materialize-hooked
 
+[![CircleCI](https://circleci.com/gh/hipstersmoothie/materialize-hooked.svg?style=svg)](https://circleci.com/gh/hipstersmoothie/materialize-hooked) [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](http://hipstersmoothie.com/materialize-hooked/) [![codecov](https://codecov.io/gh/hipstersmoothie/materialize-hooked/branch/master/graph/badge.svg)](https://codecov.io/gh/hipstersmoothie/materialize-hooked)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 This is a component library built on [materialize.css](https://materializecss.com/). It implements all of the components supported by `materialize.css` using the new [react hooks API](https://reactjs.org/docs/hooks-intro.html).
 
 ## Developing

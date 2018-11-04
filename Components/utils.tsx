@@ -91,7 +91,8 @@ interface IInfoParams {
 
 export const wInfo = (
   text?: string | boolean,
-  propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[]
+  propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[],
+  options?: { source: boolean }
 ) => {
   if (
     process.env.NODE_ENV === 'test' ||
@@ -102,6 +103,7 @@ export const wInfo = (
   }
 
   const out: IInfoParams = {
+    ...options,
     inline: true,
     styles: stylesheetBase,
     components: {

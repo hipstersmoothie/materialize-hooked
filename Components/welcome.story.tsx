@@ -1,6 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { wInfo } from '../Components/utils';
+import * as React from 'react';
+import { wInfo } from './utils';
 
 storiesOf('Welcome', module)
   .addParameters({
@@ -32,7 +32,9 @@ storiesOf('Welcome', module)
         </div>
       )
       \`\`\`
-      `
+      `,
+      undefined,
+      { source: false }
     )
   })
   .add('Introduction', () => <div />);

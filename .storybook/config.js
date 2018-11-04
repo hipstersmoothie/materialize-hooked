@@ -84,7 +84,7 @@ const Form = [
 const stories = require.context('..', true, /.story\.tsx?$/);
 
 function loadStories() {
-  require('./welcome.story.jsx');
+  require('../Components/welcome.story');
 
   // CSS
   stories.keys().forEach(key => {

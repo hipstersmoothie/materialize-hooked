@@ -93,26 +93,26 @@ function loadStories() {
     }
   });
 
-  // Components
-  stories.keys().forEach(key => {
-    if (Components.find(Component => key.includes(Component))) {
-      stories(key);
-    }
-  });
+  // // Components
+  // stories.keys().forEach(key => {
+  //   if (Components.find(Component => key.includes(Component))) {
+  //     stories(key);
+  //   }
+  // });
 
-  // Javascript
-  stories.keys().forEach(key => {
-    if (Javascript.find(Component => key.includes(Component))) {
-      stories(key);
-    }
-  });
+  // // Javascript
+  // stories.keys().forEach(key => {
+  //   if (Javascript.find(Component => key.includes(Component))) {
+  //     stories(key);
+  //   }
+  // });
 
-  // Form
-  stories.keys().forEach(key => {
-    if (Form.find(Component => key.includes(Component))) {
-      stories(key);
-    }
-  });
+  // // Form
+  // stories.keys().forEach(key => {
+  //   if (Form.find(Component => key.includes(Component))) {
+  //     stories(key);
+  //   }
+  // });
 }
 
 configure(loadStories, module);

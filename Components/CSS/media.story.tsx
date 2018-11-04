@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { createDummyPage, wInfo } from '../utils';
 
-storiesOf('CSS/Media', module)
+storiesOf('CSS/Image', module)
   .addDecorator(
     createDummyPage({
       margin: 'auto',
@@ -59,7 +59,15 @@ storiesOf('CSS/Media', module)
         </div>
       </div>
     </div>
-  ))
+  ));
+
+storiesOf('CSS/Videos', module)
+  .addDecorator(
+    createDummyPage({
+      margin: 'auto',
+      maxWidth: 800
+    })
+  )
   .addParameters({
     info: wInfo(
       'To make your embeds responsive, merely wrap them with a containing div which has the className video-container'

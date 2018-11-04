@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CSS/Media Images 1`] = `
+exports[`Storyshots CSS/Image Images 1`] = `
 <div>
   <div
     className="row"
@@ -79,7 +79,7 @@ exports[`Storyshots CSS/Media Images 1`] = `
 </div>
 `;
 
-exports[`Storyshots CSS/Media Videos - Embed 1`] = `
+exports[`Storyshots CSS/Videos Videos - Embed 1`] = `
 <div>
   <div
     className="video-container"
@@ -95,7 +95,7 @@ exports[`Storyshots CSS/Media Videos - Embed 1`] = `
 </div>
 `;
 
-exports[`Storyshots CSS/Media Videos - HTML 1`] = `
+exports[`Storyshots CSS/Videos Videos - HTML 1`] = `
 <div>
   <video
     className="video-stream"

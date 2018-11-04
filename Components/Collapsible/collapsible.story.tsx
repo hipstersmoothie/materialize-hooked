@@ -68,17 +68,6 @@ storiesOf('Javascript/Collapsible', module)
     <div>
       <Collapsible>
         <CollapsibleItem
-          isActive
-          header={
-            <>
-              <Icon icon="filter_drama" />
-              First
-            </>
-          }
-        >
-          <span>Lorem ipsum dolor sit amet.</span>
-        </CollapsibleItem>
-        <CollapsibleItem
           header={
             <>
               <Icon icon="place" />

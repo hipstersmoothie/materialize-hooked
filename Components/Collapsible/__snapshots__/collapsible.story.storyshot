@@ -79,27 +79,6 @@ exports[`Storyshots Javascript/Collapsible Collapsible Types 1`] = `
       className="collapsible expandable"
     >
       <li
-        className="active"
-      >
-        <div
-          className="collapsible-header"
-        >
-          <i
-            className="material-icons"
-          >
-            filter_drama
-          </i>
-          First
-        </div>
-        <div
-          className="collapsible-body"
-        >
-          <span>
-            Lorem ipsum dolor sit amet.
-          </span>
-        </div>
-      </li>
-      <li
         className=""
       >
         <div

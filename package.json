@@ -13,12 +13,14 @@
     "build": "tsc",
     "lint": "tslint -p . --format stylish",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook-test": "cross-env STORYBOOK_MODE=TEST start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
+    "test-all": "jest",
     "test-snapshots": "jest Components/storyshotsMarkup.test.tsx",
-    "test-all": "wait-port http://localhost:9001 && jest",
-    "test": "cross-env STORYBOOK_MODE=TEST npm-run-all --parallel storybook test-all",
-    "test:ci": "cross-env STORYBOOK_MODE=TEST CI=true npm-run-all build-storybook jest"
+    "test-local": "wait-port http://localhost:9001 && npm run test-all",
+    "test": "npm-run-all --parallel storybook-test test-local",
+    "test:ci": "cross-env STORYBOOK_MODE=TEST CI=true npm-run-all build-storybook test-all"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

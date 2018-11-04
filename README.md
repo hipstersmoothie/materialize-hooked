@@ -10,12 +10,24 @@ To start the development server ([storybook](https://github.com/storybooks/story
 yarn storybook
 ```
 
+or to start in test mode (no docs)
+
+```sh
+yarn storybook-test
+```
+
 ## Testing
 
 To run all the test suites (unit, snapshot, and visual) run the following command.
 
 ```sh
 yarn test
+```
+
+This can take a pretty long time cause it build the whole storybook to take screenshots locally. If you already have the storybook running (in test mode) you can use the following command the run the tests it.
+
+```sh
+yarn test-all
 ```
 
 To test just the snapshots.

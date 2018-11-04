@@ -13,7 +13,9 @@ const getMatchOptions = ({
   )}/_image_snapshots_`;
 
   return {
-    customSnapshotsDir
+    customSnapshotsDir,
+    failureThreshold: 0.2,
+    failureThresholdType: 'percent'
   };
 };
 
@@ -25,11 +27,20 @@ if (process.env.CI) {
   storybookUrl = `file://${path.join(__dirname, '../storybook-static')}`;
 }
 
+function customizePage(page: any) {
+  return page.setViewport({
+    width: 1000,
+    height: 600
+  });
+}
+
 /* 👇 Initialize our Image storyshots suite */
 initStoryshots({
   suite: 'Image Storyshots',
+  storyKindRegex: /^((?!.*?Javascript\/Media - Slider).)*$/,
   test: imageSnapshot({
     storybookUrl,
-    getMatchOptions
+    getMatchOptions,
+    customizePage
   })
 });

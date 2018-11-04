@@ -7,7 +7,7 @@ import { createDummyPage, wInfo } from '../utils';
 
 const Slider: React.SFC<SliderProps> = props => <SliderExample {...props} />;
 
-storiesOf('Javascript/Media', module)
+storiesOf('Javascript/Media - Slider', module)
   .addDecorator(
     createDummyPage({
       margin: 'auto',
@@ -20,7 +20,7 @@ storiesOf('Javascript/Media', module)
       'Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider.'
     )
   })
-  .add('Slider', () => (
+  .add('Basic', () => (
     <Slider
       indicators={boolean('indicators', true)}
       isFullscreen={boolean('isFullscreen', false)}

@@ -25,7 +25,7 @@ jobs:
       - run: date
       - run:
           name: Install Dependencies
-          command: npm i
+          command: yarn
       - save_cache:
           key: materialize-hooked-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
           paths:

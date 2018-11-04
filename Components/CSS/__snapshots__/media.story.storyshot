@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CSS/Image Images 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s12 m8 offset-m2 l6 offset-l3"
+    >
+      <div
+        className="card-panel grey lighten-5 z-depth-1"
+      >
+        <div
+          className="row valign-wrapper"
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            className="col s2"
+          >
+            <img
+              alt=""
+              className="responsive-img"
+              src="https://materializecss.com/images/yuna.jpg "
+            />
+          </div>
+          <div
+            className="col s10"
+          >
+            <span
+              className="black-text"
+            >
+              This is a square image. Add the "circle" class to it to make it appear circular.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col s12 m8 offset-m2 l6 offset-l3"
+    >
+      <div
+        className="card-panel grey lighten-5 z-depth-1"
+      >
+        <div
+          className="row valign-wrapper"
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          <div
+            className="col s2"
+          >
+            <img
+              alt=""
+              className="circle responsive-img"
+              src="https://materializecss.com/images/yuna.jpg "
+            />
+          </div>
+          <div
+            className="col s10"
+          >
+            <span
+              className="black-text"
+            >
+              This is a square image. Add the "circle" class to it to make it appear circular.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CSS/Videos Videos - Embed 1`] = `
+<div>
+  <div
+    className="video-container"
+  >
+    <iframe
+      frameborder={0}
+      height={480}
+      sandbox="allow-same-origin allow-scripts"
+      src="https://www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+      width={853}
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots CSS/Videos Videos - HTML 1`] = `
+<div>
+  <video
+    className="video-stream"
+    controls={true}
+    data-youtube-id="iF83wwij828"
+    poster="https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.jpg?raw=true"
+    src="https://github.com/mediaelement/mediaelement-files/raw/master/big_buck_bunny.mp4"
+    x-webkit-airplay="allow"
+  />
+</div>
+`;

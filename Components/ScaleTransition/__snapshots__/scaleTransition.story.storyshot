@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CSS/Transition Scale In 1`] = `
+<div>
+  <span
+    className="scale-transition scale-out"
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <a
+      className="waves-effect waves-light btn"
+      onClick={[Function]}
+    >
+      Hey there!
+    </a>
+  </span>
+</div>
+`;
+
+exports[`Storyshots CSS/Transition Scale Out 1`] = `
+<div>
+  <span
+    className="scale-transition"
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <a
+      className="waves-effect waves-light btn"
+      onClick={[Function]}
+    >
+      See ya!
+    </a>
+  </span>
+</div>
+`;

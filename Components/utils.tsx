@@ -90,17 +90,20 @@ interface IInfoParams {
 }
 
 export const wInfo = (
-  text?: string,
-  propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[]
+  text?: string | boolean,
+  propTablesExclude?: (React.StatelessComponent<any> | React.ComponentType)[],
+  options?: { source: boolean }
 ) => {
   if (
     process.env.NODE_ENV === 'test' ||
-    process.env.STORYBOOK_MODE === 'TEST'
+    process.env.STORYBOOK_MODE === 'TEST' ||
+    typeof text === 'boolean'
   ) {
     return { disable: true };
   }
 
   const out: IInfoParams = {
+    ...options,
     inline: true,
     styles: stylesheetBase,
     components: {

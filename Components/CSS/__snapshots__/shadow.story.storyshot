@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CSS/Shadow Headers 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col s12 m2 l2"
+    >
+      <p
+        className="z-depth-1"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      >
+        z-depth-1
+      </p>
+    </div>
+    <div
+      className="col s12 m2 l2"
+    >
+      <p
+        className="z-depth-2"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      >
+        z-depth-2
+      </p>
+    </div>
+    <div
+      className="col s12 m2 l2"
+    >
+      <p
+        className="z-depth-3"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      >
+        z-depth-3
+      </p>
+    </div>
+    <div
+      className="col s12 m2 l2"
+    >
+      <p
+        className="z-depth-4"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      >
+        z-depth-4
+      </p>
+    </div>
+    <div
+      className="col s12 m2"
+    >
+      <p
+        className="z-depth-5"
+        style={
+          Object {
+            "height": 100,
+            "width": 100,
+          }
+        }
+      >
+        z-depth-5
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -34,6 +34,32 @@ jobs:
           root: .
           paths:
             - .
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/auto-release
+      - run:
+          name: Lint
+          command: yarn lint
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/auto-release
+      - run:
+          name: Lint
+          command: yarn build
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/auto-release
+      - run:
+          name: Test
+          command: yarn test:ci
 
   release:
     <<: *defaults
@@ -57,9 +83,32 @@ workflows:
             tags:
               only: /.*/
 
-      - release:
+      - lint:
           requires:
             - install
+          filters:
+            tags:
+              only: /.*/
+
+      - test:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+
+      - build:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+
+      - release:
+          requires:
+            - build
+            - test
+            - lint
           filters:
             branches:
               only:

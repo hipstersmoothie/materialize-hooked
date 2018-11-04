@@ -1,7 +1,7 @@
 version: 2
 
 defaults: &defaults
-  working_directory: ~/auto-release-test
+  working_directory: ~/materialize-hooked
   docker:
     - image: circleci/node:latest-browsers
   environment:
@@ -16,18 +16,18 @@ jobs:
           keys:
             # Find a cache corresponding to this specific package.json checksum
             # when this file is changed, this key will fail
-            - auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-            - auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - auto-release-test-{{ .Branch }}
+            - materialize-hooked-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+            - materialize-hooked-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - materialize-hooked-{{ .Branch }}
             # Find the most recent cache used from any branch
-            - auto-release-test-master
-            - auto-release-test-
+            - materialize-hooked-master
+            - materialize-hooked-
       - run: date
       - run:
           name: Install Dependencies
           command: npm i
       - save_cache:
-          key: auto-release-test-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+          key: materialize-hooked-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -38,7 +38,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/auto-release
+          at: ~/materialize-hooked
       - run:
           name: Lint
           command: yarn lint
@@ -47,7 +47,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/auto-release
+          at: ~/materialize-hooked
       - run:
           name: Lint
           command: yarn build
@@ -56,7 +56,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/auto-release
+          at: ~/materialize-hooked
       - run:
           name: Test
           command: yarn test:ci
@@ -65,7 +65,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/auto-release-test
+          at: ~/materialize-hooked
       - run:
           name: 'Make sure we can commit to github'
           command: |

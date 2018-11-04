@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { createDummyPage, wInfo } from '../utils';
 import { CardPanel } from '../Card/index';
+import { createDummyPage, wInfo } from '../utils';
 
 storiesOf('CSS/Helpers', module)
   .addDecorator(

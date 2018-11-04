@@ -42,6 +42,38 @@ storiesOf('CSS/Helpers', module)
   ))
   .addParameters({
     info: wInfo(
+      'To truncate long lines of text in an ellipsis, add the class truncate to the tag which contains the text. See an example below of a header being truncated inside a card.'
+    )
+  })
+  .add('Truncation', () => (
+    <div style={{ width: 300, margin: 'auto' }}>
+      <CardPanel>
+        <h4 className="truncate">
+          This is an extremely long title that will be truncated
+        </h4>
+      </CardPanel>
+    </div>
+  ))
+  .addParameters({
+    info: wInfo(
+      'The hoverable is a `hover` class that adds an animation for box shadow as seen below. It can be used on most elements, but meant for use on cards.'
+    )
+  })
+  .add('Hover', () => (
+    <div style={{ width: 300, margin: 'auto' }}>
+      <CardPanel className="hoverable">Hover over me!</CardPanel>
+    </div>
+  ));
+
+storiesOf('CSS/Hiding - Showing', module)
+  .addDecorator(
+    createDummyPage({
+      margin: 'auto',
+      maxWidth: 800
+    })
+  )
+  .addParameters({
+    info: wInfo(
       'We provide easy to use classes to hide/show content on specific screen sizes.'
     )
   })
@@ -122,28 +154,4 @@ storiesOf('CSS/Helpers', module)
         </tr>
       </tbody>
     </table>
-  ))
-  .addParameters({
-    info: wInfo(
-      'To truncate long lines of text in an ellipsis, add the class truncate to the tag which contains the text. See an example below of a header being truncated inside a card.'
-    )
-  })
-  .add('Truncation', () => (
-    <div style={{ width: 300, margin: 'auto' }}>
-      <CardPanel>
-        <h4 className="truncate">
-          This is an extremely long title that will be truncated
-        </h4>
-      </CardPanel>
-    </div>
-  ))
-  .addParameters({
-    info: wInfo(
-      'The hoverable is a `hover` class that adds an animation for box shadow as seen below. It can be used on most elements, but meant for use on cards.'
-    )
-  })
-  .add('Hover', () => (
-    <div style={{ width: 300, margin: 'auto' }}>
-      <CardPanel className="hoverable">Hover over me!</CardPanel>
-    </div>
   ));

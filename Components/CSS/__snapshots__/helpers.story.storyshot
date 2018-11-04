@@ -1,6 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CSS/Helpers Hiding/Showing Content 1`] = `
+exports[`Storyshots CSS/Helpers Hover 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "width": 300,
+      }
+    }
+  >
+    <div
+      className="card-panel hoverable"
+    >
+      Hover over me!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CSS/Helpers Text Align 1`] = `
+<div>
+  <div>
+    <div
+      className="card-panel "
+    >
+      <h5
+        className="left-align"
+      >
+        This should be left aligned
+      </h5>
+    </div>
+    <div
+      className="card-panel "
+    >
+      <h5
+        className="right-align"
+      >
+        This should be right aligned
+      </h5>
+    </div>
+    <div
+      className="card-panel "
+    >
+      <h5
+        className="center-align"
+      >
+        This should be center aligned
+      </h5>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CSS/Helpers Truncation 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "width": 300,
+      }
+    }
+  >
+    <div
+      className="card-panel "
+    >
+      <h4
+        className="truncate"
+      >
+        This is an extremely long title that will be truncated
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CSS/Helpers Vertical Align 1`] = `
+<div>
+  <div
+    className="card-panel "
+  >
+    <div
+      className="valign-wrapper"
+      style={
+        Object {
+          "height": 400,
+        }
+      }
+    >
+      <h5>
+        This should be vertically aligned
+      </h5>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CSS/Hiding - Showing Hiding/Showing Content 1`] = `
 <div>
   <table
     className="striped"
@@ -150,102 +247,5 @@ exports[`Storyshots CSS/Helpers Hiding/Showing Content 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
-`;
-
-exports[`Storyshots CSS/Helpers Hover 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "width": 300,
-      }
-    }
-  >
-    <div
-      className="card-panel hoverable"
-    >
-      Hover over me!
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots CSS/Helpers Text Align 1`] = `
-<div>
-  <div>
-    <div
-      className="card-panel "
-    >
-      <h5
-        className="left-align"
-      >
-        This should be left aligned
-      </h5>
-    </div>
-    <div
-      className="card-panel "
-    >
-      <h5
-        className="right-align"
-      >
-        This should be right aligned
-      </h5>
-    </div>
-    <div
-      className="card-panel "
-    >
-      <h5
-        className="center-align"
-      >
-        This should be center aligned
-      </h5>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots CSS/Helpers Truncation 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "width": 300,
-      }
-    }
-  >
-    <div
-      className="card-panel "
-    >
-      <h4
-        className="truncate"
-      >
-        This is an extremely long title that will be truncated
-      </h4>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots CSS/Helpers Vertical Align 1`] = `
-<div>
-  <div
-    className="card-panel "
-  >
-    <div
-      className="valign-wrapper"
-      style={
-        Object {
-          "height": 400,
-        }
-      }
-    >
-      <h5>
-        This should be vertically aligned
-      </h5>
-    </div>
-  </div>
 </div>
 `;

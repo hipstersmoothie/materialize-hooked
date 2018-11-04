@@ -37,7 +37,7 @@ function customizePage(page: any) {
 /* 👇 Initialize our Image storyshots suite */
 initStoryshots({
   suite: 'Image Storyshots',
-  storyKindRegex: /^((?!.*?Javascript\/Media - Slider|CSS\/Videos|CSS\/Transition).)*$/,
+  storyKindRegex: /^((?!.*?Javascript\/Media - Slider|CSS\/Videos|CSS\/Hiding - Showing).)*$/,
   test: imageSnapshot({
     storybookUrl,
     getMatchOptions,

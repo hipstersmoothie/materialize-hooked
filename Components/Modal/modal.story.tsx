@@ -3,7 +3,7 @@ import { storiesOf, StoryDecorator } from '@storybook/react';
 import * as React from 'react';
 
 import { wInfo } from '../utils';
-import { ModalWrapper as Modal } from './index';
+import Modal from '.';
 
 const styles = {
   width: '100%',

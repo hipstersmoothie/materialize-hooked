@@ -32,7 +32,6 @@ export const FeatureDiscovery: React.SFC<FeatureDiscoveryProps> = (
   { children, target },
   ref
 ) => {
-  // For storybook
   const currentRef = !ref.hasOwnProperty('current') ? React.createRef() : ref;
 
   return (

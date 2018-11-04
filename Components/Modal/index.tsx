@@ -58,13 +58,6 @@ export const ModalComponent: React.SFC<ModalProps> = ({
   );
 };
 
-// For storybook
-export const ModalWrapper: React.SFC<ModalProps> = props => (
-  <div>
-    <ModalComponent {...props} />
-  </div>
-);
-
 ModalComponent.defaultProps = {
   footer: undefined,
   isBottomSheet: false,

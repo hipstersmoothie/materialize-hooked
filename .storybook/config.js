@@ -1,10 +1,12 @@
-const { addDecorator, setAddon, configure } = require('@storybook/react');
+const { addDecorator, configure } = require('@storybook/react');
 const { withOptions } = require('@storybook/addon-options');
 const { withInfo } = require('@storybook/addon-info');
 const { withBackgrounds } = require('@storybook/addon-backgrounds');
 const { checkA11y } = require('@storybook/addon-a11y');
-
+const { setConfig } = require('react-hot-loader');
 const React = require('react');
+
+setConfig({ pureSFC: true });
 
 // @ts-ignore
 React.Fragment = ({ children }) => children;

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { createDummyPage, wInfo } from '../utils';
 
-import { CarouselWrapper as Carousel } from '.';
+import Carousel from '.';
 
 storiesOf('Javascript/Carousel', module)
   .addDecorator(

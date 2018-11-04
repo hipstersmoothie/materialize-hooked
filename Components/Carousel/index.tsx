@@ -68,11 +68,4 @@ CarouselComponent.defaultProps = {
   isCentered: false
 };
 
-// For storybook
-export const CarouselWrapper: React.SFC<CarouselProps> = props => (
-  <div>
-    <CarouselComponent {...props} />
-  </div>
-);
-
 export default CarouselComponent;

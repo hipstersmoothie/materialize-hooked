@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
+import * as React from 'react';
 
+import { wInfo } from '../utils';
 import { ModalWrapper as Modal } from './index';
-import { wInfo } from '../utils-ts';
 
 const styles = {
   width: '100%',
@@ -62,7 +62,7 @@ storiesOf('Javascript/Modal', module)
       [LongParagraph]
     )
   })
-  .addWithJSX('Basic', (fixedFooter = boolean('hasFixedFooter', false)) => (
+  .add('Basic', (fixedFooter = boolean('hasFixedFooter', false)) => (
     <Modal
       id="modal1"
       hasFixedFooter={fixedFooter}
@@ -104,7 +104,7 @@ storiesOf('Javascript/Modal', module)
       [LongParagraph]
     )
   })
-  .addWithJSX('Modals with Fixed Footer', () => (
+  .add('Modals with Fixed Footer', () => (
     <Modal
       id="modal1"
       hasFixedFooter
@@ -130,7 +130,7 @@ storiesOf('Javascript/Modal', module)
       [LongParagraph]
     )
   })
-  .addWithJSX('Bottom Sheet Modals', () => (
+  .add('Bottom Sheet Modals', () => (
     <Modal
       id="modal1"
       isBottomSheet

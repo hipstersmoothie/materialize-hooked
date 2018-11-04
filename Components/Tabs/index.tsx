@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Tabs, TabsOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useRef, useEffect, useState } = React;
 

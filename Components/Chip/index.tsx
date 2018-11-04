@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 type ClickCallback = (event: React.MouseEvent<HTMLElement>) => void;
 
@@ -22,45 +22,39 @@ export interface ChipProps {
   className?: string;
 }
 
-export const Chip: React.SFC<ChipProps> = ({
-  className,
-  value,
-  image,
-  children,
-  onClick,
-  hasClose,
-  onClickClose
-}) => {
-  const chipClass = makeClass(className, {
-    chip: true
-  });
+class Chip extends React.PureComponent<ChipProps> {
+  public static defaultProps = {
+    onClick: () => undefined,
+    onClickClose: () => undefined,
+    className: '',
+    image: undefined,
+    hasClose: false,
+    children: undefined
+  };
 
-  return (
-    <div className={chipClass} onClick={onClick}>
-      {image && <img src={image} alt="Contact Person" />}
-      {value || children}
-      {hasClose && (
-        <i
-          className="close material-icons"
-          onClick={e => {
-            e.stopPropagation();
-            onClickClose!(e);
-          }}
-        >
-          close
-        </i>
-      )}
-    </div>
-  );
-};
+  public onClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+    this.props.onClickClose!(e);
+  };
 
-Chip.defaultProps = {
-  onClick: () => undefined,
-  onClickClose: () => undefined,
-  className: '',
-  image: undefined,
-  hasClose: false,
-  children: undefined
-};
+  public render() {
+    const { className, value, image, children, onClick, hasClose } = this.props;
+    const chipClass = makeClass(className, {
+      chip: true
+    });
+
+    return (
+      <div className={chipClass} onClick={onClick}>
+        {image && <img src={image} alt="Contact Person" />}
+        {value || children}
+        {hasClose && (
+          <i className="close material-icons" onClick={this.onClick}>
+            close
+          </i>
+        )}
+      </div>
+    );
+  }
+}
 
 export default Chip;

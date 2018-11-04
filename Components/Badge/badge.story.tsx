@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, number } from '@storybook/addon-knobs';
-import { createDummyPage, Wrapper, wInfo } from '../utils-ts';
+import * as React from 'react';
+import { createDummyPage, wInfo, Wrapper } from '../utils';
 
-import NavBar, { NavItem } from '../NavBar';
+import Badge from '.';
 import Collapsible, { CollapsibleItem } from '../Collapsible';
-import Icon from '../Icon';
 import Collection, { CollectionItem } from '../Collection';
 import Dropdown, { DropdownItem } from '../Dropdown';
-import Badge from '.';
+import Icon from '../Icon';
+import NavBar, { NavItem } from '../NavBar';
 
 storiesOf('Components/Badge', module)
   .addParameters({
@@ -18,7 +18,7 @@ storiesOf('Components/Badge', module)
   })
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Badge
       isNew={boolean('isNew', true)}
       value={number('value', 1)}
@@ -41,7 +41,7 @@ storiesOf('Components/Badge', module)
     })
   )
   .addDecorator(createDummyPage())
-  .addWithJSX('Collections', () => (
+  .add('Collections', () => (
     <Collection isLinks>
       <CollectionItem href="!#">
         <Badge value={1} /> Mary
@@ -60,7 +60,7 @@ storiesOf('Components/Badge', module)
   .addParameters({
     info: wInfo(undefined, [DropdownItem, Dropdown, Wrapper])
   })
-  .addWithJSX('Badges in Dropdown', () => (
+  .add('Badges in Dropdown', () => (
     <Wrapper>
       <Dropdown text="Dropdown" className="red">
         <DropdownItem>
@@ -78,7 +78,7 @@ storiesOf('Components/Badge', module)
   .addParameters({
     info: wInfo(undefined, [NavItem, NavBar, Wrapper])
   })
-  .addWithJSX('Badges in Navbar', () => (
+  .add('Badges in Navbar', () => (
     <NavBar logo="Logo">
       <NavItem href="!#" text="HTML" />
       <NavItem href="!#">

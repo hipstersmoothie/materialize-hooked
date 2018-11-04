@@ -1,9 +1,9 @@
-import * as React from 'react';
+import makeClass from 'classnames';
 import {
   FloatingActionButton,
   FloatingActionButtonOptions
 } from 'materialize-css';
-import makeClass from 'classnames';
+import * as React from 'react';
 
 const { useRef, useEffect } = React;
 
@@ -31,7 +31,7 @@ export interface FabProps extends Partial<FloatingActionButtonOptions> {
   /** Reveal these buttons */
   children?: React.ReactNode;
   /** Called when clicking the floating action button */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 const Fab: React.SFC<FabProps> = ({

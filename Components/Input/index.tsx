@@ -1,7 +1,7 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
-import { textareaAutoResize, CharacterCounter } from 'materialize-css';
+import { CharacterCounter, textareaAutoResize } from 'materialize-css';
 
 const { useEffect, useRef, useState, forwardRef } = React;
 

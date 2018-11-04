@@ -1,30 +1,26 @@
-import { addDecorator, setAddon, configure } from '@storybook/react';
-import { withOptions } from '@storybook/addon-options';
-import { withInfo } from '@storybook/addon-info';
-import { withBackgrounds } from '@storybook/addon-backgrounds';
-import { Wrapper } from '../Components/utils-ts';
-import { checkA11y } from '@storybook/addon-a11y';
-import JSXAddon from 'storybook-addon-jsx';
+const { addDecorator, setAddon, configure } = require('@storybook/react');
+const { withOptions } = require('@storybook/addon-options');
+const { withInfo } = require('@storybook/addon-info');
+const { withBackgrounds } = require('@storybook/addon-backgrounds');
+const { checkA11y } = require('@storybook/addon-a11y');
 
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+const React = require('react');
 
 // @ts-ignore
 React.Fragment = ({ children }) => children;
-React.Fragment.propTypes = {
-  //@ts-ignoreyarn
-  children: PropTypes.node.isRequired
-};
+React.Fragment.propTypes = {};
 React.Fragment.displayName = 'React.Fragment';
 
-setAddon(JSXAddon);
-
 addDecorator(checkA11y);
-addDecorator(
-  withInfo({
-    inline: true
-  })
-);
+
+if (process.env.NODE_ENV !== 'test') {
+  addDecorator(
+    withInfo({
+      inline: true
+    })
+  );
+}
+
 addDecorator(
   withOptions({
     name: 'materialize-hooked',

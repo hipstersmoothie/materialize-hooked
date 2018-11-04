@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Autocomplete, AutocompleteOptions } from 'materialize-css';
+import * as React from 'react';
 
 import Input, { InputProps } from '../Input';
 
@@ -38,16 +38,16 @@ export const AutoComplete: React.SFC<AutoCompleteProps> = ({
 
   useAutocomplete(autocomplete, {
     ...options,
-    onAutocomplete: function(value) {
+    onAutocomplete(newValue) {
       if (onChange) {
         onChange({
-          target: { value },
-          currentTarget: { value }
+          target: { value: newValue },
+          currentTarget: { value: newValue }
         } as React.ChangeEvent<HTMLInputElement>);
       }
 
       if (options.onAutocomplete) {
-        options.onAutocomplete.call(this, value);
+        options.onAutocomplete.call(this, newValue);
       }
     }
   } as AutocompleteOptions);

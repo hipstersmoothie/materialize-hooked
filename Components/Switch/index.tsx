@@ -1,9 +1,7 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 export interface SwitchProps {
-  /** Called when the switch value changes */
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /**
    * The switch is disabled
    * @default false
@@ -29,6 +27,8 @@ export interface SwitchProps {
    * @default
    */
   className?: string;
+  /** Called when the switch value changes */
+  onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 export const Switch: React.SFC<SwitchProps> = ({

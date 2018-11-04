@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 import {
-  withKnobs,
-  number,
   array,
   boolean,
-  select
+  number,
+  select,
+  withKnobs
 } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import * as React from 'react';
 
-import { createDummyPage, action, wInfo } from '../utils-ts';
 import Range from '.';
+import { action, createDummyPage, wInfo } from '../utils';
 
 storiesOf('Form/Range', module)
   .addDecorator(
@@ -37,7 +37,7 @@ storiesOf('Form/Range', module)
   .addParameters({
     info: wInfo(
       `
-      We have two different types of sliders. nouiSlider is a 3rd party plugin which we've modified. 
+      We have two different types of sliders. nouiSlider is a 3rd party plugin which we've modified.
 
       You will have to manually link the \`nouislider.css\`
 

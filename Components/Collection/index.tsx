@@ -1,5 +1,5 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 export interface CollectionItemProps {
   /** HREF for the item if in link list */
@@ -11,8 +11,6 @@ export interface CollectionItemProps {
    * @default false
    */
   isActive?: boolean;
-  /** Called when clicking the item */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /** Extra info to display with the item, usually an icon */
   secondaryContent?: React.ReactNode;
   /**
@@ -29,6 +27,8 @@ export interface CollectionItemProps {
    * @default
    */
   imageClassName?: string;
+  /** Called when clicking the item */
+  onClick?(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 export const CollectionItem: React.SFC<CollectionItemProps> = ({

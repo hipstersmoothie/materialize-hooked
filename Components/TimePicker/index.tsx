@@ -1,5 +1,6 @@
-import * as React from 'react';
+import makeClass from 'classnames';
 import { Timepicker, TimepickerOptions } from 'materialize-css';
+import * as React from 'react';
 
 import Input, { InputProps } from '../Input';
 
@@ -34,6 +35,7 @@ const TimePicker: React.SFC<TimePickerProps> = ({
   ...options
 }) => {
   const timePicker = useRef<HTMLInputElement>();
+  const timeClass = makeClass(className, 'timepicker');
 
   if (!options.i18n) {
     delete options.i18n;
@@ -41,7 +43,7 @@ const TimePicker: React.SFC<TimePickerProps> = ({
 
   useTimePicker(timePicker, {
     ...options,
-    onCloseEnd: function(el) {
+    onCloseEnd(el) {
       if (onChange && timePicker.current) {
         onChange({
           target: timePicker.current,
@@ -69,7 +71,7 @@ const TimePicker: React.SFC<TimePickerProps> = ({
       isDisabled={isDisabled}
       isInline={isInline}
       type="text"
-      className="timepicker"
+      className={timeClass}
       onChange={onChange}
     />
   );

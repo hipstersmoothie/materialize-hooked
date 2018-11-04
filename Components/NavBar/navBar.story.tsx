@@ -1,11 +1,13 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
-import Tabs, { Tab } from '../Tabs';
 import Button from '../Button';
+import Tabs, { Tab } from '../Tabs';
 import Nav, { NavItem, NavSearch } from './index';
+
+const noop = () => undefined;
 
 storiesOf('Components/Nav', module)
   .addDecorator(withKnobs)
@@ -14,9 +16,9 @@ storiesOf('Components/Nav', module)
       'The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Nav
-      useSideNav={boolean('useSideNav', true)}
+      hasSideNav={boolean('hasSideNav', true)}
       logo={text('logo', 'Logo')}
       isLeft={boolean('isLeft', false)}
       isFixed={boolean('isFixed', false)}
@@ -41,7 +43,7 @@ storiesOf('Components/Nav', module)
   .addParameters({
     info: wInfo('To left align your navbar links, just add a `isLeft`')
   })
-  .addWithJSX('Left Aligned Links', () => (
+  .add('Left Aligned Links', () => (
     <Nav logo="Logo" isLeft>
       <NavItem href="!#" text="Sass" onClick={action('Sass onClick')} />
       <NavItem
@@ -63,7 +65,7 @@ storiesOf('Components/Nav', module)
       'The logo will center itself on medium and down screens, but if you want the logo to always be centered, add the `isCenter` prop to your NavBar. You will have to make sure yourself that links do not overlap if you use this.'
     )
   })
-  .addWithJSX('Centering the logo', () => (
+  .add('Centering the logo', () => (
     <Nav logo="Logo" hasCenteredLogo>
       <NavItem href="!#" text="Sass" onClick={action('Sass onClick')} />
       <NavItem
@@ -83,7 +85,7 @@ storiesOf('Components/Nav', module)
   .addParameters({
     info: wInfo('Add `isActive` to your NavItems to denote the current page.')
   })
-  .addWithJSX('Active Items', () => (
+  .add('Active Items', () => (
     <Nav logo="Logo">
       <NavItem href="!#" text="Sass" onClick={action('Sass onClick')} />
       <NavItem
@@ -103,9 +105,9 @@ storiesOf('Components/Nav', module)
   .addParameters({
     info: wInfo('Add `isActive` to your NavItems to denote the current page.')
   })
-  .addWithJSX('Extended Navbar with Tabs', () => (
+  .add('Extended Navbar with Tabs', () => (
     <Nav
-      useSideNav={boolean('useSideNav', true)}
+      hasSideNav={boolean('hasSideNav', true)}
       logo={text('logo', 'Logo')}
       isLeft={boolean('isLeft', false)}
       isFixed={boolean('isFixed', false)}
@@ -143,7 +145,7 @@ storiesOf('Components/Nav', module)
       'To make the navbar fixed, you have to add an outer wrapping div with the class  navbar-fixed. This will offset your other content while making your nav fixed. You can adjust the height of this outer div to change how much offset is on your content.'
     )
   })
-  .addWithJSX('Fixed NavBar', () => (
+  .add('Fixed NavBar', () => (
     <Nav logo="Logo" isFixed>
       <NavItem href="!#" text="Sass" onClick={action('Sass onClick')} />
       <NavItem
@@ -160,7 +162,7 @@ storiesOf('Components/Nav', module)
       <NavItem href="!#" text="Mobile" onClick={action('Mobile onClick')} />
     </Nav>
   ))
-  .addWithJSX('Icon Links', () => (
+  .add('Icon Links', () => (
     <Nav logo="logo">
       <NavItem href="!#" isButton icon="cloud" />
       <NavItem href="!#" icon="search" />
@@ -173,7 +175,7 @@ storiesOf('Components/Nav', module)
       'For adding an icon to a text link you need to add either a  left or  right class to the icon depending on where you want the icon to be.'
     )
   })
-  .addWithJSX('Icon + Text', () => (
+  .add('Icon + Text', () => (
     <Nav logo="logo">
       <NavItem href="!#" iconLeft icon="cloud" text="Link with Left Icon" />
       <NavItem href="!#" iconRight icon="search" text="Link with Right Icon" />
@@ -184,7 +186,7 @@ storiesOf('Components/Nav', module)
       'When your nav bar is resized, you will see that the links on the right turn into a hamburger icon menu.'
     )
   })
-  .addWithJSX('Buttons', () => (
+  .add('Buttons', () => (
     <Nav logo="logo">
       <NavItem
         href="!#"
@@ -208,16 +210,16 @@ storiesOf('Components/Nav', module)
   .addParameters({
     info: wInfo('You can add a search form in the navbar.')
   })
-  .addWithJSX('Search', () => (
+  .add('Search', () => (
     <Nav isSearch logo="logo">
-      <NavSearch onChange={() => undefined} value={text('value', null)} />
+      <NavSearch onChange={noop} value={text('value', null)} />
     </Nav>
   ))
   .addParameters({
     info: wInfo('You can add a search form in the navbar.')
   })
-  .addWithJSX('Mobile Collapse Button', () => (
-    <Nav logo="Logo" useSideNav>
+  .add('Mobile Collapse Button', () => (
+    <Nav logo="Logo" hasSideNav>
       <NavItem href="!#" text="Sass" onClick={action('Sass onClick')} />
       <NavItem
         href="!#"

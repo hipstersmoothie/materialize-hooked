@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Icon Basic 1`] = `
+<div>
+  <i
+    className="material-icons"
+  >
+    publish
+  </i>
+</div>
+`;

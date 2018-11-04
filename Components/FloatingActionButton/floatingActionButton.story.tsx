@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
-import Button from '../Button';
 import Fab from '.';
+import Button from '../Button';
 
 storiesOf('Components/FloatingActionButton', module)
   .addDecorator(withKnobs)
@@ -14,7 +14,7 @@ storiesOf('Components/FloatingActionButton', module)
       [Button]
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Fab
       icon={text('icon', 'publish')}
       hoverEnabled={boolean('hoverEnabled', true)}
@@ -58,7 +58,7 @@ storiesOf('Components/FloatingActionButton', module)
       [Button]
     )
   })
-  .addWithJSX('Horizontal FAB', () => (
+  .add('Horizontal FAB', () => (
     <Fab
       icon={text('icon', 'publish')}
       direction="left"
@@ -96,7 +96,7 @@ storiesOf('Components/FloatingActionButton', module)
       [Button]
     )
   })
-  .addWithJSX('Click-only FAB', () => (
+  .add('Click-only FAB', () => (
     <Fab
       icon={text('icon', 'publish')}
       hoverEnabled={false}
@@ -134,7 +134,7 @@ storiesOf('Components/FloatingActionButton', module)
       [Button]
     )
   })
-  .addWithJSX('FAB to Toolbar', () => (
+  .add('FAB to Toolbar', () => (
     <Fab
       toolbarEnabled
       icon={text('icon', 'publish')}

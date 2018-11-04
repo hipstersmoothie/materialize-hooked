@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, createDummyPage, wInfo } from '../utils';
 
 import Chip from '.';
 
@@ -13,7 +13,7 @@ storiesOf('Form/Chip', module)
       'Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Chip
       value={text('value', 'Chip Component')}
       hasClose={boolean('hasClose', false)}
@@ -27,7 +27,7 @@ storiesOf('Form/Chip', module)
       'To create a tag chip just add a close icon inside with the prop `To create a tag chip just add a close icon inside with the class prop `hasClose`.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Close Chip', () => (
     <Chip
       value={text('value', 'Chip Component')}
       hasClose

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Radio Basic 1`] = `
+<div>
+  <p>
+    <label
+      htmlFor="radio"
+    >
+      <input
+        checked={false}
+        className="waves-effect waves-light"
+        disabled={false}
+        id="radio"
+        name="group1"
+        onClick={[Function]}
+        type="radio"
+      />
+      <span>
+        Radio Text
+      </span>
+    </label>
+  </p>
+</div>
+`;

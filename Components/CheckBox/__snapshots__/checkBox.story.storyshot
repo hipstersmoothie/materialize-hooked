@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/CheckBox Basic 1`] = `
+<div>
+  <p>
+    <label>
+      <input
+        checked={false}
+        className=""
+        disabled={false}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span>
+        Checkbox
+      </span>
+    </label>
+  </p>
+</div>
+`;

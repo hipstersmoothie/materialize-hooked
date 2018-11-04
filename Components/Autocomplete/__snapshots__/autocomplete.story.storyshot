@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Autocomplete Basic 1`] = `
+<div>
+  <div
+    className="input-field"
+  >
+    <i
+      className="material-icons prefix"
+    >
+      access_time
+    </i>
+    <input
+      aria-label="Autocomplete Input"
+      className="autocomplete validate"
+      disabled={false}
+      id="id"
+      onChange={[Function]}
+      placeholder={null}
+      type="text"
+      value="foo"
+    />
+  </div>
+</div>
+`;

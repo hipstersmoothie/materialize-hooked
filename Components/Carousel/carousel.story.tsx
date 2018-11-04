@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { array, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, array } from '@storybook/addon-knobs';
-import { createDummyPage, wInfo } from '../utils-ts';
+import * as React from 'react';
+import { createDummyPage, wInfo } from '../utils';
 
 import { CarouselWrapper as Carousel } from '.';
 
@@ -19,11 +19,11 @@ storiesOf('Javascript/Carousel', module)
       'Our Carousel is a robust and versatile component that can be an image slider, to an item carousel, to an onboarding experience. It is touch enabled making it especially smooth to use on mobile.\n\nNote: This is also touch compatible! Try swiping with your finger to scroll through the carousel.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Carousel
       images={array('images', [
         'https://vignette.wikia.nocookie.net/animaljam/images/7/78/Lil_bub_the_cat-250x250.jpg/revision/latest?cb=20140510201421',
-        'http://webfixfast.com/wp-content/uploads/2012/11/cat-1-250x250.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwUukNCJaMQLwmsMMvmgW3ySDuLMwVIRoAbKBymq7p-T9u0PEOKg',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9jWojHYGGqM0ZTIziTBMyv29Ql5Wv-6DSQvxz5m_rZ4CYq5G',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJhL-vJ32eGdFal-LDu5wDRXBteI7vLhQ7PF31cu2fFAzE6uQZ',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx9nLK29Z9NJm43wf3hCcLpew8IOhG2R0xWFVJjC0Dy25Ym6_XaA'
@@ -35,7 +35,7 @@ storiesOf('Javascript/Carousel', module)
       'Our carousel has a full width option that makes it into a simple and elegant image carousel. You can also have indicators that show up on the bottom of the slider.\n\nNote: This is also touch compatible! Try swiping with your finger to scroll through the carousel.'
     )
   })
-  .addWithJSX('Full width slider', () => (
+  .add('Full width slider', () => (
     <Carousel
       isSlider
       fullWidth
@@ -52,7 +52,7 @@ storiesOf('Javascript/Carousel', module)
       "The carousel doesn't only support images but also allows you to make content carousels. You can add fixed items to your carousel by adding a div with the class  carousel-fixed-item and adding your fixed content in there.\n\nNote: This is also touch compatible! Try swiping with your finger to scroll through the carousel."
     )
   })
-  .addWithJSX('Special Options', () => (
+  .add('Special Options', () => (
     <Carousel isCentered isSlider fullWidth>
       <div className="carousel-fixed-item center">
         <a className="btn waves-effect white grey-text darken-text-2">button</a>

@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { Slider, SliderOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useRef, useEffect } = React;
 

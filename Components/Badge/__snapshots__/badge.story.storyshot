@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Badge Badges in Collapsible 1`] = `
+<div>
+  <ul
+    className="collapsible expandable"
+  >
+    <li
+      className=""
+    >
+      <div
+        className="collapsible-header"
+      >
+        <i
+          className="material-icons"
+        >
+          filter_drama
+        </i>
+        First
+        <span
+          className="badge new"
+        >
+          4
+        </span>
+      </div>
+      <div
+        className="collapsible-body"
+      >
+        <span>
+          Lorem ipsum dolor sit amet.
+        </span>
+      </div>
+    </li>
+    <li
+      className=""
+    >
+      <div
+        className="collapsible-header"
+      >
+        <i
+          className="material-icons"
+        >
+          place
+        </i>
+        Second
+        <span
+          className="badge"
+        >
+          1
+        </span>
+      </div>
+      <div
+        className="collapsible-body"
+      >
+        <span>
+          Lorem ipsum dolor sit amet.
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Badge Badges in Dropdown 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "justifyContent": "center",
+      "minHeight": 100,
+      "width": "100%",
+    }
+  }
+>
+  <div>
+    <a
+      className="dropdown-trigger btn red"
+      data-target="dropdown1"
+      href="#"
+    >
+      Dropdown
+    </a>
+    <ul
+      className="dropdown-content"
+      id="dropdown1"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          <span
+            className="badge"
+          >
+            1
+          </span>
+           one
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          <span
+            className="badge new"
+          >
+            1
+          </span>
+           two
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+        >
+          three
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Badge Badges in Navbar 1`] = `
+<div
+  className=""
+>
+  <nav
+    className=""
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <a
+        className="brand-logo "
+      >
+        Logo
+      </a>
+      <ul
+        className="right hide-on-med-and-down"
+      >
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            HTML
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            CSS 
+            <span
+              className="badge new"
+            >
+              1
+            </span>
+          </a>
+        </li>
+        <li
+          className=""
+        >
+          <a
+            className=""
+            href="!#"
+          >
+            Javascript
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots Components/Badge Basic 1`] = `
+<div>
+  <span
+    className="red badge new"
+    data-badge-caption=""
+  >
+    1
+  </span>
+</div>
+`;
+
+exports[`Storyshots Components/Badge Collections 1`] = `
+<div>
+  <div>
+    <div
+      className="collection"
+    >
+      <a
+        className="collection-item"
+      >
+        <span
+          className="badge"
+        >
+          1
+        </span>
+         Mary
+      </a>
+      <a
+        className="collection-item"
+      >
+        <span
+          className="badge new"
+        >
+          4
+        </span>
+         Adam
+      </a>
+      <a
+        className="collection-item"
+      >
+        Andrew
+      </a>
+      <a
+        className="collection-item"
+      >
+        <span
+          className="badge"
+        >
+          14
+        </span>
+         Sue
+      </a>
+    </div>
+  </div>
+</div>
+`;

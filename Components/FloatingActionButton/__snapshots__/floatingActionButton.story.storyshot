@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/FloatingActionButton Basic 1`] = `
+<div
+  className="fixed-action-btn"
+  id=""
+>
+  <a
+    className="waves-effect waves-light btn-floating btn-large "
+    onClick={[Function]}
+  >
+    <i
+      className="large material-icons"
+    >
+      publish
+    </i>
+  </a>
+  <ul>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          insert_chart
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="yellow darken-1 btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          format_quote
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="green btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          publish
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="blue btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          attach_file
+        </i>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/FloatingActionButton Click-only FAB 1`] = `
+<div
+  className="fixed-action-btn"
+  id=""
+>
+  <a
+    className="waves-effect waves-light btn-floating btn-large "
+    onClick={[Function]}
+  >
+    <i
+      className="large material-icons"
+    >
+      publish
+    </i>
+  </a>
+  <ul>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          insert_chart
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="yellow darken-1 btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          format_quote
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="green btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          publish
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="blue btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          attach_file
+        </i>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/FloatingActionButton FAB to Toolbar 1`] = `
+<div
+  className="fixed-action-btn toolbar"
+  id=""
+>
+  <a
+    className="waves-effect waves-light btn-floating btn-large red"
+    onClick={[Function]}
+  >
+    <i
+      className="large material-icons"
+    >
+      publish
+    </i>
+  </a>
+  <ul>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          insert_chart
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          format_quote
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          publish
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          attach_file
+        </i>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/FloatingActionButton Horizontal FAB 1`] = `
+<div
+  className="fixed-action-btn"
+  id=""
+>
+  <a
+    className="waves-effect waves-light btn-floating btn-large "
+    onClick={[Function]}
+  >
+    <i
+      className="large material-icons"
+    >
+      publish
+    </i>
+  </a>
+  <ul>
+    <li>
+      <a
+        className="red btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          insert_chart
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="yellow darken-1 btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          format_quote
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="green btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          publish
+        </i>
+      </a>
+    </li>
+    <li>
+      <a
+        className="blue btn-floating"
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons"
+        >
+          attach_file
+        </i>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

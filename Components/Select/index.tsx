@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import { FormSelect, FormSelectOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -112,10 +112,10 @@ export interface FormSelectProps extends Partial<FormSelectOptions> {
    * @default false
    */
   isBrowserDefault?: boolean;
-  /** Called when the select value changes */
-  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   /** Aria label for the file input */
   ariaLabel?: string;
+  /** Called when the select value changes */
+  onChange?(event: React.ChangeEvent<HTMLSelectElement>): void;
 }
 
 const FormSelectComponent: React.SFC<FormSelectProps> = ({

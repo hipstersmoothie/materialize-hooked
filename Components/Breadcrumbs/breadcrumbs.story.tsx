@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
 import { withKnobs } from '@storybook/addon-knobs';
+import { storiesOf, StoryDecorator } from '@storybook/react';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
 // eslint-disable-next-line unicorn/import-index
 import Breadcrumbs, { Breadcrumb } from '.';
@@ -22,7 +22,7 @@ storiesOf('Components/Breadcrumbs', module)
       'Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.'
     )
   })
-  .addWithJSX('Basic', () => (
+  .add('Basic', () => (
     <Breadcrumbs className="row">
       <Breadcrumb value="First" onClick={action('First onClick')} />
       <Breadcrumb value="Second" onClick={action('Second onClick')} />

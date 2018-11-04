@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
 import {
-  withKnobs,
   boolean,
   number,
+  select,
   text,
-  select
+  withKnobs
 } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+import * as React from 'react';
 
 // eslint-disable-next-line unicorn/import-index
-import { action, createDummyPage, wInfo } from '../utils-ts';
-import Dropdown, { DropdownItem, Divider } from '.';
+import Dropdown, { Divider, DropdownItem } from '.';
+import { action, createDummyPage, wInfo } from '../utils';
 
 storiesOf('Javascript/Dropdown', module)
   .addDecorator(createDummyPage())

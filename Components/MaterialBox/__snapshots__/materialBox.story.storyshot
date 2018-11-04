@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Javascript/Media - MaterialBox Basic 1`] = `
+<div>
+  <img
+    alt="A pretty picture"
+    className=""
+    data-caption="A pretty picture"
+    src="https://materializecss.com/images/sample-1.jpg"
+    width={650}
+  />
+</div>
+`;

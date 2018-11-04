@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { Materialbox, MaterialboxOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 

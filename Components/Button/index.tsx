@@ -1,18 +1,11 @@
-import * as React from 'react';
 import makeClass from 'classnames';
+import * as React from 'react';
 
 export interface ButtonProps {
   /**  A className to attach to the root component */
   className?: string;
   /**  A id to attach to the root component */
   id?: string;
-  /**
-   * A className to attach to the root component
-   * @default
-   */
-  onClick?: (
-    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
-  ) => void;
   /**  An icon to display in the button */
   icon?: string;
   /**  The text of the button. */
@@ -64,6 +57,10 @@ export interface ButtonProps {
    * @default false
    */
   isSubmit?: boolean;
+  /** Called when the button is clicked */
+  onClick?(
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ): void;
 }
 
 const Button: React.SFC<ButtonProps> = ({

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { Dropdown, DropdownOptions } from 'materialize-css';
+import * as React from 'react';
 
 const { useEffect, useRef } = React;
 
@@ -8,21 +8,23 @@ export const useDropdown = (
   options: DropdownProps
 ) => {
   useEffect(() => {
-    if (ref.current) {
-      const dropdown = Dropdown.init(ref.current, options);
+    if (!ref.current) {
+      return;
+    }
 
-      if (options.open) {
-        dropdown.open();
-      }
+    const dropdown = Dropdown.init(ref.current, options);
+
+    if (options.open) {
+      dropdown.open();
     }
   });
 };
 
 export interface DropdownItemProps {
-  /** Called when the dropdown item is clicked */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /** Content of the dropdown item */
   children: React.ReactNode;
+  /** Called when the dropdown item is clicked */
+  onClick?(event: React.MouseEvent<HTMLAnchorElement>): void;
 }
 
 export const DropdownItem: React.SFC<DropdownItemProps> = ({

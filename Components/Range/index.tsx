@@ -1,6 +1,6 @@
-import * as React from 'react';
 import makeClass from 'classnames';
 import * as noUiSlider from 'nouislider';
+import * as React from 'react';
 
 const { useRef, useEffect } = React;
 
@@ -9,25 +9,26 @@ const useFancySlider = (
   options: RangeProps
 ) => {
   useEffect(() => {
-    if (ref.current) {
-      if (ref.current.noUiSlider) {
-        ref.current.noUiSlider.updateOptions(options as noUiSlider.Options);
-      } else if (options.isFancy) {
-        noUiSlider.create(ref.current, options as noUiSlider.Options);
-      }
+    if (!ref.current) {
+      return;
+    }
 
-      if (ref.current.noUiSlider) {
-        ref.current.noUiSlider.on(
-          'set',
-          options.onChange as noUiSlider.Callback
-        );
+    if (ref.current.noUiSlider) {
+      ref.current.noUiSlider.updateOptions(options as noUiSlider.Options);
+    } else if (options.isFancy) {
+      noUiSlider.create(ref.current, options as noUiSlider.Options);
+    }
 
-        if (options.isDisabled) {
-          ref.current.setAttribute('disabled', 'true');
-        } else {
-          ref.current.removeAttribute('disabled');
-        }
-      }
+    if (!ref.current.noUiSlider) {
+      return;
+    }
+
+    ref.current.noUiSlider.on('set', options.onChange as noUiSlider.Callback);
+
+    if (options.isDisabled) {
+      ref.current.setAttribute('disabled', 'true');
+    } else {
+      ref.current.removeAttribute('disabled');
     }
   });
 };

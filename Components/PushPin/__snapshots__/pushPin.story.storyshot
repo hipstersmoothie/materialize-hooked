@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Javascript/Pushpin Basic 1`] = `
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="container "
+  >
+    <div
+      className="pushpin"
+    >
+      <h1
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        Sticky 1
+      </h1>
+    </div>
+    <div
+      style={
+        Object {
+          "height": 500,
+        }
+      }
+    >
+      Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content
+    </div>
+    <div
+      className="pushpin"
+    >
+      <h1
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        Sticky 2
+      </h1>
+    </div>
+    <div
+      style={
+        Object {
+          "height": 500,
+        }
+      }
+    >
+      Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content
+    </div>
+    <div
+      className="pushpin"
+    >
+      <h1
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        Sticky 3
+      </h1>
+    </div>
+    <div
+      style={
+        Object {
+          "height": 500,
+        }
+      }
+    >
+      Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content
+    </div>
+    <div
+      style={
+        Object {
+          "height": 500,
+        }
+      }
+    >
+      Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content
+    </div>
+  </div>
+</div>
+`;

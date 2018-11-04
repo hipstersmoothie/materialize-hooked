@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Collection Avatar Content 1`] = `
+<div
+  style={
+    Object {
+      "margin": "auto",
+      "maxWidth": 800,
+    }
+  }
+>
+  <ul
+    className="collection"
+  >
+    
+    <li
+      className="collection-item avatar"
+    >
+      <img
+        alt=""
+        className="circle"
+        src="https://materializecss.com/images/yuna.jpg"
+      />
+      <span
+        className="title"
+      >
+        Title
+      </span>
+      <p>
+        First Line 
+        <br />
+        Second Line
+      </p>
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          grade
+        </i>
+      </a>
+    </li>
+    <li
+      className="collection-item avatar"
+    >
+      <i
+        className="circle material-icons"
+      >
+        folder
+      </i>
+      <span
+        className="title"
+      >
+        Title
+      </span>
+      <p>
+        First Line 
+        <br />
+        Second Line
+      </p>
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          grade
+        </i>
+      </a>
+    </li>
+    <li
+      className="collection-item avatar"
+    >
+      <i
+        className="red circle material-icons"
+      >
+        insert_chart
+      </i>
+      <span
+        className="title"
+      >
+        Title
+      </span>
+      <p>
+        First Line 
+        <br />
+        Second Line
+      </p>
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          grade
+        </i>
+      </a>
+    </li>
+    <li
+      className="collection-item avatar"
+    >
+      <i
+        className="green circle material-icons"
+      >
+        play_arrow
+      </i>
+      <span
+        className="title"
+      >
+        Title
+      </span>
+      <p>
+        First Line 
+        <br />
+        Second Line
+      </p>
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          grade
+        </i>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Collection Basic 1`] = `
+<div
+  style={
+    Object {
+      "margin": "auto",
+      "maxWidth": 800,
+    }
+  }
+>
+  <ul
+    className="collection"
+  >
+    
+    <li
+      className="collection-item"
+      onClick={[Function]}
+    >
+      Alvin
+    </li>
+    <li
+      className="collection-item"
+      onClick={[Function]}
+    >
+      Simon
+    </li>
+    <li
+      className="collection-item"
+      onClick={[Function]}
+    >
+      Theodore
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Collection Links 1`] = `
+<div
+  style={
+    Object {
+      "margin": "auto",
+      "maxWidth": 800,
+    }
+  }
+>
+  <div
+    className="collection"
+  >
+    
+    <a
+      className="collection-item"
+    >
+      Alvin
+    </a>
+    <a
+      className="collection-item"
+    >
+      Simon
+    </a>
+    <a
+      className="collection-item"
+    >
+      Theodore
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Collection Secondary Content 1`] = `
+<div
+  style={
+    Object {
+      "margin": "auto",
+      "maxWidth": 800,
+    }
+  }
+>
+  <div
+    className="collection"
+  >
+    
+    <a
+      className="collection-item"
+    >
+      Alvin
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          send
+        </i>
+      </a>
+    </a>
+    <a
+      className="collection-item"
+    >
+      Simon
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          send
+        </i>
+      </a>
+    </a>
+    <a
+      className="collection-item"
+    >
+      Theodore
+      <a
+        className="secondary-content"
+        href="#!"
+      >
+        <i
+          className="material-icons"
+        >
+          send
+        </i>
+      </a>
+    </a>
+  </div>
+</div>
+`;

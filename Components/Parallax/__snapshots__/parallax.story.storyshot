@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Javascript/Parallax Basic 1`] = `
+<div
+  style={Object {}}
+>
+  <div
+    className="parallax-container"
+    style={
+      Object {
+        "height": 500,
+      }
+    }
+  >
+    <div
+      className="parallax"
+    >
+      <img
+        alt=""
+        src="https://materializecss.com/images/parallax1.jpg"
+      />
+    </div>
+  </div>
+  <div
+    className="section white"
+  >
+    <div
+      className="row container"
+    >
+      <div
+        className="col s12 m10 offset-m1"
+      >
+        <h2
+          className="header"
+        >
+          Parallax
+        </h2>
+        <p
+          className="grey-text text-darken-3 lighten-3"
+        >
+          Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Javascript/Parallax With Content 1`] = `
+<div
+  style={Object {}}
+>
+  <div
+    className="parallax-container"
+    style={
+      Object {
+        "height": 500,
+      }
+    }
+  >
+    <div
+      className="parallax"
+    >
+      <img
+        alt=""
+        src="https://materializecss.com/images/parallax1.jpg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "height": "100%",
+        }
+      }
+    >
+      <h2
+        className="header white-text section"
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "justifyContent": "center",
+            "margin": 0,
+            "padding": 0,
+          }
+        }
+      >
+        Fancy Header
+      </h2>
+    </div>
+  </div>
+  <div
+    className="section white"
+  >
+    <div
+      className="row container"
+    >
+      <div
+        className="col s12 m10 offset-m1"
+      >
+        <h2
+          className="header"
+        >
+          Parallax
+        </h2>
+        <p
+          className="grey-text text-darken-3 lighten-3"
+        >
+          Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

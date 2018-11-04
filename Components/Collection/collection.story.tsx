@@ -1,7 +1,7 @@
-import * as React from 'react';
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf, StoryDecorator } from '@storybook/react';
-import { action, wInfo } from '../utils-ts';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import * as React from 'react';
+import { action, wInfo } from '../utils';
 
 import Collection, { CollectionItem } from './index';
 
@@ -12,7 +12,7 @@ const styles = {
 const DummyPage: StoryDecorator = storyFn => (
   <div style={styles}>{storyFn()}</div>
 );
-const icon = (icon: string) => (
+const makeIcon = (icon: string) => (
   <a href="#!" className="secondary-content">
     <i className="material-icons">{icon}</i>
   </a>
@@ -50,14 +50,14 @@ storiesOf('Components/Collection', module)
       <CollectionItem
         href="#"
         isActive={boolean('isActive', false)}
-        secondaryContent={icon('send')}
+        secondaryContent={makeIcon('send')}
       >
         Alvin
       </CollectionItem>
-      <CollectionItem href="#" secondaryContent={icon('send')}>
+      <CollectionItem href="#" secondaryContent={makeIcon('send')}>
         Simon
       </CollectionItem>
-      <CollectionItem href="#" secondaryContent={icon('send')}>
+      <CollectionItem href="#" secondaryContent={makeIcon('send')}>
         Theodore
       </CollectionItem>
     </Collection>
@@ -66,7 +66,7 @@ storiesOf('Components/Collection', module)
     <Collection header={text('header', '')}>
       <CollectionItem
         image="https://materializecss.com/images/yuna.jpg"
-        secondaryContent={icon('grade')}
+        secondaryContent={makeIcon('grade')}
       >
         <span className="title">Title</span>
         <p>
@@ -77,7 +77,7 @@ storiesOf('Components/Collection', module)
       <CollectionItem
         isActive={boolean('isActive', false)}
         icon="folder"
-        secondaryContent={icon('grade')}
+        secondaryContent={makeIcon('grade')}
       >
         <span className="title">Title</span>
         <p>
@@ -88,7 +88,7 @@ storiesOf('Components/Collection', module)
       <CollectionItem
         imageClassName="red"
         icon="insert_chart"
-        secondaryContent={icon('grade')}
+        secondaryContent={makeIcon('grade')}
       >
         <span className="title">Title</span>
         <p>
@@ -99,7 +99,7 @@ storiesOf('Components/Collection', module)
       <CollectionItem
         imageClassName="green"
         icon="play_arrow"
-        secondaryContent={icon('grade')}
+        secondaryContent={makeIcon('grade')}
       >
         <span className="title">Title</span>
         <p>

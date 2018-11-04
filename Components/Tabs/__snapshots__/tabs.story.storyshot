@@ -1,0 +1,400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Javascript/Tabs Basic 1`] = `
+<div>
+  <ul
+    className="tabs"
+  >
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test1"
+      >
+        Test 1
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className="active"
+        href="#test2"
+      >
+        Test 2
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test3"
+      >
+        Test 3
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test4"
+      >
+        Test 4
+      </a>
+    </li>
+  </ul>
+  <div
+    className="nav-content"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="col s12"
+        id="test1"
+      >
+        Test 1
+      </div>
+      <div
+        className="col s12"
+        id="test2"
+      >
+        Test 2
+      </div>
+      <div
+        className="col s12"
+        id="test3"
+      >
+        Test 3
+      </div>
+      <div
+        className="col s12"
+        id="test4"
+      >
+        Test 4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Javascript/Tabs Fixed Width Tabs 1`] = `
+<div>
+  <ul
+    className="tabs tabs-fixed-width"
+  >
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test1"
+      >
+        Test 1
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className="active"
+        href="#test2"
+      >
+        Test 2
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test3"
+      >
+        Test 3
+      </a>
+    </li>
+  </ul>
+  <div
+    className="nav-content"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="col s12 blue"
+        id="test1"
+      >
+        Test 1
+      </div>
+      <div
+        className="col s12 red"
+        id="test2"
+      >
+        Test 2
+      </div>
+      <div
+        className="col s12 green"
+        id="test3"
+      >
+        Test 3
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Javascript/Tabs Linking to an External Page 1`] = `
+<div>
+  <ul
+    className="tabs"
+  >
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test1"
+      >
+        Test 1
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className="active"
+        href="#test2"
+      >
+        Test 2
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test3"
+      >
+        Test 3
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test4"
+      >
+        Test 4
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="https://google.com"
+        target="_blank"
+      >
+        Google
+      </a>
+    </li>
+  </ul>
+  <div
+    className="nav-content"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="col s12"
+        id="test1"
+      >
+        Test 1
+      </div>
+      <div
+        className="col s12"
+        id="test2"
+      >
+        Test 2
+      </div>
+      <div
+        className="col s12"
+        id="test3"
+      >
+        Test 3
+      </div>
+      <div
+        className="col s12"
+        id="test4"
+      >
+        Test 4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Javascript/Tabs Preselecting a tab 1`] = `
+<div>
+  <ul
+    className="tabs"
+  >
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test1"
+      >
+        Test 1
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className="active"
+        href="#test2"
+      >
+        Test 2
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test3"
+      >
+        Test 3
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test4"
+      >
+        Test 4
+      </a>
+    </li>
+  </ul>
+  <div
+    className="nav-content"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="col s12"
+        id="test1"
+      >
+        Test 1
+      </div>
+      <div
+        className="col s12"
+        id="test2"
+      >
+        Test 2
+      </div>
+      <div
+        className="col s12"
+        id="test3"
+      >
+        Test 3
+      </div>
+      <div
+        className="col s12"
+        id="test4"
+      >
+        Test 4
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Javascript/Tabs Swipeable Tabs 1`] = `
+<div>
+  <ul
+    className="tabs"
+  >
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test1"
+      >
+        Test 1
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className="active"
+        href="#test2"
+      >
+        Test 2
+      </a>
+    </li>
+    <li
+      className="tab"
+    >
+      <a
+        className=""
+        href="#test3"
+      >
+        Test 3
+      </a>
+    </li>
+  </ul>
+  <div
+    className="nav-content"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="col s12 blue"
+        id="test1"
+      >
+        Test 1
+      </div>
+      <div
+        className="col s12 red"
+        id="test2"
+      >
+        Test 2
+      </div>
+      <div
+        className="col s12 green"
+        id="test3"
+      >
+        Test 3
+      </div>
+    </div>
+  </div>
+</div>
+`;
